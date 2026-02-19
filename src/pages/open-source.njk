@@ -1,0 +1,265 @@
+{% set pageTitle = "Open Source — NinerLog" %}
+{% set pageDescription = "NinerLog is 100% open source. See the code, self-host, or contribute. Your logbook, your rules." %}
+{% set pagePath = "/open-source" %}
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<section class="bg-gradient-to-br from-navy-900 via-navy-800 to-navy-950 py-16 lg:py-24">
+  <div class="max-w-6xl mx-auto px-4 text-center">
+    <h1 class="text-4xl lg:text-5xl font-extrabold tracking-tight text-white text-balance reveal">
+      See the code. Own the code.<br class="hidden sm:block" /> Trust the code.
+    </h1>
+    <p class="mt-6 text-lg text-slate-300 leading-relaxed max-w-2xl mx-auto reveal reveal-delay-1">
+      NinerLog is 100% open source under the MIT license. Every line of code is public, auditable, and yours to use.
+    </p>
+  </div>
+</section>
+
+<!-- ============================================================
+     WHAT OPEN SOURCE MEANS
+     ============================================================ -->
+<section class="bg-white dark:bg-navy-950 py-16 lg:py-24">
+  <div class="max-w-3xl mx-auto px-4">
+    <h2 class="text-2xl lg:text-3xl font-bold tracking-tight text-slate-800 dark:text-white mb-6 reveal">
+      What &ldquo;open source&rdquo; means for your logbook.
+    </h2>
+    <div class="prose prose-slate prose-lg dark:prose-invert max-w-none reveal reveal-delay-1">
+      <p>
+        Your pilot logbook is a legal document. It records your entire flying career &mdash; every hour, every landing, every license. You need to trust the platform that holds it.
+      </p>
+      <p>
+        With NinerLog, that trust is built on transparency. Our source code is public on GitHub. Anyone can read it, audit it, and verify exactly how your data is stored, processed, and protected.
+      </p>
+      <p>
+        Open source means <strong>no hidden data collection</strong>, <strong>no secret algorithms</strong>, and <strong>no vendor lock-in</strong>. If NinerLog ever disappeared tomorrow, you could take the code and run it yourself. Your logbook would keep working.
+      </p>
+      <p>
+        That&rsquo;s the promise: <strong>your data is yours, forever.</strong>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     ARCHITECTURE
+     ============================================================ -->
+<section class="bg-slate-50 dark:bg-navy-900 py-16 lg:py-24">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="text-center mb-12 lg:mb-16">
+      <h2 class="text-3xl lg:text-4xl font-bold tracking-tight text-slate-800 dark:text-white reveal">
+        NinerLog Architecture
+      </h2>
+      <p class="mt-4 text-lg text-slate-500 dark:text-slate-400 max-w-2xl mx-auto reveal reveal-delay-1">
+        A modern, clean stack. No magic, no black boxes.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 relative">
+      <!-- Connector arrows (desktop) -->
+      <div class="hidden md:flex absolute top-1/2 left-1/3 -translate-y-1/2 -translate-x-1/2 z-10">
+        <svg class="w-8 h-8 text-sky-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </div>
+      <div class="hidden md:flex absolute top-1/2 left-2/3 -translate-y-1/2 -translate-x-1/2 z-10">
+        <svg class="w-8 h-8 text-sky-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </div>
+
+      <!-- Frontend -->
+      <div class="p-6 bg-white dark:bg-navy-800 border border-slate-200 dark:border-navy-700 rounded-xl text-center reveal reveal-delay-1">
+        <div class="w-12 h-12 rounded-lg bg-sky-500/10 flex items-center justify-center mx-auto mb-4">
+          <svg class="w-6 h-6 text-sky-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="m9 8 6 4-6 4Z"/></svg>
+        </div>
+        <h3 class="text-lg font-semibold text-slate-800 dark:text-white mb-2">React + TypeScript</h3>
+        <p class="text-sm text-slate-600 dark:text-slate-300">TailwindCSS, PWA / Mobile-first design. Fast, accessible, modern.</p>
+      </div>
+
+      <!-- Backend -->
+      <div class="p-6 bg-white dark:bg-navy-800 border border-slate-200 dark:border-navy-700 rounded-xl text-center reveal reveal-delay-2">
+        <div class="w-12 h-12 rounded-lg bg-amber-500/10 flex items-center justify-center mx-auto mb-4">
+          <svg class="w-6 h-6 text-amber-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>
+        </div>
+        <h3 class="text-lg font-semibold text-slate-800 dark:text-white mb-2">Go API Server</h3>
+        <p class="text-sm text-slate-600 dark:text-slate-300">REST + JWT authentication. OpenAPI specification. Fast and reliable.</p>
+      </div>
+
+      <!-- Database -->
+      <div class="p-6 bg-white dark:bg-navy-800 border border-slate-200 dark:border-navy-700 rounded-xl text-center reveal reveal-delay-3">
+        <div class="w-12 h-12 rounded-lg bg-emerald-500/10 flex items-center justify-center mx-auto mb-4">
+          <svg class="w-6 h-6 text-emerald-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg>
+        </div>
+        <h3 class="text-lg font-semibold text-slate-800 dark:text-white mb-2">PostgreSQL</h3>
+        <p class="text-sm text-slate-600 dark:text-slate-300">Versioned migrations. Your data stored safely and efficiently.</p>
+      </div>
+    </div>
+
+    <div class="mt-8 text-center text-sm text-slate-500 dark:text-slate-400 reveal reveal-delay-4">
+      <p>All code publicly available on GitHub &bull; MIT License &bull; Docker Compose for easy self-hosting</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     REPOSITORY CARDS
+     ============================================================ -->
+<section class="bg-white dark:bg-navy-950 py-16 lg:py-24">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="text-center mb-12 lg:mb-16">
+      <h2 class="text-3xl lg:text-4xl font-bold tracking-tight text-slate-800 dark:text-white reveal">
+        Explore the code.
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+      <!-- Project -->
+      <a href="https://github.com/fjaeckel/pilotlog-project" target="_blank" rel="noopener noreferrer"
+         class="group p-6 bg-white dark:bg-navy-800 border border-slate-200 dark:border-navy-700 rounded-xl hover:border-sky-500 dark:hover:border-sky-500 transition-colors reveal reveal-delay-1">
+        <div class="flex items-center gap-3 mb-3">
+          <svg class="w-6 h-6 text-slate-800 dark:text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          <span class="font-semibold text-slate-800 dark:text-white">pilotlog-project</span>
+        </div>
+        <p class="text-sm text-slate-600 dark:text-slate-300 mb-4">Project planning, OpenAPI spec, documentation, and architecture decisions.</p>
+        <div class="flex items-center gap-4 text-xs text-slate-500 dark:text-slate-400">
+          <span class="flex items-center gap-1">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 17.75l-6.172 3.245 1.179-6.873-5-4.867 6.9-1.002L12 2l3.093 6.253 6.9 1.002-5 4.867 1.179 6.873z"/></svg>
+            MIT
+          </span>
+          <span class="text-sky-500 group-hover:text-sky-400 transition-colors">View on GitHub &rarr;</span>
+        </div>
+      </a>
+
+      <!-- Frontend -->
+      <a href="https://github.com/fjaeckel/pilotlog-frontend" target="_blank" rel="noopener noreferrer"
+         class="group p-6 bg-white dark:bg-navy-800 border border-slate-200 dark:border-navy-700 rounded-xl hover:border-sky-500 dark:hover:border-sky-500 transition-colors reveal reveal-delay-2">
+        <div class="flex items-center gap-3 mb-3">
+          <svg class="w-6 h-6 text-slate-800 dark:text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          <span class="font-semibold text-slate-800 dark:text-white">pilotlog-frontend</span>
+        </div>
+        <p class="text-sm text-slate-600 dark:text-slate-300 mb-4">React + TypeScript PWA. TailwindCSS, responsive, accessible pilot logbook UI.</p>
+        <div class="flex items-center gap-4 text-xs text-slate-500 dark:text-slate-400">
+          <span class="flex items-center gap-1">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 17.75l-6.172 3.245 1.179-6.873-5-4.867 6.9-1.002L12 2l3.093 6.253 6.9 1.002-5 4.867 1.179 6.873z"/></svg>
+            MIT
+          </span>
+          <span class="text-sky-500 group-hover:text-sky-400 transition-colors">View on GitHub &rarr;</span>
+        </div>
+      </a>
+
+      <!-- API -->
+      <a href="https://github.com/fjaeckel/pilotlog-api" target="_blank" rel="noopener noreferrer"
+         class="group p-6 bg-white dark:bg-navy-800 border border-slate-200 dark:border-navy-700 rounded-xl hover:border-sky-500 dark:hover:border-sky-500 transition-colors reveal reveal-delay-3">
+        <div class="flex items-center gap-3 mb-3">
+          <svg class="w-6 h-6 text-slate-800 dark:text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          <span class="font-semibold text-slate-800 dark:text-white">pilotlog-api</span>
+        </div>
+        <p class="text-sm text-slate-600 dark:text-slate-300 mb-4">Go REST API with JWT auth, PostgreSQL, OpenAPI spec. The backend engine.</p>
+        <div class="flex items-center gap-4 text-xs text-slate-500 dark:text-slate-400">
+          <span class="flex items-center gap-1">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 17.75l-6.172 3.245 1.179-6.873-5-4.867 6.9-1.002L12 2l3.093 6.253 6.9 1.002-5 4.867 1.179 6.873z"/></svg>
+            MIT
+          </span>
+          <span class="text-sky-500 group-hover:text-sky-400 transition-colors">View on GitHub &rarr;</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SELF-HOSTING
+     ============================================================ -->
+<section class="bg-slate-50 dark:bg-navy-900 py-16 lg:py-24">
+  <div class="max-w-3xl mx-auto px-4">
+    <h2 class="text-2xl lg:text-3xl font-bold tracking-tight text-slate-800 dark:text-white mb-6 reveal">
+      Self-host NinerLog.
+    </h2>
+    <div class="prose prose-slate prose-lg dark:prose-invert max-w-none reveal reveal-delay-1">
+      <p>
+        NinerLog ships with Docker Compose for easy self-hosting. If you have Docker installed, you can run your own instance in minutes:
+      </p>
+      <pre class="bg-navy-900 dark:bg-navy-950 text-slate-300 rounded-lg p-4 overflow-x-auto"><code>git clone https://github.com/fjaeckel/pilotlog-project.git
+cd pilotlog-project
+docker compose up -d</code></pre>
+      <p>
+        <strong>Honest note:</strong> Self-hosting requires some technical knowledge (Docker, basic server admin). If that&rsquo;s not your thing, just use our free hosted version at <a href="https://app.ninerlog.com" class="text-sky-500 hover:text-sky-400">app.ninerlog.com</a> &mdash; same code, zero setup.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CONTRIBUTE
+     ============================================================ -->
+<section class="bg-white dark:bg-navy-950 py-16 lg:py-24">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="text-center mb-12 lg:mb-16">
+      <h2 class="text-3xl lg:text-4xl font-bold tracking-tight text-slate-800 dark:text-white reveal">
+        Contribute to NinerLog.
+      </h2>
+      <p class="mt-4 text-lg text-slate-500 dark:text-slate-400 max-w-2xl mx-auto reveal reveal-delay-1">
+        NinerLog is built by pilots who volunteer their time. There are many ways to help.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+      <div class="p-6 bg-slate-50 dark:bg-navy-800 rounded-xl text-center reveal reveal-delay-1">
+        <svg class="w-8 h-8 text-sky-500 mx-auto mb-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>
+        <h3 class="font-semibold text-slate-800 dark:text-white mb-1">Code</h3>
+        <p class="text-sm text-slate-600 dark:text-slate-300">Fix bugs, add features, improve performance.</p>
+      </div>
+      <div class="p-6 bg-slate-50 dark:bg-navy-800 rounded-xl text-center reveal reveal-delay-2">
+        <svg class="w-8 h-8 text-amber-500 mx-auto mb-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></svg>
+        <h3 class="font-semibold text-slate-800 dark:text-white mb-1">Translations</h3>
+        <p class="text-sm text-slate-600 dark:text-slate-300">Help NinerLog speak your language.</p>
+      </div>
+      <div class="p-6 bg-slate-50 dark:bg-navy-800 rounded-xl text-center reveal reveal-delay-3">
+        <svg class="w-8 h-8 text-rose-500 mx-auto mb-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg>
+        <h3 class="font-semibold text-slate-800 dark:text-white mb-1">Bug Reports</h3>
+        <p class="text-sm text-slate-600 dark:text-slate-300">Found something wrong? Let us know on GitHub.</p>
+      </div>
+      <div class="p-6 bg-slate-50 dark:bg-navy-800 rounded-xl text-center reveal reveal-delay-4">
+        <svg class="w-8 h-8 text-emerald-500 mx-auto mb-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        <h3 class="font-semibold text-slate-800 dark:text-white mb-1">Documentation</h3>
+        <p class="text-sm text-slate-600 dark:text-slate-300">Improve docs, write guides, help new users.</p>
+      </div>
+    </div>
+
+    <div class="mt-8 text-center reveal reveal-delay-5">
+      <a href="https://github.com/fjaeckel/pilotlog-project/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer"
+         class="inline-flex items-center gap-2 px-6 py-3 border border-sky-500 text-sky-500 hover:bg-sky-500 hover:text-white rounded-full transition-all duration-200 font-semibold">
+        Read the Contributing Guide &rarr;
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECURITY
+     ============================================================ -->
+<section class="bg-navy-900 py-16 lg:py-24">
+  <div class="max-w-3xl mx-auto px-4 text-center">
+    <h2 class="text-3xl lg:text-4xl font-bold tracking-tight text-white mb-6 reveal">
+      Security &amp; transparency.
+    </h2>
+    <p class="text-lg text-slate-300 leading-relaxed mb-8 reveal reveal-delay-1">
+      We take security seriously. Our code is open for anyone to audit. If you discover a vulnerability, please report it responsibly.
+    </p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-left mb-8">
+      <div class="p-6 bg-navy-800 border border-navy-700 rounded-xl reveal reveal-delay-2">
+        <h3 class="text-lg font-semibold text-white mb-2">Public Audit</h3>
+        <p class="text-sm text-slate-300">All source code is public. Security through transparency, not obscurity.</p>
+      </div>
+      <div class="p-6 bg-navy-800 border border-navy-700 rounded-xl reveal reveal-delay-3">
+        <h3 class="text-lg font-semibold text-white mb-2">Responsible Disclosure</h3>
+        <p class="text-sm text-slate-300">Found a vulnerability? Email us privately. We&rsquo;ll fix it and credit you.</p>
+      </div>
+    </div>
+    <p class="text-sm text-slate-400 reveal reveal-delay-4">
+      Licensed under the <strong class="text-white">MIT License</strong> &mdash; use it however you want.
+    </p>
+  </div>
+</section>
+
+{% endblock %}

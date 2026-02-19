@@ -1,0 +1,163 @@
+{% set pageTitle = "Support NinerLog — Donate" %}
+{% set pageDescription = "NinerLog is free for every pilot, funded by community donations. Help keep it running." %}
+{% set pagePath = "/donate" %}
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<section class="bg-gradient-to-br from-navy-900 via-navy-800 to-navy-950 py-16 lg:py-24">
+  <div class="max-w-6xl mx-auto px-4 text-center">
+    <h1 class="text-4xl lg:text-5xl font-extrabold tracking-tight text-white text-balance reveal">
+      Free for all. Funded by some.
+    </h1>
+    <p class="mt-6 text-lg text-slate-300 leading-relaxed max-w-2xl mx-auto reveal reveal-delay-1">
+      NinerLog is free for every pilot. If you find value in it, consider helping keep the servers running.
+    </p>
+  </div>
+</section>
+
+<!-- ============================================================
+     WHY DONATE
+     ============================================================ -->
+<section class="bg-white dark:bg-navy-950 py-16 lg:py-24">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="text-center mb-12 lg:mb-16">
+      <h2 class="text-3xl lg:text-4xl font-bold tracking-tight text-slate-800 dark:text-white reveal">
+        NinerLog costs money to run.
+      </h2>
+      <p class="mt-4 text-lg text-slate-500 dark:text-slate-400 max-w-2xl mx-auto reveal reveal-delay-1">
+        We believe in full transparency. Here&rsquo;s where the money goes.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8 max-w-2xl mx-auto">
+      <div class="p-6 bg-slate-50 dark:bg-navy-800 border border-slate-200 dark:border-navy-700 rounded-xl reveal reveal-delay-1">
+        <div class="w-12 h-12 rounded-lg bg-sky-500/10 flex items-center justify-center mb-4">
+          <svg class="w-6 h-6 text-sky-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="8" x="2" y="2" rx="2" ry="2"/><rect width="20" height="8" x="2" y="14" rx="2" ry="2"/><line x1="6" x2="6.01" y1="6" y2="6"/><line x1="6" x2="6.01" y1="18" y2="18"/></svg>
+        </div>
+        <h3 class="text-lg font-semibold text-slate-800 dark:text-white mb-2">Hosting &amp; Infrastructure</h3>
+        <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Servers, database, CDN, domain, SSL certificates. Everything needed to keep NinerLog online 24/7.</p>
+        <p class="mt-3 text-sm font-semibold text-sky-600 dark:text-sky-400">~$30/month</p>
+      </div>
+
+      <div class="p-6 bg-slate-50 dark:bg-navy-800 border border-slate-200 dark:border-navy-700 rounded-xl reveal reveal-delay-2">
+        <div class="w-12 h-12 rounded-lg bg-amber-500/10 flex items-center justify-center mb-4">
+          <svg class="w-6 h-6 text-amber-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>
+        </div>
+        <h3 class="text-lg font-semibold text-slate-800 dark:text-white mb-2">Development</h3>
+        <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Volunteer time and occasional paid contributions. Building new features, fixing bugs, improving performance.</p>
+        <p class="mt-3 text-sm font-semibold text-amber-600 dark:text-amber-400">Volunteer hours</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     DONATION OPTIONS
+     ============================================================ -->
+<section class="bg-slate-50 dark:bg-navy-900 py-16 lg:py-24">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="text-center mb-12 lg:mb-16">
+      <h2 class="text-3xl lg:text-4xl font-bold tracking-tight text-slate-800 dark:text-white reveal">
+        Every contribution fuels a free logbook.
+      </h2>
+    </div>
+
+    <!-- Amount cards -->
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 max-w-3xl mx-auto mb-10">
+      <div class="p-6 bg-white dark:bg-navy-800 border-2 border-slate-200 dark:border-navy-700 rounded-xl text-center hover:border-amber-400 hover:shadow-lg hover:shadow-amber-400/10 transition-all duration-200 cursor-pointer group reveal reveal-delay-1">
+        <div class="text-3xl font-bold text-slate-800 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">$5</div>
+        <p class="text-sm text-slate-500 dark:text-slate-400 mt-2">Keeps one pilot&rsquo;s logbook free for a year</p>
+      </div>
+      <div class="p-6 bg-white dark:bg-navy-800 border-2 border-slate-200 dark:border-navy-700 rounded-xl text-center hover:border-amber-400 hover:shadow-lg hover:shadow-amber-400/10 transition-all duration-200 cursor-pointer group reveal reveal-delay-2">
+        <div class="text-3xl font-bold text-slate-800 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">$10</div>
+        <p class="text-sm text-slate-500 dark:text-slate-400 mt-2">A week of API hosting</p>
+      </div>
+      <div class="p-6 bg-white dark:bg-navy-800 border-2 border-slate-200 dark:border-navy-700 rounded-xl text-center hover:border-amber-400 hover:shadow-lg hover:shadow-amber-400/10 transition-all duration-200 cursor-pointer group reveal reveal-delay-3">
+        <div class="text-3xl font-bold text-slate-800 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">$20</div>
+        <p class="text-sm text-slate-500 dark:text-slate-400 mt-2">A month of database hosting</p>
+      </div>
+      <div class="p-6 bg-white dark:bg-navy-800 border-2 border-slate-200 dark:border-navy-700 rounded-xl text-center hover:border-amber-400 hover:shadow-lg hover:shadow-amber-400/10 transition-all duration-200 cursor-pointer group reveal reveal-delay-4">
+        <div class="text-3xl font-bold text-slate-800 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">$50</div>
+        <p class="text-sm text-slate-500 dark:text-slate-400 mt-2">Funds a feature sprint</p>
+      </div>
+    </div>
+
+    <!-- Donation platforms -->
+    <div class="max-w-md mx-auto space-y-4 reveal reveal-delay-5">
+      <a href="https://github.com/sponsors/fjaeckel" target="_blank" rel="noopener noreferrer"
+         class="flex items-center justify-center gap-3 w-full px-8 py-4
+                bg-gradient-to-r from-amber-400 to-amber-500
+                text-navy-900 font-semibold text-lg
+                rounded-full
+                shadow-lg shadow-amber-400/30
+                hover:shadow-xl hover:shadow-amber-400/40 hover:scale-[1.02]
+                active:scale-[0.98]
+                transition-all duration-200">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+        Donate via GitHub Sponsors
+      </a>
+      <div class="grid grid-cols-2 gap-4">
+        <a href="https://ko-fi.com/ninerlog" target="_blank" rel="noopener noreferrer"
+           class="flex items-center justify-center gap-2 px-6 py-3
+                  border border-slate-300 dark:border-navy-600 text-slate-700 dark:text-slate-300
+                  rounded-full hover:bg-slate-100 dark:hover:bg-navy-800
+                  transition-all duration-200 font-semibold text-sm">
+          Ko-fi
+        </a>
+        <a href="https://paypal.me/ninerlog" target="_blank" rel="noopener noreferrer"
+           class="flex items-center justify-center gap-2 px-6 py-3
+                  border border-slate-300 dark:border-navy-600 text-slate-700 dark:text-slate-300
+                  rounded-full hover:bg-slate-100 dark:hover:bg-navy-800
+                  transition-all duration-200 font-semibold text-sm">
+          PayPal
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SPONSOR TIER
+     ============================================================ -->
+<section class="bg-white dark:bg-navy-950 py-16 lg:py-24">
+  <div class="max-w-3xl mx-auto px-4 text-center">
+    <h2 class="text-2xl lg:text-3xl font-bold tracking-tight text-slate-800 dark:text-white mb-4 reveal">
+      Flying Club or Aviation Business?
+    </h2>
+    <p class="text-lg text-slate-600 dark:text-slate-300 leading-relaxed mb-8 reveal reveal-delay-1">
+      Get your logo on NinerLog.com for $100/year. Supports the project and shows your pilots you care about open-source aviation tools.
+    </p>
+    <a href="mailto:sponsor@ninerlog.com"
+       class="inline-flex items-center gap-2 px-6 py-3 border border-sky-500 text-sky-600 dark:text-sky-400 hover:bg-sky-500 hover:text-white rounded-full transition-all duration-200 font-semibold reveal reveal-delay-2">
+      Become a Sponsor &rarr;
+    </a>
+  </div>
+</section>
+
+<!-- ============================================================
+     DONOR WALL
+     ============================================================ -->
+<section class="bg-slate-50 dark:bg-navy-900 py-16 lg:py-24">
+  <div class="max-w-3xl mx-auto px-4 text-center">
+    <h2 class="text-2xl lg:text-3xl font-bold tracking-tight text-slate-800 dark:text-white mb-4 reveal">
+      Thank you to our supporters.
+    </h2>
+    <p class="text-slate-500 dark:text-slate-400 mb-8 reveal reveal-delay-1">
+      These generous pilots help keep NinerLog free for everyone.
+    </p>
+    <div class="p-8 bg-white dark:bg-navy-800 border border-slate-200 dark:border-navy-700 rounded-xl reveal reveal-delay-2">
+      <p class="text-slate-400 dark:text-slate-500 italic">
+        Be the first to support NinerLog! Your name or callsign will appear here.
+      </p>
+    </div>
+    <p class="mt-4 text-xs text-slate-400 dark:text-slate-500 reveal reveal-delay-3">
+      Donor recognition is opt-in. We display names or callsigns, never amounts.
+    </p>
+  </div>
+</section>
+
+{% endblock %}

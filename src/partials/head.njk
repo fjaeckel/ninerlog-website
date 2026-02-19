@@ -1,0 +1,55 @@
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>{{ pageTitle | default("NinerLog — Your Logbook, Your Data, Forever Free") }}</title>
+<meta name="description" content="{{ pageDescription | default("Free, open-source pilot logbook for GA pilots. Log flights, track currency, manage licenses. EASA & FAA compliant. No subscriptions.") }}" />
+<link rel="canonical" href="https://ninerlog.com{{ pagePath | default('/') }}" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="{{ pageTitle | default('NinerLog — Your Logbook, Your Data, Forever Free') }}" />
+<meta property="og:description" content="{{ pageDescription | default('Free, open-source pilot logbook for GA pilots. Log flights, track currency, manage licenses. EASA & FAA compliant. No subscriptions.') }}" />
+<meta property="og:image" content="https://ninerlog.com/images/og-image.png" />
+<meta property="og:url" content="https://ninerlog.com{{ pagePath | default('/') }}" />
+<meta property="og:site_name" content="NinerLog" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="{{ pageTitle | default('NinerLog') }}" />
+<meta name="twitter:description" content="{{ pageDescription | default('Free, open-source pilot logbook for GA pilots.') }}" />
+<meta name="twitter:image" content="https://ninerlog.com/images/og-image.png" />
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+<!-- Fonts from Fontsource via jsdelivr CDN -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource-variable/plus-jakarta-sans@5/index.min.css" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource-variable/inter@5/index.min.css" crossorigin="anonymous" />
+
+<!-- Styles -->
+<link rel="stylesheet" href="/styles.css" />
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "NinerLog",
+  "url": "https://ninerlog.com",
+  "description": "Free, open-source pilot logbook for GA pilots. EASA and FAA compliant."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "NinerLog",
+  "operatingSystem": "Web",
+  "applicationCategory": "UtilitiesApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "description": "Free, open-source digital pilot logbook with multi-license support, currency tracking, and EASA/FAA compliance."
+}
+</script>

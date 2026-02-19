@@ -1,0 +1,94 @@
+{% set pageTitle = "Privacy Policy — NinerLog" %}
+{% set pageDescription = "How NinerLog handles your data. GDPR compliant, cookie-free analytics, no tracking." %}
+{% set pagePath = "/privacy" %}
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+
+<section class="bg-white dark:bg-navy-950 py-12 lg:py-20">
+  <article class="prose prose-slate prose-lg dark:prose-invert prose-sky max-w-prose mx-auto px-4">
+    <h1>Privacy Policy</h1>
+    <p class="text-sm text-slate-500 dark:text-slate-400">Last updated: February 2026</p>
+
+    <h2>1. Introduction</h2>
+    <p>
+      NinerLog (&ldquo;we&rdquo;, &ldquo;us&rdquo;, &ldquo;our&rdquo;) is committed to protecting your privacy. This policy explains what data we collect, how we use it, and your rights under GDPR and other applicable regulations.
+    </p>
+
+    <h2>2. What Data We Collect</h2>
+    <p>We collect only the minimum data necessary to provide the logbook service:</p>
+    <ul>
+      <li><strong>Account data:</strong> Email address and hashed password when you register</li>
+      <li><strong>Flight log data:</strong> Flight records, aircraft, licenses, credentials, and related logbook entries you create</li>
+      <li><strong>Usage analytics:</strong> Anonymous, cookie-free page view analytics (via Plausible/Umami &mdash; no personal data collected)</li>
+    </ul>
+    <p>We do <strong>not</strong> collect:</p>
+    <ul>
+      <li>Names, addresses, or phone numbers (unless you voluntarily provide them)</li>
+      <li>Payment information (donations are processed by third-party platforms)</li>
+      <li>Tracking cookies or advertising identifiers</li>
+      <li>Location data beyond what you voluntarily enter (airport codes)</li>
+    </ul>
+
+    <h2>3. How We Use Your Data</h2>
+    <ul>
+      <li>To provide the pilot logbook service at app.ninerlog.com</li>
+      <li>To authenticate your account and protect your data</li>
+      <li>To send password reset emails (only when requested by you)</li>
+      <li>To improve the service based on anonymous usage analytics</li>
+    </ul>
+
+    <h2>4. Data Storage &amp; Security</h2>
+    <p>
+      Your data is stored in a PostgreSQL database hosted on secure infrastructure. Passwords are hashed using bcrypt. All connections use TLS encryption. We perform regular backups.
+    </p>
+
+    <h2>5. Data Sharing</h2>
+    <p>
+      We do <strong>not</strong> sell, rent, or share your personal data with third parties. Period. Your logbook data is yours alone.
+    </p>
+
+    <h2>6. Cookies</h2>
+    <p>
+      NinerLog.com (this website) uses <strong>no cookies</strong>. The NinerLog app (app.ninerlog.com) uses only essential session cookies for authentication &mdash; no tracking cookies, no third-party cookies.
+    </p>
+
+    <h2>7. Analytics</h2>
+    <p>
+      We use privacy-respecting analytics (Plausible or Umami) that do not use cookies, do not collect personal data, and are fully GDPR-compliant without requiring a cookie banner.
+    </p>
+
+    <h2>8. Your Rights (GDPR)</h2>
+    <p>Under the GDPR, you have the right to:</p>
+    <ul>
+      <li><strong>Access:</strong> Request a copy of all your data</li>
+      <li><strong>Rectification:</strong> Correct any inaccurate data</li>
+      <li><strong>Erasure:</strong> Request deletion of your account and all associated data</li>
+      <li><strong>Portability:</strong> Export your data in CSV, PDF, or JSON format at any time</li>
+      <li><strong>Objection:</strong> Object to data processing</li>
+    </ul>
+    <p>To exercise these rights, email <a href="mailto:privacy@ninerlog.com">privacy@ninerlog.com</a>.</p>
+
+    <h2>9. Data Retention</h2>
+    <p>
+      We retain your data for as long as your account is active. If you delete your account, all associated data is permanently removed within 30 days.
+    </p>
+
+    <h2>10. Children</h2>
+    <p>
+      NinerLog is not intended for children under 16. We do not knowingly collect data from children.
+    </p>
+
+    <h2>11. Changes to This Policy</h2>
+    <p>
+      We may update this policy from time to time. Significant changes will be communicated via the website. The &ldquo;last updated&rdquo; date at the top reflects the most recent revision.
+    </p>
+
+    <h2>12. Contact</h2>
+    <p>
+      For privacy-related questions, contact us at <a href="mailto:privacy@ninerlog.com">privacy@ninerlog.com</a>.
+    </p>
+  </article>
+</section>
+
+{% endblock %}
