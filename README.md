@@ -1,8 +1,8 @@
-# NinerLog.com Website
+# NinerLog Website
 
-The public-facing marketing website for [NinerLog](https://ninerlog.com) — the free, open-source pilot logbook.
+Public-facing marketing website for [NinerLog](https://ninerlog.com) — the free, open-source pilot logbook.
 
-## Stack
+## Tech Stack
 
 - **Markup:** HTML + [Nunjucks](https://mozilla.github.io/nunjucks/) templates
 - **Styling:** [Tailwind CSS](https://tailwindcss.com/) + [@tailwindcss/typography](https://tailwindcss.com/docs/typography-plugin)
@@ -13,16 +13,9 @@ The public-facing marketing website for [NinerLog](https://ninerlog.com) — the
 ## Getting Started
 
 ```bash
-# Install dependencies (~30MB node_modules)
 npm install
-
-# Start development server with watch mode
-npm run dev
-# → http://localhost:8080
-
-# Build for production
-npm run build
-# → Output in _site/
+npm run dev       # Dev server → http://localhost:8080
+npm run build     # Production build → _site/
 ```
 
 ## Project Structure
@@ -59,8 +52,16 @@ src/
 
 ## Deployment
 
-Push to `main` → GitHub Actions builds → deploys to GitHub Pages at ninerlog.com.
+Push to `main` → GitHub Actions builds → deploys to GitHub Pages at [ninerlog.com](https://ninerlog.com).
 
-## License
+## Related Repositories
 
-MIT
+| Repository | Description |
+|---|---|
+| [ninerlog-project](https://github.com/fjaeckel/ninerlog-project) | Project planning, documentation, OpenAPI spec |
+| [ninerlog-api](https://github.com/fjaeckel/ninerlog-api) | Go backend REST API |
+| [ninerlog-frontend](https://github.com/fjaeckel/ninerlog-frontend) | React/TypeScript PWA frontend |
+
+## Contributing
+
+See [CONTRIBUTING.md](https://github.com/fjaeckel/ninerlog-project/blob/main/CONTRIBUTING.md) for development guidelines.
