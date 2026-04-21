@@ -1,12 +1,18 @@
 <!-- Footer -->
 <footer class="bg-navy-950 border-t border-white/5">
+  <!-- Runway centerline divider at top -->
+  <div class="pt-1" aria-hidden="true">
+    <div class="runway-divider mx-auto"></div>
+  </div>
+
   <div class="max-w-6xl mx-auto px-4 py-12 lg:py-16">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
 
       <!-- Brand column -->
       <div class="lg:col-span-1">
-        <a href="/" class="text-xl font-bold text-white font-display">
-          <span>Niner</span><span class="text-sky-400">Log</span>
+        <a href="/" class="flex items-center gap-2 text-xl font-bold text-white font-display">
+          <span class="inline-flex items-center justify-center w-7 h-7 rounded-sm bg-sky-500/15 text-sky-400 text-xs font-mono font-bold">N9</span>
+          <span><span>Niner</span><span class="text-sky-400">Log</span></span>
         </a>
         <p class="mt-3 text-sm text-slate-400 max-w-xs">
           The free, open-source pilot logbook. Your data, your rules, forever free.
@@ -24,7 +30,6 @@
         <ul class="space-y-2 text-sm text-slate-400">
           <li><a href="/features" class="hover:text-white transition-colors">Features</a></li>
           <li><a href="/open-source" class="hover:text-white transition-colors">Open Source</a></li>
-          <li><a href="/donate" class="hover:text-white transition-colors">Donate</a></li>
           <li><a href="https://app.ninerlog.com" class="hover:text-white transition-colors">Launch App</a></li>
         </ul>
       </div>
@@ -51,8 +56,8 @@
     </div>
 
     <div class="mt-12 pt-8 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-4">
-      <p class="text-xs text-slate-500">&copy; 2026 NinerLog. Open source under MIT License.</p>
-      <p class="text-xs text-slate-500">Made with &hearts; by pilots, for pilots.</p>
+      <p class="text-xs text-slate-500">&copy; 2026 NinerLog. Open source under AGPL-3.0 &amp; MIT.</p>
+      <p class="text-xs text-slate-500 font-mono tracking-wide">Made with <span class="text-rose-400">&hearts;</span> by pilots, for pilots.</p>
     </div>
   </div>
 </footer>

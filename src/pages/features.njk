@@ -8,15 +8,24 @@
 <!-- ============================================================
      HERO
      ============================================================ -->
-<section class="bg-gradient-to-br from-navy-900 via-navy-800 to-navy-950 py-16 lg:py-24">
-  <div class="max-w-6xl mx-auto px-4 text-center">
-    <h1 class="text-4xl lg:text-5xl font-extrabold tracking-tight text-white text-balance reveal">
+<section class="relative bg-linear-to-br from-navy-900 via-navy-800 to-navy-950 py-16 lg:py-24 overflow-hidden">
+  <!-- Topographic overlay -->
+  <div class="absolute inset-0 bg-topo-pattern pointer-events-none" aria-hidden="true"></div>
+  <div class="max-w-6xl mx-auto px-4 text-center relative z-10">
+    <div class="mb-4 reveal">
+      <span class="freq-badge">
+        <span class="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 animate-blink"></span>
+        ALL FEATURES &bull; ZERO COST
+      </span>
+    </div>
+    <h1 class="text-4xl lg:text-5xl font-extrabold tracking-tight text-white text-balance reveal reveal-delay-1">
       Built for pilots who care<br class="hidden sm:block" /> about their data.
     </h1>
-    <p class="mt-6 text-lg text-slate-300 leading-relaxed max-w-2xl mx-auto reveal reveal-delay-1">
+    <p class="mt-6 text-lg text-slate-300 leading-relaxed max-w-2xl mx-auto reveal reveal-delay-2">
       Every feature designed by pilots, for pilots. No bloat, no gimmicks &mdash; just the tools you need.
     </p>
   </div>
+  <div class="absolute bottom-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-sky-500/20 to-transparent" aria-hidden="true"></div>
 </section>
 
 <!-- ============================================================
@@ -210,162 +219,9 @@
 </section>
 
 <!-- ============================================================
-     COMING SOON
-     ============================================================ -->
-<section class="bg-slate-50 dark:bg-navy-900 py-16 lg:py-24">
-  <div class="max-w-6xl mx-auto px-4">
-    <div class="text-center mb-12 lg:mb-16">
-      <h2 class="text-3xl lg:text-4xl font-bold tracking-tight text-slate-800 dark:text-white reveal">
-        Coming soon.
-      </h2>
-      <p class="mt-4 text-lg text-slate-500 dark:text-slate-400 max-w-2xl mx-auto reveal reveal-delay-1">
-        We&rsquo;re always building. Here&rsquo;s what&rsquo;s next on our roadmap.
-      </p>
-    </div>
-
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-      <!-- Offline Support -->
-      <div class="p-6 border-2 border-dashed border-slate-300 dark:border-navy-600 rounded-xl reveal reveal-delay-1">
-        <div class="flex items-center justify-between mb-4">
-          <svg class="w-8 h-8 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
-          <span class="text-xs uppercase tracking-wider text-amber-600 bg-amber-100 dark:bg-amber-900/30 dark:text-amber-400 px-2 py-0.5 rounded-full font-semibold">Planned</span>
-        </div>
-        <h3 class="text-lg font-semibold text-slate-800 dark:text-white mb-2">Offline Support</h3>
-        <p class="text-sm text-slate-500 dark:text-slate-400">Full PWA with service worker. Log flights without internet, sync when you&rsquo;re back online.</p>
-      </div>
-
-      <!-- Digital Signatures -->
-      <div class="p-6 border-2 border-dashed border-slate-300 dark:border-navy-600 rounded-xl reveal reveal-delay-2">
-        <div class="flex items-center justify-between mb-4">
-          <svg class="w-8 h-8 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
-          <span class="text-xs uppercase tracking-wider text-amber-600 bg-amber-100 dark:bg-amber-900/30 dark:text-amber-400 px-2 py-0.5 rounded-full font-semibold">Planned</span>
-        </div>
-        <h3 class="text-lg font-semibold text-slate-800 dark:text-white mb-2">Digital Signatures</h3>
-        <p class="text-sm text-slate-500 dark:text-slate-400">Instructor and examiner sign-off per flight. Digital proof of competency checks.</p>
-      </div>
-
-      <!-- Photo Attachments -->
-      <div class="p-6 border-2 border-dashed border-slate-300 dark:border-navy-600 rounded-xl reveal reveal-delay-3">
-        <div class="flex items-center justify-between mb-4">
-          <svg class="w-8 h-8 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
-          <span class="text-xs uppercase tracking-wider text-amber-600 bg-amber-100 dark:bg-amber-900/30 dark:text-amber-400 px-2 py-0.5 rounded-full font-semibold">Planned</span>
-        </div>
-        <h3 class="text-lg font-semibold text-slate-800 dark:text-white mb-2">Photo Attachments</h3>
-        <p class="text-sm text-slate-500 dark:text-slate-400">Attach receipts, certificates, and photos to flights and credentials.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================
-     COMPARISON TABLE
-     ============================================================ -->
-<section class="bg-white dark:bg-navy-950 py-16 lg:py-24">
-  <div class="max-w-6xl mx-auto px-4">
-    <div class="text-center mb-12 lg:mb-16">
-      <h2 class="text-3xl lg:text-4xl font-bold tracking-tight text-slate-800 dark:text-white reveal">
-        How NinerLog compares.
-      </h2>
-      <p class="mt-4 text-lg text-slate-500 dark:text-slate-400 max-w-2xl mx-auto reveal reveal-delay-1">
-        We respect other logbook apps. Here&rsquo;s how NinerLog stacks up.
-      </p>
-    </div>
-
-    <div class="overflow-x-auto -mx-4 px-4 reveal reveal-delay-2">
-      <table class="w-full text-sm border-collapse min-w-[640px]">
-        <thead>
-          <tr class="border-b border-slate-200 dark:border-navy-700">
-            <th class="text-left py-3 px-4 font-semibold text-slate-800 dark:text-white sticky left-0 bg-white dark:bg-navy-950 z-10"></th>
-            <th class="py-3 px-4 font-semibold text-sky-600 dark:text-sky-400 bg-sky-50 dark:bg-navy-800 border-x border-sky-200 dark:border-sky-800">NinerLog</th>
-            <th class="py-3 px-4 font-semibold text-slate-600 dark:text-slate-400">LogTen Pro</th>
-            <th class="py-3 px-4 font-semibold text-slate-600 dark:text-slate-400">ForeFlight</th>
-            <th class="py-3 px-4 font-semibold text-slate-600 dark:text-slate-400">myFlightbook</th>
-          </tr>
-        </thead>
-        <tbody class="text-slate-600 dark:text-slate-300">
-          <tr class="border-b border-slate-100 dark:border-navy-800">
-            <td class="py-3 px-4 font-medium text-slate-800 dark:text-white sticky left-0 bg-white dark:bg-navy-950">Price</td>
-            <td class="py-3 px-4 text-center bg-sky-50 dark:bg-navy-800 border-x border-sky-200 dark:border-sky-800 font-semibold text-emerald-600 dark:text-emerald-400">Free &star;</td>
-            <td class="py-3 px-4 text-center">$99/yr</td>
-            <td class="py-3 px-4 text-center">$239/yr</td>
-            <td class="py-3 px-4 text-center">Free*</td>
-          </tr>
-          <tr class="border-b border-slate-100 dark:border-navy-800">
-            <td class="py-3 px-4 font-medium text-slate-800 dark:text-white sticky left-0 bg-white dark:bg-navy-950">Open Source</td>
-            <td class="py-3 px-4 text-center bg-sky-50 dark:bg-navy-800 border-x border-sky-200 dark:border-sky-800 text-emerald-500">&check;</td>
-            <td class="py-3 px-4 text-center text-slate-400">&times;</td>
-            <td class="py-3 px-4 text-center text-slate-400">&times;</td>
-            <td class="py-3 px-4 text-center text-emerald-500">&check;</td>
-          </tr>
-          <tr class="border-b border-slate-100 dark:border-navy-800">
-            <td class="py-3 px-4 font-medium text-slate-800 dark:text-white sticky left-0 bg-white dark:bg-navy-950">Multi-License</td>
-            <td class="py-3 px-4 text-center bg-sky-50 dark:bg-navy-800 border-x border-sky-200 dark:border-sky-800 text-emerald-500">&check;</td>
-            <td class="py-3 px-4 text-center">Partial</td>
-            <td class="py-3 px-4 text-center text-slate-400">&times;</td>
-            <td class="py-3 px-4 text-center">Partial</td>
-          </tr>
-          <tr class="border-b border-slate-100 dark:border-navy-800">
-            <td class="py-3 px-4 font-medium text-slate-800 dark:text-white sticky left-0 bg-white dark:bg-navy-950">EASA + FAA</td>
-            <td class="py-3 px-4 text-center bg-sky-50 dark:bg-navy-800 border-x border-sky-200 dark:border-sky-800 text-emerald-500">&check;</td>
-            <td class="py-3 px-4 text-center text-emerald-500">&check;</td>
-            <td class="py-3 px-4 text-center">FAA only</td>
-            <td class="py-3 px-4 text-center text-emerald-500">&check;</td>
-          </tr>
-          <tr class="border-b border-slate-100 dark:border-navy-800">
-            <td class="py-3 px-4 font-medium text-slate-800 dark:text-white sticky left-0 bg-white dark:bg-navy-950">Class Ratings</td>
-            <td class="py-3 px-4 text-center bg-sky-50 dark:bg-navy-800 border-x border-sky-200 dark:border-sky-800 text-emerald-500">&check;</td>
-            <td class="py-3 px-4 text-center text-emerald-500">&check;</td>
-            <td class="py-3 px-4 text-center text-slate-400">&times;</td>
-            <td class="py-3 px-4 text-center text-slate-400">&times;</td>
-          </tr>
-          <tr class="border-b border-slate-100 dark:border-navy-800">
-            <td class="py-3 px-4 font-medium text-slate-800 dark:text-white sticky left-0 bg-white dark:bg-navy-950">Data Export</td>
-            <td class="py-3 px-4 text-center bg-sky-50 dark:bg-navy-800 border-x border-sky-200 dark:border-sky-800 font-semibold text-emerald-600 dark:text-emerald-400">Full</td>
-            <td class="py-3 px-4 text-center">Limited</td>
-            <td class="py-3 px-4 text-center">CSV only</td>
-            <td class="py-3 px-4 text-center">Full</td>
-          </tr>
-          <tr class="border-b border-slate-100 dark:border-navy-800">
-            <td class="py-3 px-4 font-medium text-slate-800 dark:text-white sticky left-0 bg-white dark:bg-navy-950">Self-Hostable</td>
-            <td class="py-3 px-4 text-center bg-sky-50 dark:bg-navy-800 border-x border-sky-200 dark:border-sky-800 text-emerald-500">&check;</td>
-            <td class="py-3 px-4 text-center text-slate-400">&times;</td>
-            <td class="py-3 px-4 text-center text-slate-400">&times;</td>
-            <td class="py-3 px-4 text-center text-slate-400">&times;</td>
-          </tr>
-          <tr class="border-b border-slate-100 dark:border-navy-800">
-            <td class="py-3 px-4 font-medium text-slate-800 dark:text-white sticky left-0 bg-white dark:bg-navy-950">Instrument Tracking</td>
-            <td class="py-3 px-4 text-center bg-sky-50 dark:bg-navy-800 border-x border-sky-200 dark:border-sky-800 text-emerald-500">&check;</td>
-            <td class="py-3 px-4 text-center text-emerald-500">&check;</td>
-            <td class="py-3 px-4 text-center text-emerald-500">&check;</td>
-            <td class="py-3 px-4 text-center">Partial</td>
-          </tr>
-          <tr class="border-b border-slate-100 dark:border-navy-800">
-            <td class="py-3 px-4 font-medium text-slate-800 dark:text-white sticky left-0 bg-white dark:bg-navy-950">Route Maps</td>
-            <td class="py-3 px-4 text-center bg-sky-50 dark:bg-navy-800 border-x border-sky-200 dark:border-sky-800 text-emerald-500">&check;</td>
-            <td class="py-3 px-4 text-center text-emerald-500">&check;</td>
-            <td class="py-3 px-4 text-center text-emerald-500">&check;</td>
-            <td class="py-3 px-4 text-center text-emerald-500">&check;</td>
-          </tr>
-          <tr>
-            <td class="py-3 px-4 font-medium text-slate-800 dark:text-white sticky left-0 bg-white dark:bg-navy-950">Mobile-First PWA</td>
-            <td class="py-3 px-4 text-center bg-sky-50 dark:bg-navy-800 border-x border-sky-200 dark:border-sky-800 text-emerald-500">&check;</td>
-            <td class="py-3 px-4 text-center">Native</td>
-            <td class="py-3 px-4 text-center">Native</td>
-            <td class="py-3 px-4 text-center">Web</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <p class="mt-4 text-xs text-slate-400 dark:text-slate-500 text-center reveal reveal-delay-3">
-      * myFlightbook is free and open source &mdash; a great project. NinerLog focuses on EASA class rating support and modern PWA design.
-    </p>
-  </div>
-</section>
-
-<!-- ============================================================
      CTA
      ============================================================ -->
-<section class="bg-gradient-to-b from-navy-900 to-navy-950 py-16 lg:py-24">
+<section class="bg-linear-to-b from-navy-900 to-navy-950 py-16 lg:py-24">
   <div class="max-w-6xl mx-auto px-4 text-center">
     <h2 class="text-3xl lg:text-4xl font-bold tracking-tight text-white reveal">
       See for yourself.
@@ -376,7 +232,7 @@
     <div class="mt-8 reveal reveal-delay-2">
       <a href="https://app.ninerlog.com/register"
          class="inline-flex items-center gap-2 px-8 py-4
-                bg-gradient-to-r from-amber-400 to-amber-500
+                bg-linear-to-r from-amber-400 to-amber-500
                 text-navy-900 font-semibold text-lg
                 rounded-full
                 shadow-lg shadow-amber-400/30
@@ -386,6 +242,9 @@
         <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>
         Start Logging &mdash; It&rsquo;s Free
       </a>
+      <p class="mt-3 text-sm text-slate-400">
+        <span class="font-mono text-xs text-slate-500 tracking-wider">SQUAWK 7000</span> &mdash; VFR and free to fly.
+      </p>
     </div>
   </div>
 </section>

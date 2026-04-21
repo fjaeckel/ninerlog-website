@@ -8,15 +8,23 @@
 <!-- ============================================================
      HERO
      ============================================================ -->
-<section class="bg-gradient-to-br from-navy-900 via-navy-800 to-navy-950 py-16 lg:py-24">
-  <div class="max-w-6xl mx-auto px-4 text-center">
-    <h1 class="text-4xl lg:text-5xl font-extrabold tracking-tight text-white text-balance reveal">
+<section class="relative bg-linear-to-br from-navy-900 via-navy-800 to-navy-950 py-16 lg:py-24 overflow-hidden">
+  <div class="absolute inset-0 bg-topo-pattern pointer-events-none" aria-hidden="true"></div>
+  <div class="max-w-6xl mx-auto px-4 text-center relative z-10">
+    <div class="mb-4 reveal">
+      <span class="freq-badge">
+        <span class="inline-block w-1.5 h-1.5 rounded-full bg-amber-400 animate-blink"></span>
+        COMMUNITY FUNDED
+      </span>
+    </div>
+    <h1 class="text-4xl lg:text-5xl font-extrabold tracking-tight text-white text-balance reveal reveal-delay-1">
       Free for all. Funded by some.
     </h1>
-    <p class="mt-6 text-lg text-slate-300 leading-relaxed max-w-2xl mx-auto reveal reveal-delay-1">
+    <p class="mt-6 text-lg text-slate-300 leading-relaxed max-w-2xl mx-auto reveal reveal-delay-2">
       NinerLog is free for every pilot. If you find value in it, consider helping keep the servers running.
     </p>
   </div>
+  <div class="absolute bottom-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-sky-500/20 to-transparent" aria-hidden="true"></div>
 </section>
 
 <!-- ============================================================
@@ -90,7 +98,7 @@
     <div class="max-w-md mx-auto space-y-4 reveal reveal-delay-5">
       <a href="https://github.com/sponsors/fjaeckel" target="_blank" rel="noopener noreferrer"
          class="flex items-center justify-center gap-3 w-full px-8 py-4
-                bg-gradient-to-r from-amber-400 to-amber-500
+                bg-linear-to-r from-amber-400 to-amber-500
                 text-navy-900 font-semibold text-lg
                 rounded-full
                 shadow-lg shadow-amber-400/30
@@ -131,7 +139,7 @@
     <p class="text-lg text-slate-600 dark:text-slate-300 leading-relaxed mb-8 reveal reveal-delay-1">
       Get your logo on NinerLog.com for $100/year. Supports the project and shows your pilots you care about open-source aviation tools.
     </p>
-    <a href="mailto:sponsor@ninerlog.com"
+    <a href="mailto:hej@ninerlog.com"
        class="inline-flex items-center gap-2 px-6 py-3 border border-sky-500 text-sky-600 dark:text-sky-400 hover:bg-sky-500 hover:text-white rounded-full transition-all duration-200 font-semibold reveal reveal-delay-2">
       Become a Sponsor &rarr;
     </a>

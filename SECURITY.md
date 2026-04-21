@@ -6,7 +6,7 @@ If you discover a security vulnerability on the NinerLog website, please report 
 
 **Do NOT open a public GitHub issue for security vulnerabilities.**
 
-Instead, please email **security@ninerlog.com** with:
+Instead, please email **hej@ninerlog.com** with:
 
 - A description of the vulnerability
 - Steps to reproduce the issue

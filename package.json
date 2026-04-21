@@ -14,9 +14,10 @@
     "build:assets": "cp -r images _site/ 2>/dev/null || true && cp favicon.svg robots.txt sitemap.xml CNAME _site/ 2>/dev/null || true"
   },
   "dependencies": {
-    "tailwindcss": "^3.4.0",
+    "@tailwindcss/cli": "^4.2.4",
     "@tailwindcss/typography": "^0.5.0",
-    "nunjucks-cli": "^1.0.0"
+    "nunjucks-cli": "^1.0.0",
+    "tailwindcss": "^4.2.4"
   },
   "devDependencies": {
     "concurrently": "^9.0.0"

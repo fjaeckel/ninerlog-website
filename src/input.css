@@ -1,6 +1,287 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@plugin '@tailwindcss/typography';
+
+@source "./**/*.njk";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --color-navy-600: #2e4066;
+  --color-navy-700: #243352;
+  --color-navy-800: #1a2640;
+  --color-navy-900: #0f172a;
+  --color-navy-950: #0a0e1a;
+
+  --color-strip-yellow: #f5e6a3;
+  --color-strip-cream: #faf3d8;
+
+  --font-display:
+    'Plus Jakarta Sans Variable', 'Inter Variable', system-ui, sans-serif;
+  --font-sans: 'Inter Variable', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono Variable', ui-monospace, monospace;
+
+  --container-site: 1152px;
+
+  --animate-fade-up: fadeUp 600ms ease-out forwards;
+  --animate-fade-in: fadeIn 400ms ease-out forwards;
+  --animate-sweep: sweep 4s ease-in-out infinite;
+  --animate-blink: blink 3s ease-in-out infinite;
+
+  --background-image-runway-lines: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 20px,
+    rgba(255, 255, 255, 0.03) 20px,
+    rgba(255, 255, 255, 0.03) 22px
+  );
+  --background-image-topo-pattern: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5c13.807 0 25 11.193 25 25S43.807 55 30 55 5 43.807 5 30 16.193 5 30 5zm0 10c-8.284 0-15 6.716-15 15s6.716 15 15 15 15-6.716 15-15-6.716-15-15-15z' fill='none' stroke='rgba(255,255,255,0.02)' stroke-width='.5'/%3E%3C/svg%3E");
+
+  @keyframes fadeUp {
+    0% {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes sweep {
+    0%,
+    100% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.4;
+    }
+  }
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
+@utility runway-divider {
+  /* ── Runway centerline divider ── */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  height: 2px;
+  margin: 0 auto;
+  max-width: 240px;
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.15) 0px,
+    rgba(255, 255, 255, 0.15) 24px,
+    transparent 24px,
+    transparent 36px
+  );
+}
+
+@utility runway-divider-dark {
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(148, 163, 184, 0.2) 0px,
+    rgba(148, 163, 184, 0.2) 24px,
+    transparent 24px,
+    transparent 36px
+  );
+}
+
+@utility flight-strip {
+  /* ── Flight strip card (ATC paper strip style) ── */
+  @apply relative overflow-hidden;
+  background: linear-gradient(180deg, #faf3d8 0%, #f5e6a3 100%);
+  border-left: 4px solid #d4a843;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 3px;
+    height: 100%;
+    background: repeating-linear-gradient(
+      180deg,
+      transparent 0px,
+      transparent 4px,
+      #d4a843 4px,
+      #d4a843 8px
+    );
+  }
+}
+
+@utility waypoint {
+  /* ── Waypoint marker (for How-it-works) ── */
+  @apply relative;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    width: 140%;
+    height: 140%;
+    border: 1px solid currentColor;
+    opacity: 0.15;
+    border-radius: 0;
+    pointer-events: none;
+  }
+}
+
+@utility vor-bg {
+  /* ── VOR radial background ── */
+  background-image:
+    radial-gradient(
+      circle at center,
+      transparent 40%,
+      rgba(14, 165, 233, 0.03) 41%,
+      transparent 42%
+    ),
+    radial-gradient(
+      circle at center,
+      transparent 60%,
+      rgba(14, 165, 233, 0.02) 61%,
+      transparent 62%
+    ),
+    radial-gradient(
+      circle at center,
+      transparent 80%,
+      rgba(14, 165, 233, 0.01) 81%,
+      transparent 82%
+    );
+}
+
+@utility hdg-ticks {
+  /* ── Heading indicator tick marks ── */
+  position: relative;
+  &::after {
+    content: '|  ·  ·  |  ·  ·  |  ·  ·  |';
+    position: absolute;
+    bottom: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'JetBrains Mono Variable', monospace;
+    font-size: 8px;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.08);
+    white-space: nowrap;
+    pointer-events: none;
+  }
+}
+
+@utility freq-badge {
+  /* ── ATIS frequency badge ── */
+  @apply inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-sm text-xs font-mono font-medium;
+  background: rgba(14, 165, 233, 0.08);
+  color: #38bdf8;
+  border: 1px solid rgba(14, 165, 233, 0.15);
+}
+
+@utility taxiway-border {
+  /* ── Taxiway edge line (dashed borders) ── */
+  border-style: dashed;
+  border-color: rgba(251, 191, 36, 0.25);
+}
+
+@utility alt-label {
+  /* ── Altitude tape section numbers ── */
+  @apply font-mono text-xs tracking-widest uppercase;
+  color: rgba(255, 255, 255, 0.12);
+}
+
+@utility compass-rose {
+  /* ── Compass rose decorative element ── */
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    height: 200px;
+    transform: translate(-50%, -50%);
+    background: conic-gradient(
+      from 0deg,
+      transparent 0deg,
+      rgba(14, 165, 233, 0.03) 2deg,
+      transparent 4deg,
+      transparent 30deg,
+      rgba(14, 165, 233, 0.02) 32deg,
+      transparent 34deg,
+      transparent 60deg,
+      rgba(14, 165, 233, 0.03) 62deg,
+      transparent 64deg,
+      transparent 90deg,
+      rgba(14, 165, 233, 0.03) 92deg,
+      transparent 94deg,
+      transparent 120deg,
+      rgba(14, 165, 233, 0.02) 122deg,
+      transparent 124deg,
+      transparent 150deg,
+      rgba(14, 165, 233, 0.03) 152deg,
+      transparent 154deg,
+      transparent 180deg,
+      rgba(14, 165, 233, 0.03) 182deg,
+      transparent 184deg,
+      transparent 210deg,
+      rgba(14, 165, 233, 0.02) 212deg,
+      transparent 214deg,
+      transparent 240deg,
+      rgba(14, 165, 233, 0.03) 242deg,
+      transparent 244deg,
+      transparent 270deg,
+      rgba(14, 165, 233, 0.03) 272deg,
+      transparent 274deg,
+      transparent 300deg,
+      rgba(14, 165, 233, 0.02) 302deg,
+      transparent 304deg,
+      transparent 330deg,
+      rgba(14, 165, 233, 0.03) 332deg,
+      transparent 334deg,
+      transparent 360deg
+    );
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+  }
+}
+
+@utility text-balance {
+  text-wrap: balance;
+}
 
 @layer base {
   html {
@@ -17,12 +298,6 @@
   h1, h2, h3, h4, h5 {
     font-family: 'Plus Jakarta Sans Variable', 'Inter Variable', system-ui, sans-serif;
     @apply text-slate-800 dark:text-white;
-  }
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
   }
 }
 

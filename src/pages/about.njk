@@ -8,12 +8,20 @@
 <!-- ============================================================
      HERO
      ============================================================ -->
-<section class="bg-gradient-to-br from-navy-900 via-navy-800 to-navy-950 py-16 lg:py-24">
-  <div class="max-w-6xl mx-auto px-4 text-center">
-    <h1 class="text-4xl lg:text-5xl font-extrabold tracking-tight text-white text-balance reveal">
+<section class="relative bg-linear-to-br from-navy-900 via-navy-800 to-navy-950 py-16 lg:py-24 overflow-hidden">
+  <div class="absolute inset-0 bg-topo-pattern pointer-events-none" aria-hidden="true"></div>
+  <div class="max-w-6xl mx-auto px-4 text-center relative z-10">
+    <div class="mb-4 reveal">
+      <span class="freq-badge">
+        <span class="inline-block w-1.5 h-1.5 rounded-full bg-sky-400 animate-blink"></span>
+        OUR STORY
+      </span>
+    </div>
+    <h1 class="text-4xl lg:text-5xl font-extrabold tracking-tight text-white text-balance reveal reveal-delay-1">
       We believe every pilot deserves<br class="hidden sm:block" /> a free, reliable logbook.
     </h1>
   </div>
+  <div class="absolute bottom-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-sky-500/20 to-transparent" aria-hidden="true"></div>
 </section>
 
 <!-- ============================================================
@@ -33,7 +41,7 @@
         We&rsquo;re pilots ourselves. We fly GA. We hold EASA and FAA licenses. We know what it&rsquo;s like to juggle PPL and SPL currency, track SEP revalidation windows, and wonder if we need one more landing before taking passengers.
       </p>
       <p>
-        So we built the logbook we wanted. And we made it free &mdash; not &ldquo;free trial,&rdquo; not &ldquo;free with ads,&rdquo; not &ldquo;free until we get acquired and shut down.&rdquo; Genuinely, permanently, no-strings-attached free. Open source under the MIT license.
+        So we built the logbook we wanted. And we made it free &mdash; not &ldquo;free trial,&rdquo; not &ldquo;free with ads,&rdquo; not &ldquo;free until we get acquired and shut down.&rdquo; Genuinely, permanently, no-strings-attached free. Open source under the AGPL-3.0 and MIT licenses.
       </p>
       <p>
         Your logbook is a legal record of your entire flying career. It should outlast any company, any subscription, any business model. With NinerLog, it will.
@@ -101,10 +109,10 @@
       Questions, feedback, or just want to say hello? We&rsquo;d love to hear from you.
     </p>
     <div class="flex flex-col sm:flex-row items-center justify-center gap-4 reveal reveal-delay-2">
-      <a href="mailto:hello@ninerlog.com"
+      <a href="mailto:hej@ninerlog.com"
          class="inline-flex items-center gap-2 px-6 py-3 bg-sky-500 text-white font-semibold rounded-full hover:bg-sky-400 transition-colors">
         <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-        hello@ninerlog.com
+        hej@ninerlog.com
       </a>
       <a href="https://github.com/fjaeckel" target="_blank" rel="noopener noreferrer"
          class="inline-flex items-center gap-2 px-6 py-3 border border-slate-300 dark:border-navy-600 text-slate-700 dark:text-slate-300 font-semibold rounded-full hover:bg-slate-100 dark:hover:bg-navy-800 transition-colors">

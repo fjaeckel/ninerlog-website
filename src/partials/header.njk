@@ -1,16 +1,16 @@
 <!-- Sticky Navigation Header -->
-<header class="sticky top-0 z-50 bg-navy-900/95 backdrop-blur-sm border-b border-white/5">
+<header class="sticky top-0 z-50 bg-navy-900/95 backdrop-blur-xs border-b border-white/5">
   <nav class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between" aria-label="Main navigation">
-    <!-- Logo / Wordmark -->
-    <a href="/" class="text-xl font-bold text-white font-display">
-      <span class="text-white">Niner</span><span class="text-sky-400">Log</span>
+    <!-- Logo / Wordmark with N9 mark -->
+    <a href="/" class="flex items-center gap-2 text-xl font-bold text-white font-display group">
+      <span class="inline-flex items-center justify-center w-7 h-7 rounded-sm bg-sky-500/15 text-sky-400 text-xs font-mono font-bold group-hover:bg-sky-500/25 transition-colors">N9</span>
+      <span><span class="text-white">Niner</span><span class="text-sky-400">Log</span></span>
     </a>
 
     <!-- Desktop nav -->
     <div class="hidden lg:flex items-center gap-8">
       <a href="/features" class="text-sm text-slate-300 hover:text-white transition-colors">Features</a>
       <a href="/open-source" class="text-sm text-slate-300 hover:text-white transition-colors">Open Source</a>
-      <a href="/donate" class="text-sm text-slate-300 hover:text-white transition-colors">Donate</a>
       <a href="/about" class="text-sm text-slate-300 hover:text-white transition-colors">About</a>
       <a href="https://app.ninerlog.com/register"
          class="px-5 py-2 bg-amber-400 text-navy-900 text-sm font-semibold rounded-full hover:bg-amber-300 transition-colors">
@@ -28,7 +28,7 @@
 </header>
 
 <!-- Mobile menu overlay -->
-<div id="mobile-menu" class="hidden fixed inset-0 z-[60] bg-navy-900/98 backdrop-blur-sm lg:hidden">
+<div id="mobile-menu" class="hidden fixed inset-0 z-60 bg-navy-900/98 backdrop-blur-xs lg:hidden">
   <div class="flex flex-col items-center justify-center h-full gap-8">
     <button id="menu-close" class="absolute top-4 right-4 p-2 text-white" aria-label="Close menu">
       <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -37,7 +37,6 @@
     </button>
     <a href="/features" class="text-2xl text-white font-semibold hover:text-sky-400 transition-colors">Features</a>
     <a href="/open-source" class="text-2xl text-white font-semibold hover:text-sky-400 transition-colors">Open Source</a>
-    <a href="/donate" class="text-2xl text-white font-semibold hover:text-sky-400 transition-colors">Donate</a>
     <a href="/about" class="text-2xl text-white font-semibold hover:text-sky-400 transition-colors">About</a>
     <a href="https://app.ninerlog.com/register"
        class="mt-4 px-8 py-4 bg-amber-400 text-navy-900 font-semibold text-lg rounded-full hover:bg-amber-300 transition-colors">
