@@ -11,7 +11,7 @@
     "build": "npm run build:njk && npm run build:css && npm run build:assets",
     "build:njk": "nunjucks 'pages/*.njk' -p src -o _site && mv _site/pages/*.html _site/ && rmdir _site/pages",
     "build:css": "tailwindcss -i src/input.css -o _site/styles.css --minify",
-    "build:assets": "cp -r images _site/ 2>/dev/null || true && cp favicon.svg robots.txt sitemap.xml CNAME _site/ 2>/dev/null || true"
+    "build:assets": "cp -r images _site/ 2>/dev/null || true && cp favicon.svg favicon.ico apple-touch-icon.png robots.txt sitemap.xml CNAME _site/ 2>/dev/null || true"
   },
   "dependencies": {
     "@tailwindcss/cli": "^4.2.4",
