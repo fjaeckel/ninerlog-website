@@ -58,10 +58,9 @@ Push to `main` → GitHub Actions builds → deploys to GitHub Pages at [ninerlo
 
 | Repository | Description |
 |---|---|
-| [ninerlog-project](https://github.com/fjaeckel/ninerlog-project) | Project planning, documentation, OpenAPI spec |
-| [ninerlog-api](https://github.com/fjaeckel/ninerlog-api) | Go backend REST API |
+| [ninerlog-api](https://github.com/fjaeckel/ninerlog-api) | Go backend REST API (includes OpenAPI spec) |
 | [ninerlog-frontend](https://github.com/fjaeckel/ninerlog-frontend) | React/TypeScript PWA frontend |
 
 ## Contributing
 
-See [CONTRIBUTING.md](https://github.com/fjaeckel/ninerlog-project/blob/main/CONTRIBUTING.md) for development guidelines.
+See [CONTRIBUTING.md](https://github.com/fjaeckel/ninerlog-api/blob/main/CONTRIBUTING.md) for development guidelines.
