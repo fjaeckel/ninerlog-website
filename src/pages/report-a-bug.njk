@@ -1,0 +1,193 @@
+{% set pageTitle = "Report a Bug — NinerLog" %}
+{% set pageDescription = "Found a bug in NinerLog? Here's how to report it so it actually gets fixed." %}
+{% set pagePath = "/report-a-bug" %}
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<section class="relative bg-linear-to-br from-navy-900 via-navy-800 to-navy-950 py-16 lg:py-24 overflow-hidden">
+  <div class="absolute inset-0 bg-topo-pattern pointer-events-none" aria-hidden="true"></div>
+  <div class="max-w-6xl mx-auto px-4 text-center relative z-10">
+    <div class="mb-4 reveal">
+      <span class="freq-badge">
+        <span class="inline-block w-1.5 h-1.5 rounded-full bg-rose-400 animate-blink"></span>
+        SQUAWK IT
+      </span>
+    </div>
+    <h1 class="text-4xl lg:text-5xl font-extrabold tracking-tight text-white text-balance reveal reveal-delay-1">
+      Found a bug?<br class="hidden sm:block" /> Help us fix it.
+    </h1>
+    <p class="mt-6 text-lg text-slate-300 leading-relaxed max-w-2xl mx-auto reveal reveal-delay-2">
+      NinerLog is built by pilots, for pilots &mdash; and we rely on your reports to keep it sharp. Every bug you tell us about helps the whole community.
+    </p>
+  </div>
+  <div class="absolute bottom-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-sky-500/20 to-transparent" aria-hidden="true"></div>
+</section>
+
+<!-- ============================================================
+     PRIMARY: GITHUB ISSUES
+     ============================================================ -->
+<section class="bg-white dark:bg-navy-950 py-16 lg:py-24">
+  <div class="max-w-3xl mx-auto px-4">
+    <div class="reveal">
+      <span class="text-xs font-mono uppercase tracking-wider text-sky-500">Preferred &middot; Step 1</span>
+      <h2 class="mt-2 text-2xl lg:text-3xl font-bold tracking-tight text-slate-800 dark:text-white">
+        Open a GitHub issue.
+      </h2>
+    </div>
+    <div class="prose prose-slate prose-lg dark:prose-invert max-w-none reveal reveal-delay-1 mt-6">
+      <p>
+        All NinerLog bug reports &mdash; whether they affect the API, the web app, the mobile PWA, the self-hosted Docker images, or the website &mdash; are tracked in a <strong>single place</strong>: the <code>ninerlog-api</code> issue tracker on GitHub.
+      </p>
+      <p>
+        We do this on purpose: one tracker means nothing falls through the cracks, and the maintainer can prioritise across the whole stack at a glance.
+      </p>
+    </div>
+
+    <div class="mt-8 flex flex-col sm:flex-row gap-4 reveal reveal-delay-2">
+      <a href="https://github.com/fjaeckel/ninerlog-api/issues/new?labels=bug&amp;template=bug_report.md"
+         target="_blank" rel="noopener noreferrer"
+         class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-sky-500 text-white font-semibold rounded-full hover:bg-sky-400 transition-colors">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+        Open a new issue
+      </a>
+      <a href="https://github.com/fjaeckel/ninerlog-api/issues"
+         target="_blank" rel="noopener noreferrer"
+         class="inline-flex items-center justify-center gap-2 px-6 py-3 border border-slate-300 dark:border-navy-600 text-slate-700 dark:text-slate-300 font-semibold rounded-full hover:bg-slate-100 dark:hover:bg-navy-800 transition-colors">
+        Browse existing issues
+      </a>
+    </div>
+
+    <p class="mt-4 text-sm text-slate-500 dark:text-slate-400 reveal reveal-delay-3">
+      Tip: please search existing issues first &mdash; someone may have already squawked the same thing.
+    </p>
+  </div>
+</section>
+
+<!-- ============================================================
+     WHAT TO INCLUDE
+     ============================================================ -->
+<section class="bg-slate-50 dark:bg-navy-900 py-16 lg:py-24">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="text-center mb-12 lg:mb-16">
+      <h2 class="text-3xl lg:text-4xl font-bold tracking-tight text-slate-800 dark:text-white reveal">
+        What to include in your report.
+      </h2>
+      <p class="mt-4 text-lg text-slate-500 dark:text-slate-400 max-w-2xl mx-auto reveal reveal-delay-1">
+        Good bug reports get fixed faster. A great one reads like a NOTAM &mdash; clear, precise, and actionable.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-4xl mx-auto">
+      <div class="p-6 bg-white dark:bg-navy-800 border border-slate-200 dark:border-navy-700 rounded-xl reveal reveal-delay-1">
+        <div class="flex items-center gap-3 mb-3">
+          <svg class="w-6 h-6 text-sky-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg>
+          <h3 class="text-lg font-semibold text-slate-800 dark:text-white">What happened</h3>
+        </div>
+        <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">A short description of the actual behaviour you observed &mdash; the more specific, the better.</p>
+      </div>
+
+      <div class="p-6 bg-white dark:bg-navy-800 border border-slate-200 dark:border-navy-700 rounded-xl reveal reveal-delay-2">
+        <div class="flex items-center gap-3 mb-3">
+          <svg class="w-6 h-6 text-emerald-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+          <h3 class="text-lg font-semibold text-slate-800 dark:text-white">What you expected</h3>
+        </div>
+        <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">What did you think would happen instead? This helps us tell bugs apart from feature requests.</p>
+      </div>
+
+      <div class="p-6 bg-white dark:bg-navy-800 border border-slate-200 dark:border-navy-700 rounded-xl reveal reveal-delay-3">
+        <div class="flex items-center gap-3 mb-3">
+          <svg class="w-6 h-6 text-amber-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.74 9.74 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+          <h3 class="text-lg font-semibold text-slate-800 dark:text-white">Steps to reproduce</h3>
+        </div>
+        <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Numbered steps that reliably trigger the bug. If you can&rsquo;t reproduce it, tell us that too.</p>
+      </div>
+
+      <div class="p-6 bg-white dark:bg-navy-800 border border-slate-200 dark:border-navy-700 rounded-xl reveal reveal-delay-4">
+        <div class="flex items-center gap-3 mb-3">
+          <svg class="w-6 h-6 text-rose-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>
+          <h3 class="text-lg font-semibold text-slate-800 dark:text-white">Environment</h3>
+        </div>
+        <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Browser &amp; version, operating system, mobile or desktop, and whether you&rsquo;re on app.ninerlog.com or self-hosted.</p>
+      </div>
+
+      <div class="p-6 bg-white dark:bg-navy-800 border border-slate-200 dark:border-navy-700 rounded-xl reveal reveal-delay-5">
+        <div class="flex items-center gap-3 mb-3">
+          <svg class="w-6 h-6 text-sky-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
+          <h3 class="text-lg font-semibold text-slate-800 dark:text-white">Screenshots / logs</h3>
+        </div>
+        <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">A picture is worth a thousand stack traces. Browser console errors are pure gold.</p>
+      </div>
+
+      <div class="p-6 bg-white dark:bg-navy-800 border border-slate-200 dark:border-navy-700 rounded-xl reveal reveal-delay-6">
+        <div class="flex items-center gap-3 mb-3">
+          <svg class="w-6 h-6 text-emerald-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <h3 class="text-lg font-semibold text-slate-800 dark:text-white">When it started</h3>
+        </div>
+        <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Has it always been like this, or did it appear after a recent update? Approximate dates are fine.</p>
+      </div>
+    </div>
+
+    <p class="mt-10 text-center text-sm text-slate-500 dark:text-slate-400 max-w-2xl mx-auto reveal">
+      <strong class="text-slate-700 dark:text-slate-200">Please don&rsquo;t include personal data</strong> &mdash; full names, dates of birth, license numbers, or full flight records. A redacted screenshot is always better than a real one.
+    </p>
+  </div>
+</section>
+
+<!-- ============================================================
+     NO GITHUB? EMAIL FALLBACK
+     ============================================================ -->
+<section class="bg-white dark:bg-navy-950 py-16 lg:py-24">
+  <div class="max-w-3xl mx-auto px-4">
+    <div class="reveal">
+      <span class="text-xs font-mono uppercase tracking-wider text-amber-500">No GitHub account?</span>
+      <h2 class="mt-2 text-2xl lg:text-3xl font-bold tracking-tight text-slate-800 dark:text-white">
+        Email us instead.
+      </h2>
+    </div>
+    <div class="prose prose-slate prose-lg dark:prose-invert max-w-none reveal reveal-delay-1 mt-6">
+      <p>
+        GitHub is the fastest path &mdash; you&rsquo;ll get notified when the bug is triaged, fixed, and shipped. But if you don&rsquo;t have an account and don&rsquo;t want to create one, that&rsquo;s completely fine.
+      </p>
+      <p>
+        Send the same information (what happened, what you expected, steps to reproduce, environment, screenshots) to:
+      </p>
+    </div>
+
+    <div class="mt-8 reveal reveal-delay-2">
+      <a href="mailto:hej@ninerlog.com?subject=Bug%20report"
+         class="inline-flex items-center gap-2 px-6 py-3 bg-amber-400 text-navy-900 font-semibold rounded-full hover:bg-amber-300 transition-colors">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        hej@ninerlog.com
+      </a>
+    </div>
+
+    <p class="mt-4 text-sm text-slate-500 dark:text-slate-400 reveal reveal-delay-3">
+      We&rsquo;ll create a GitHub issue on your behalf and reply with the link so you can follow along.
+    </p>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECURITY DISCLAIMER
+     ============================================================ -->
+<section class="bg-slate-50 dark:bg-navy-900 py-16 lg:py-24">
+  <div class="max-w-3xl mx-auto px-4">
+    <div class="p-6 lg:p-8 bg-white dark:bg-navy-800 border-l-4 border-rose-500 rounded-xl reveal">
+      <div class="flex items-start gap-4">
+        <svg class="w-8 h-8 text-rose-500 flex-shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <div>
+          <h3 class="text-lg font-semibold text-slate-800 dark:text-white mb-2">Found a security issue?</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+            Please <strong>do not</strong> open a public GitHub issue for security vulnerabilities. Email <a href="mailto:hej@ninerlog.com?subject=Security%20vulnerability" class="text-sky-500 hover:text-sky-400">hej@ninerlog.com</a> directly, or follow the disclosure process in our <a href="https://github.com/fjaeckel/ninerlog-api/blob/main/SECURITY.md" target="_blank" rel="noopener noreferrer" class="text-sky-500 hover:text-sky-400">SECURITY.md</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
