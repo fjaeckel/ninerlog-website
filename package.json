@@ -14,7 +14,7 @@
     "build:assets": "cp -r images _site/ 2>/dev/null || true && cp favicon.svg favicon.ico apple-touch-icon.png robots.txt sitemap.xml CNAME _site/ 2>/dev/null || true"
   },
   "dependencies": {
-    "@tailwindcss/cli": "^4.2.4",
+    "@tailwindcss/cli": "^4.3.0",
     "@tailwindcss/typography": "^0.5.0",
     "nunjucks-cli": "^1.0.0",
     "tailwindcss": "^4.3.0"
