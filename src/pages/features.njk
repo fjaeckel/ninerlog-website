@@ -1,5 +1,5 @@
 {% set pageTitle = "Features — NinerLog" %}
-{% set pageDescription = "Flight logging, multi-license support, currency tracking, import/export, and more. Every feature free, forever." %}
+{% set pageDescription = "Flight logging, multi-license support, currency tracking, import/export, encrypted cloud backup, and more. Every feature free, forever." %}
 {% set pagePath = "/features" %}
 {% extends "layouts/base.njk" %}
 
@@ -177,8 +177,78 @@
   </div>
 </section>
 
-<!-- Custom Reports -->
+<!-- Cloud Backup -->
 <section class="bg-slate-50 dark:bg-navy-900 py-16 lg:py-24">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <!-- Illustrative panel (no photo asset needed) -->
+      <div class="order-last lg:order-2">
+        <div class="relative rounded-xl shadow-xl bg-linear-to-br from-navy-800 via-navy-900 to-navy-950 p-8 lg:p-10 overflow-hidden">
+          <div class="absolute inset-0 bg-topo-pattern opacity-30 pointer-events-none" aria-hidden="true"></div>
+          <div class="relative z-10 flex flex-col items-center text-center">
+            <div class="w-20 h-20 rounded-2xl bg-sky-500/15 flex items-center justify-center mb-6">
+              <!-- Cloud + shield icon -->
+              <svg class="w-10 h-10 text-sky-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M17.5 19a4.5 4.5 0 0 0 .5-8.96A6 6 0 0 0 6.34 9.1 4.5 4.5 0 0 0 7 18h2"/>
+                <path d="M12 13v3l2 2-2 2-2-2 2-2"/>
+                <path d="M12 13a3 3 0 0 1 3 3v1a3 3 0 0 1-6 0v-1a3 3 0 0 1 3-3z"/>
+              </svg>
+            </div>
+            <p class="font-mono text-xs tracking-wider text-sky-300/80 mb-2">SQUAWK 1200 &bull; ENCRYPTED</p>
+            <p class="text-white font-semibold text-lg">Opt-in. Encrypted. Yours to switch off.</p>
+            <div class="mt-6 grid grid-cols-3 gap-3 text-[11px] uppercase tracking-wider text-slate-300">
+              <span class="px-2 py-1 rounded bg-white/5 border border-white/10">TLS in transit</span>
+              <span class="px-2 py-1 rounded bg-white/5 border border-white/10">AES at rest</span>
+              <span class="px-2 py-1 rounded bg-white/5 border border-white/10">EU hosted</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal lg:order-1">
+        <span class="freq-badge mb-4">
+          <span class="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 animate-blink"></span>
+          NEW &bull; PRIVACY-FIRST
+        </span>
+        <h2 class="text-2xl lg:text-3xl font-bold tracking-tight text-slate-800 dark:text-white mb-4 mt-3">Cloud Backup</h2>
+        <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
+          An optional safety net for your logbook. Turn on cloud backup and NinerLog keeps an encrypted copy of your flights ready to restore &mdash; whether you lose a device, switch browsers, or just want peace of mind. You stay in control: enable it when you want it, switch it off when you don&rsquo;t.
+        </p>
+        <ul class="space-y-3">
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-emerald-500 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            <span class="text-slate-600 dark:text-slate-300"><strong>Opt-in by default.</strong> Backups are off until you enable them &mdash; and you can turn them off and delete them at any time</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-emerald-500 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            <span class="text-slate-600 dark:text-slate-300"><strong>Encrypted in transit and at rest.</strong> TLS for every connection, strong encryption on the backup itself</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-emerald-500 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            <span class="text-slate-600 dark:text-slate-300"><strong>EU-hosted.</strong> Backups live on our OVH servers in Germany &mdash; your flight data never leaves the European Economic Area</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-emerald-500 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            <span class="text-slate-600 dark:text-slate-300"><strong>Never shared, never sold.</strong> No third parties, no analytics on your logbook contents &mdash; your data is yours alone</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-emerald-500 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            <span class="text-slate-600 dark:text-slate-300"><strong>One-click restore.</strong> Recover your full logbook on any device, in any supported browser</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-emerald-500 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            <span class="text-slate-600 dark:text-slate-300"><strong>No lock-in.</strong> Cloud backup sits alongside CSV, PDF, and JSON export &mdash; you can always take your data with you</span>
+          </li>
+        </ul>
+        <p class="mt-6 text-sm text-slate-500 dark:text-slate-400">
+          Prefer to stay fully offline or self-host? Cloud backup is entirely optional &mdash; the rest of NinerLog works exactly the same with it switched off. See our <a href="/privacy" class="text-sky-600 dark:text-sky-400 hover:underline">privacy policy</a> for the full details.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Custom Reports -->
+<section class="bg-white dark:bg-navy-950 py-16 lg:py-24">
   <div class="max-w-6xl mx-auto px-4">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
       <img src="/images/feature-reports.png" alt="NinerLog custom reports page with charts, flight statistics, and route maps" class="rounded-xl shadow-xl w-full order-last lg:order-2" loading="lazy" width="1200" height="675" />
@@ -207,7 +277,7 @@
 </section>
 
 <!-- Mobile Support -->
-<section class="bg-white dark:bg-navy-950 py-16 lg:py-24">
+<section class="bg-slate-50 dark:bg-navy-900 py-16 lg:py-24">
   <div class="max-w-6xl mx-auto px-4">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
       <div class="flex justify-center order-last lg:order-none">
@@ -238,7 +308,7 @@
 </section>
 
 <!-- Language Support -->
-<section class="bg-slate-50 dark:bg-navy-900 py-16 lg:py-24">
+<section class="bg-white dark:bg-navy-950 py-16 lg:py-24">
   <div class="max-w-6xl mx-auto px-4">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
       <img src="/images/feature-language.png" alt="NinerLog interface in German showing full language support" class="rounded-xl shadow-xl w-full order-last lg:order-2" loading="lazy" width="1200" height="675" />
@@ -269,7 +339,7 @@
 <!-- ============================================================
      FULL FEATURE GRID
      ============================================================ -->
-<section class="bg-white dark:bg-navy-950 py-16 lg:py-24">
+<section class="bg-slate-50 dark:bg-navy-900 py-16 lg:py-24">
   <div class="max-w-6xl mx-auto px-4">
     <div class="text-center mb-12 lg:mb-16">
       <h2 class="text-3xl lg:text-4xl font-bold tracking-tight text-slate-800 dark:text-white reveal">
@@ -286,13 +356,13 @@
         { "cat": "Licenses", "items": ["Multi-License", "Class Ratings (SEP/MEP/TMG/IR)", "Any Authority Worldwide"] },
         { "cat": "Tracking", "items": ["Currency Tracking", "Credentials & Medicals", "Expiry Notifications"] },
         { "cat": "Fleet", "items": ["Aircraft Management", "Flight Form Integration"] },
-        { "cat": "Data", "items": ["Import (CSV/XLS/ForeFlight)", "Export (CSV/PDF/JSON)", "Full Backup"] },
+        { "cat": "Data", "items": ["Import (CSV/XLS/ForeFlight)", "Export (CSV/PDF/JSON)", "Encrypted Cloud Backup"] },
         { "cat": "Visualization", "items": ["Reports & Charts", "Route Maps", "Airport Heatmap"] },
         { "cat": "Advanced", "items": ["Instrument Tracking", "People & Crew", "Auto-Calculations"] },
         { "cat": "Platform", "items": ["Self-Hosting", "Security Hardened", "MIT Licensed"] }
       ] %}
       {% for group in features %}
-      <div class="p-6 bg-slate-50 dark:bg-navy-800 rounded-xl reveal reveal-delay-{{ loop.index }}">
+      <div class="p-6 bg-white dark:bg-navy-800 rounded-xl reveal reveal-delay-{{ loop.index }}">
         <h3 class="text-sm font-bold text-sky-500 uppercase tracking-wider mb-3">{{ group.cat }}</h3>
         <ul class="space-y-2">
           {% for item in group.items %}
