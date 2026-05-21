@@ -1,5 +1,5 @@
 {% set pageTitle = "Features — NinerLog" %}
-{% set pageDescription = "Flight logging, multi-license support, currency tracking, import/export, encrypted cloud backup, and more. Every feature free, forever." %}
+{% set pageDescription = "Flight logging, multi-license support, currency tracking, import/export, user-owned offsite cloud backup, and more. Every feature free, forever." %}
 {% set pagePath = "/features" %}
 {% extends "layouts/base.njk" %}
 
@@ -187,19 +187,20 @@
           <div class="absolute inset-0 bg-topo-pattern opacity-30 pointer-events-none" aria-hidden="true"></div>
           <div class="relative z-10 flex flex-col items-center text-center">
             <div class="w-20 h-20 rounded-2xl bg-sky-500/15 flex items-center justify-center mb-6">
-              <!-- Cloud + shield icon -->
+              <!-- Cloud + upload icon -->
               <svg class="w-10 h-10 text-sky-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="M17.5 19a4.5 4.5 0 0 0 .5-8.96A6 6 0 0 0 6.34 9.1 4.5 4.5 0 0 0 7 18h2"/>
-                <path d="M12 13v3l2 2-2 2-2-2 2-2"/>
-                <path d="M12 13a3 3 0 0 1 3 3v1a3 3 0 0 1-6 0v-1a3 3 0 0 1 3-3z"/>
+                <path d="M12 12v7"/>
+                <path d="m9 15 3-3 3 3"/>
               </svg>
             </div>
-            <p class="font-mono text-xs tracking-wider text-sky-300/80 mb-2">SQUAWK 1200 &bull; ENCRYPTED</p>
-            <p class="text-white font-semibold text-lg">Opt-in. Encrypted. Yours to switch off.</p>
-            <div class="mt-6 grid grid-cols-3 gap-3 text-[11px] uppercase tracking-wider text-slate-300">
-              <span class="px-2 py-1 rounded bg-white/5 border border-white/10">TLS in transit</span>
-              <span class="px-2 py-1 rounded bg-white/5 border border-white/10">AES at rest</span>
-              <span class="px-2 py-1 rounded bg-white/5 border border-white/10">EU hosted</span>
+            <p class="font-mono text-xs tracking-wider text-sky-300/80 mb-2">SQUAWK 1200 &bull; YOUR STORAGE</p>
+            <p class="text-white font-semibold text-lg">Your backup. Your destination. Your keys.</p>
+            <div class="mt-6 flex flex-wrap justify-center gap-2 text-[11px] uppercase tracking-wider text-slate-300">
+              <span class="px-2 py-1 rounded bg-white/5 border border-white/10">S3-compatible</span>
+              <span class="px-2 py-1 rounded bg-white/5 border border-white/10">WebDAV</span>
+              <span class="px-2 py-1 rounded bg-white/5 border border-white/10">Nextcloud</span>
+              <span class="px-2 py-1 rounded bg-white/5 border border-white/10">Your own server</span>
             </div>
           </div>
         </div>
@@ -207,40 +208,40 @@
       <div class="reveal lg:order-1">
         <span class="freq-badge mb-4">
           <span class="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 animate-blink"></span>
-          NEW &bull; PRIVACY-FIRST
+          NEW &bull; USER-OWNED
         </span>
         <h2 class="text-2xl lg:text-3xl font-bold tracking-tight text-slate-800 dark:text-white mb-4 mt-3">Cloud Backup</h2>
         <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
-          An optional safety net for your logbook. Turn on cloud backup and NinerLog keeps an encrypted copy of your flights ready to restore &mdash; whether you lose a device, switch browsers, or just want peace of mind. You stay in control: enable it when you want it, switch it off when you don&rsquo;t.
+          Send a copy of your logbook to a cloud storage location <em>you</em> own and control &mdash; on a schedule, automatically. Point NinerLog at your S3 bucket, your Nextcloud, your home NAS, or any provider you trust, and we&rsquo;ll keep an offsite copy of your flights there for you. No NinerLog-only vault, no lock-in &mdash; just your data, in your storage.
         </p>
         <ul class="space-y-3">
           <li class="flex items-start gap-3">
             <svg class="w-5 h-5 text-emerald-500 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-            <span class="text-slate-600 dark:text-slate-300"><strong>Opt-in by default.</strong> Backups are off until you enable them &mdash; and you can turn them off and delete them at any time</span>
+            <span class="text-slate-600 dark:text-slate-300"><strong>You pick the destination.</strong> Bring your own bucket or server &mdash; NinerLog never holds the only copy</span>
           </li>
           <li class="flex items-start gap-3">
             <svg class="w-5 h-5 text-emerald-500 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-            <span class="text-slate-600 dark:text-slate-300"><strong>Encrypted in transit and at rest.</strong> TLS for every connection, strong encryption on the backup itself</span>
+            <span class="text-slate-600 dark:text-slate-300"><strong>Truly user-owned.</strong> The backup files sit in your storage account under your credentials &mdash; you can read, copy, or delete them without us</span>
           </li>
           <li class="flex items-start gap-3">
             <svg class="w-5 h-5 text-emerald-500 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-            <span class="text-slate-600 dark:text-slate-300"><strong>EU-hosted.</strong> Backups live on our OVH servers in Germany &mdash; your flight data never leaves the European Economic Area</span>
+            <span class="text-slate-600 dark:text-slate-300"><strong>Open formats.</strong> Backups use the same CSV / JSON your export already produces &mdash; readable with or without NinerLog</span>
           </li>
           <li class="flex items-start gap-3">
             <svg class="w-5 h-5 text-emerald-500 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-            <span class="text-slate-600 dark:text-slate-300"><strong>Never shared, never sold.</strong> No third parties, no analytics on your logbook contents &mdash; your data is yours alone</span>
+            <span class="text-slate-600 dark:text-slate-300"><strong>Opt-in and reversible.</strong> Off by default, switch on when you want it, disconnect any time &mdash; we keep no copy of your storage credentials beyond what&rsquo;s needed to run the backup</span>
           </li>
           <li class="flex items-start gap-3">
             <svg class="w-5 h-5 text-emerald-500 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-            <span class="text-slate-600 dark:text-slate-300"><strong>One-click restore.</strong> Recover your full logbook on any device, in any supported browser</span>
+            <span class="text-slate-600 dark:text-slate-300"><strong>Scheduled, offsite, automatic.</strong> A second copy lands safely outside the app on the cadence you choose &mdash; daily, weekly, or after every flight</span>
           </li>
           <li class="flex items-start gap-3">
             <svg class="w-5 h-5 text-emerald-500 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-            <span class="text-slate-600 dark:text-slate-300"><strong>No lock-in.</strong> Cloud backup sits alongside CSV, PDF, and JSON export &mdash; you can always take your data with you</span>
+            <span class="text-slate-600 dark:text-slate-300"><strong>Restore from your own files.</strong> Bring a backup file back into NinerLog at any time &mdash; or open it directly in a spreadsheet</span>
           </li>
         </ul>
         <p class="mt-6 text-sm text-slate-500 dark:text-slate-400">
-          Prefer to stay fully offline or self-host? Cloud backup is entirely optional &mdash; the rest of NinerLog works exactly the same with it switched off. See our <a href="/privacy" class="text-sky-600 dark:text-sky-400 hover:underline">privacy policy</a> for the full details.
+          Cloud backup is entirely optional &mdash; the rest of NinerLog works exactly the same with it switched off. See our <a href="/privacy" class="text-sky-600 dark:text-sky-400 hover:underline">privacy policy</a> for how connection details are handled.
         </p>
       </div>
     </div>
@@ -356,7 +357,7 @@
         { "cat": "Licenses", "items": ["Multi-License", "Class Ratings (SEP/MEP/TMG/IR)", "Any Authority Worldwide"] },
         { "cat": "Tracking", "items": ["Currency Tracking", "Credentials & Medicals", "Expiry Notifications"] },
         { "cat": "Fleet", "items": ["Aircraft Management", "Flight Form Integration"] },
-        { "cat": "Data", "items": ["Import (CSV/XLS/ForeFlight)", "Export (CSV/PDF/JSON)", "Encrypted Cloud Backup"] },
+        { "cat": "Data", "items": ["Import (CSV/XLS/ForeFlight)", "Export (CSV/PDF/JSON)", "Offsite Cloud Backup"] },
         { "cat": "Visualization", "items": ["Reports & Charts", "Route Maps", "Airport Heatmap"] },
         { "cat": "Advanced", "items": ["Instrument Tracking", "People & Crew", "Auto-Calculations"] },
         { "cat": "Platform", "items": ["Self-Hosting", "Security Hardened", "MIT Licensed"] }
