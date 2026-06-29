@@ -15,7 +15,7 @@
     "build:cachebust": "HASH=$(shasum -a 256 _site/styles.css | cut -c1-10) && find _site -name '*.html' -exec perl -i -pe \"s|/styles\\.css(?![\\?\\w])|/styles.css?v=$HASH|g\" {} +"
   },
   "dependencies": {
-    "@tailwindcss/cli": "^4.3.1",
+    "@tailwindcss/cli": "^4.3.2",
     "@tailwindcss/typography": "^0.5.20",
     "nunjucks-cli": "^1.0.0",
     "tailwindcss": "^4.3.2"
