@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://ninerlog.com/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ninerlog.com/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ninerlog.com/de/flugbuch"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ninerlog.com/"/>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -11,10 +15,73 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://ninerlog.com/open-source</loc>
+    <loc>https://ninerlog.com/easa-logbook</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://ninerlog.com/faa-logbook</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://ninerlog.com/free-pilot-logbook</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://ninerlog.com/self-hosted</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ninerlog.com/self-hosted"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ninerlog.com/de/selbst-hosten"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ninerlog.com/self-hosted"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://ninerlog.com/import-export</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://ninerlog.com/open-source</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ninerlog.com/open-source"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ninerlog.com/de/open-source-flugbuch"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ninerlog.com/open-source"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- German -->
+  <url>
+    <loc>https://ninerlog.com/de/flugbuch</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ninerlog.com/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ninerlog.com/de/flugbuch"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ninerlog.com/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://ninerlog.com/de/open-source-flugbuch</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ninerlog.com/open-source"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ninerlog.com/de/open-source-flugbuch"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ninerlog.com/open-source"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ninerlog.com/de/vereinsflugbuch</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ninerlog.com/de/selbst-hosten</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ninerlog.com/self-hosted"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ninerlog.com/de/selbst-hosten"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ninerlog.com/self-hosted"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <url>
     <loc>https://ninerlog.com/donate</loc>
     <changefreq>monthly</changefreq>

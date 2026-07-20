@@ -4,6 +4,26 @@
 <meta name="description" content="{{ pageDescription | default("Free, open-source pilot logbook for GA pilots. Log flights, track currency, manage licenses. EASA & FAA compliant. No subscriptions.") }}" />
 <link rel="canonical" href="https://ninerlog.com{{ pagePath | default('/') }}" />
 
+{#
+  hreflang — emitted only when a page has a genuine counterpart in the other
+  language. English pages declare `altDe`, German pages declare `altEn`.
+  Pages without a real translated equivalent deliberately emit nothing:
+  hreflang must be reciprocal and point at actual equivalents.
+#}
+{% if altDe %}
+{% set enUrl = "https://ninerlog.com" + (pagePath | default('/')) %}
+{% set deUrl = "https://ninerlog.com" + altDe %}
+{% elif altEn %}
+{% set enUrl = "https://ninerlog.com" + altEn %}
+{% set deUrl = "https://ninerlog.com" + (pagePath | default('/')) %}
+{% endif %}
+{% if enUrl and deUrl %}
+<!-- Language alternates -->
+<link rel="alternate" hreflang="en" href="{{ enUrl }}" />
+<link rel="alternate" hreflang="de" href="{{ deUrl }}" />
+<link rel="alternate" hreflang="x-default" href="{{ enUrl }}" />
+{% endif %}
+
 <!-- Open Graph -->
 <meta property="og:type" content="website" />
 <meta property="og:title" content="{{ pageTitle | default('NinerLog — Your Logbook, Your Data, Forever Free') }}" />
@@ -11,6 +31,7 @@
 <meta property="og:image" content="https://ninerlog.com/images/og-image.png" />
 <meta property="og:url" content="https://ninerlog.com{{ pagePath | default('/') }}" />
 <meta property="og:site_name" content="NinerLog" />
+<meta property="og:locale" content="{{ 'de_DE' if pageLang == 'de' else 'en_US' }}" />
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />

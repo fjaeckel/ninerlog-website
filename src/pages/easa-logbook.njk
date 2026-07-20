@@ -1,0 +1,227 @@
+{% set pageTitle = "Free EASA Pilot Logbook — FCL.740 & FCL.140 Currency Tracking | NinerLog" %}
+{% set pageDescription = "Free, open-source EASA pilot logbook. Tracks FCL.740.A revalidation, FCL.140.A LAPL and FCL.140.S sailplane recency, and FCL.625.A instrument currency." %}
+{% set pagePath = "/easa-logbook" %}
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<section class="relative bg-linear-to-br from-navy-900 via-navy-800 to-navy-950 py-16 lg:py-24 overflow-hidden">
+  <div class="absolute inset-0 bg-topo-pattern pointer-events-none" aria-hidden="true"></div>
+  <div class="max-w-6xl mx-auto px-4 text-center relative z-10">
+    <div class="mb-4 reveal">
+      <span class="freq-badge">
+        <span class="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 animate-blink"></span>
+        PART-FCL &bull; FREE &amp; OPEN SOURCE
+      </span>
+    </div>
+    <h1 class="text-4xl lg:text-5xl font-extrabold tracking-tight text-white text-balance reveal reveal-delay-1">
+      Free EASA Pilot Logbook
+    </h1>
+    <p class="mt-6 text-lg text-slate-300 leading-relaxed max-w-2xl mx-auto reveal reveal-delay-2">
+      Most logbook apps are built around FAA rules and treat Part-FCL as an afterthought. NinerLog evaluates your flights against the EASA regulation that actually applies to your licence &mdash; and tells you which paragraph it used.
+    </p>
+  </div>
+  <div class="absolute bottom-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-sky-500/20 to-transparent" aria-hidden="true"></div>
+</section>
+
+<!-- ============================================================
+     RECENCY VS REVALIDATION
+     ============================================================ -->
+<section class="bg-white dark:bg-navy-950 py-16 lg:py-24">
+  <div class="max-w-3xl mx-auto px-4">
+    <h2 class="text-2xl lg:text-3xl font-bold tracking-tight text-slate-800 dark:text-white mb-6 reveal">
+      Recency and revalidation are not the same thing.
+    </h2>
+    <div class="prose prose-slate prose-lg dark:prose-invert max-w-none reveal reveal-delay-1">
+      <p>
+        This is the detail that trips up most software. EASA draws a line between two things that both have to be true at once:
+      </p>
+      <ul>
+        <li><strong>Recency</strong> (FCL.140.x) &mdash; rolling flight experience you need to exercise the privileges of a LAPL or SPL. It runs backwards from today, and no examiner signature is involved.</li>
+        <li><strong>Revalidation</strong> (FCL.740.x) &mdash; periodic renewal of a class or type rating on a PPL, CPL or ATPL. The experience is counted inside a window tied to the rating&rsquo;s <em>expiry date</em>, not to today.</li>
+      </ul>
+      <p>
+        A tool that counts everything as a rolling window will quietly tell a PPL holder they are fine when their SEP rating window has not even opened yet. NinerLog models the two separately, and dispatches on your licence type: LAPL and SPL go down the FCL.140 path, PPL/CPL/ATPL down FCL.740.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WHAT IS EVALUATED
+     ============================================================ -->
+<section class="bg-slate-50 dark:bg-navy-900 py-16 lg:py-24">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="text-center mb-12 lg:mb-16">
+      <h2 class="text-3xl lg:text-4xl font-bold tracking-tight text-slate-800 dark:text-white reveal">
+        The EASA rules NinerLog evaluates.
+      </h2>
+      <p class="mt-4 text-lg text-slate-500 dark:text-slate-400 max-w-2xl mx-auto reveal reveal-delay-1">
+        Each result names the paragraph it came from, so you can check the reasoning against the regulation yourself.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+
+      <!-- FCL.740.A(b)(1) -->
+      <div class="group p-6 bg-white dark:bg-navy-800 border border-slate-200 dark:border-navy-700 rounded-xl hover:shadow-lg hover:-translate-y-1 transition-all duration-200 reveal reveal-delay-1">
+        <div class="font-mono text-xs font-bold text-sky-500 tracking-wider mb-2">FCL.740.A(b)(1)</div>
+        <h3 class="text-lg font-semibold text-slate-800 dark:text-white mb-2">SEP &amp; TMG revalidation</h3>
+        <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+          12 hours total flight time, of which 6 hours as PIC, plus 12 takeoffs and landings and a one-hour refresher flight with an instructor &mdash; counted within the 12 months preceding the rating&rsquo;s expiry date.
+        </p>
+      </div>
+
+      <!-- FCL.740.A(b)(2) -->
+      <div class="group p-6 bg-white dark:bg-navy-800 border border-slate-200 dark:border-navy-700 rounded-xl hover:shadow-lg hover:-translate-y-1 transition-all duration-200 reveal reveal-delay-2">
+        <div class="font-mono text-xs font-bold text-sky-500 tracking-wider mb-2">FCL.740.A(b)(2)</div>
+        <h3 class="text-lg font-semibold text-slate-800 dark:text-white mb-2">MEP &amp; SET revalidation</h3>
+        <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+          Either a proficiency check, or the experience-based route: 10 route sectors as PIC plus a one-hour refresher flight with an instructor inside the 12-month window.
+        </p>
+      </div>
+
+      <!-- FCL.140.A -->
+      <div class="group p-6 bg-white dark:bg-navy-800 border border-slate-200 dark:border-navy-700 rounded-xl hover:shadow-lg hover:-translate-y-1 transition-all duration-200 reveal reveal-delay-2">
+        <div class="font-mono text-xs font-bold text-amber-500 tracking-wider mb-2">FCL.140.A</div>
+        <h3 class="text-lg font-semibold text-slate-800 dark:text-white mb-2">LAPL(A) recency</h3>
+        <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+          12 hours of flight time, 12 takeoffs and landings and one hour of training with an instructor, on a rolling 24-month window measured from today &mdash; not from a rating expiry date.
+        </p>
+      </div>
+
+      <!-- FCL.140.S -->
+      <div class="group p-6 bg-white dark:bg-navy-800 border border-slate-200 dark:border-navy-700 rounded-xl hover:shadow-lg hover:-translate-y-1 transition-all duration-200 reveal reveal-delay-3">
+        <div class="font-mono text-xs font-bold text-amber-500 tracking-wider mb-2">FCL.140.S</div>
+        <h3 class="text-lg font-semibold text-slate-800 dark:text-white mb-2">SPL &amp; LAPL(S) recency</h3>
+        <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+          Sailplanes count <em>launches</em>, not landings: 5 hours of PIC time, 15 launches and 2 training flights with an instructor in the preceding 24 months. Launch methods are tracked individually &mdash; winch, aerotow and self-launch each need their own 5 launches under FCL.140.S(b)(1). The TMG extension under FCL.140.S(b)(2) is evaluated separately again.
+        </p>
+      </div>
+
+      <!-- FCL.625.A -->
+      <div class="group p-6 bg-white dark:bg-navy-800 border border-slate-200 dark:border-navy-700 rounded-xl hover:shadow-lg hover:-translate-y-1 transition-all duration-200 reveal reveal-delay-3">
+        <div class="font-mono text-xs font-bold text-violet-500 tracking-wider mb-2">FCL.625.A</div>
+        <h3 class="text-lg font-semibold text-slate-800 dark:text-white mb-2">Instrument rating</h3>
+        <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+          10 hours of IFR flight time within the 12 months preceding expiry, alongside the annual proficiency check.
+        </p>
+      </div>
+
+      <!-- FCL.060(b) -->
+      <div class="group p-6 bg-white dark:bg-navy-800 border border-slate-200 dark:border-navy-700 rounded-xl hover:shadow-lg hover:-translate-y-1 transition-all duration-200 reveal reveal-delay-4">
+        <div class="font-mono text-xs font-bold text-emerald-500 tracking-wider mb-2">FCL.060(b)</div>
+        <h3 class="text-lg font-semibold text-slate-800 dark:text-white mb-2">Carrying passengers</h3>
+        <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+          3 takeoffs and landings in the same class or type within the preceding 90 days, plus one at night to carry passengers at night &mdash; with the night requirement waived for holders of a valid IR under FCL.060(b)(2)(ii).
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     GERMAN UL
+     ============================================================ -->
+<section class="bg-white dark:bg-navy-950 py-16 lg:py-24">
+  <div class="max-w-3xl mx-auto px-4">
+    <h2 class="text-2xl lg:text-3xl font-bold tracking-tight text-slate-800 dark:text-white mb-6 reveal">
+      German ultralights, too.
+    </h2>
+    <div class="prose prose-slate prose-lg dark:prose-invert max-w-none reveal reveal-delay-1">
+      <p>
+        Ultralights in Germany are not covered by Part-FCL at all &mdash; they run on national law. NinerLog has a separate evaluator for <strong>LuftPersV &sect;45</strong>: 12 hours of flight time, 12 takeoffs and landings and a one-hour <em>&Uuml;bungsflug</em> with an instructor on a rolling 24-month window, plus the 90-day rule attached to the <em>Passagierberechtigung</em>.
+      </p>
+      <p>
+        The results for UL ratings are reported in German, because that is the language the regulation and your <em>Luftsportger&auml;tef&uuml;hrerschein</em> are written in.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     BEYOND CURRENCY
+     ============================================================ -->
+<section class="bg-slate-50 dark:bg-navy-900 py-16 lg:py-24">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="text-center mb-12 lg:mb-16">
+      <h2 class="text-3xl lg:text-4xl font-bold tracking-tight text-slate-800 dark:text-white reveal">
+        Built for how European pilots actually fly.
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+      <div class="group p-6 bg-white dark:bg-navy-800 border border-slate-200 dark:border-navy-700 rounded-xl hover:shadow-lg hover:-translate-y-1 transition-all duration-200 reveal reveal-delay-1">
+        <h3 class="text-lg font-semibold text-slate-800 dark:text-white mb-2">More than one licence</h3>
+        <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Plenty of European pilots hold an SPL and a PPL, or an EASA licence and an FAA certificate. Each licence carries its own ratings and is evaluated under its own authority&rsquo;s rules, in one logbook.</p>
+      </div>
+      <div class="group p-6 bg-white dark:bg-navy-800 border border-slate-200 dark:border-navy-700 rounded-xl hover:shadow-lg hover:-translate-y-1 transition-all duration-200 reveal reveal-delay-2">
+        <h3 class="text-lg font-semibold text-slate-800 dark:text-white mb-2">EASA-shaped CSV export</h3>
+        <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Export with EASA column conventions rather than a US layout you have to rearrange by hand. FAA and a ForeFlight-compatible standard layout are there too.</p>
+      </div>
+      <div class="group p-6 bg-white dark:bg-navy-800 border border-slate-200 dark:border-navy-700 rounded-xl hover:shadow-lg hover:-translate-y-1 transition-all duration-200 reveal reveal-delay-3">
+        <h3 class="text-lg font-semibold text-slate-800 dark:text-white mb-2">Instructor signatures</h3>
+        <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Training flights get signed in person or through a secure link, and lock afterwards &mdash; so the entry stays exactly as it was endorsed.</p>
+      </div>
+      <div class="group p-6 bg-white dark:bg-navy-800 border border-slate-200 dark:border-navy-700 rounded-xl hover:shadow-lg hover:-translate-y-1 transition-all duration-200 reveal reveal-delay-4">
+        <h3 class="text-lg font-semibold text-slate-800 dark:text-white mb-2">Medicals and credentials</h3>
+        <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Class 1, Class 2 and LAPL medicals, ratings and other credentials all carry expiry dates. NinerLog warns you before they lapse.</p>
+      </div>
+      <div class="group p-6 bg-white dark:bg-navy-800 border border-slate-200 dark:border-navy-700 rounded-xl hover:shadow-lg hover:-translate-y-1 transition-all duration-200 reveal reveal-delay-5">
+        <h3 class="text-lg font-semibold text-slate-800 dark:text-white mb-2">German throughout</h3>
+        <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">The whole application is translated, not just the menus. <a href="/de/flugbuch" class="text-sky-500 hover:text-sky-400">Auf Deutsch ansehen &rarr;</a></p>
+      </div>
+      <div class="group p-6 bg-white dark:bg-navy-800 border border-slate-200 dark:border-navy-700 rounded-xl hover:shadow-lg hover:-translate-y-1 transition-all duration-200 reveal reveal-delay-6">
+        <h3 class="text-lg font-semibold text-slate-800 dark:text-white mb-2">Your data stays yours</h3>
+        <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Export the lot as CSV, PDF or JSON whenever you want, or <a href="/self-hosted" class="text-sky-500 hover:text-sky-400">run the whole thing yourself</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     HONEST NOTE
+     ============================================================ -->
+<section class="bg-white dark:bg-navy-950 py-16 lg:py-24">
+  <div class="max-w-3xl mx-auto px-4">
+    <div class="p-6 lg:p-8 bg-amber-500/5 border border-amber-500/30 rounded-xl reveal">
+      <h2 class="text-xl lg:text-2xl font-bold tracking-tight text-slate-800 dark:text-white mb-4">
+        An honest note about compliance.
+      </h2>
+      <div class="prose prose-slate dark:prose-invert max-w-none">
+        <p>
+          NinerLog implements these rules carefully and shows you the paragraph behind every result &mdash; but it is a tool, not an authority. Regulations get amended, national implementations differ, and your competent authority has the final word. <strong>The pilot in command remains responsible for their own currency.</strong>
+        </p>
+        <p class="mb-0">
+          Because the code is open, you do not have to take that on faith. The currency engine lives in
+          <a href="https://github.com/fjaeckel/ninerlog-api" target="_blank" rel="noopener noreferrer">ninerlog-api</a>
+          and you are welcome to read exactly how each rule is evaluated &mdash; or open an issue if you find one that is wrong.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CTA
+     ============================================================ -->
+<section class="bg-navy-900 py-16 lg:py-24">
+  <div class="max-w-3xl mx-auto px-4 text-center">
+    <h2 class="text-3xl lg:text-4xl font-bold tracking-tight text-white mb-6 reveal">
+      Stop doing currency maths in your head.
+    </h2>
+    <p class="text-lg text-slate-300 leading-relaxed mb-8 reveal reveal-delay-1">
+      Free, open source, no subscription. Import your existing logbook and see where you stand.
+    </p>
+    <a href="https://app.ninerlog.com/register"
+       class="inline-flex items-center gap-2 px-8 py-4 bg-linear-to-r from-amber-400 to-amber-500 text-navy-900 font-semibold text-lg rounded-full shadow-lg shadow-amber-400/30 hover:shadow-xl hover:shadow-amber-400/40 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-navy-900 reveal reveal-delay-2">
+      Start Logging &mdash; It&rsquo;s Free
+    </a>
+  </div>
+</section>
+
+{% endblock %}

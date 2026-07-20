@@ -22,6 +22,27 @@
   }
 </script>
 
+<!-- Copy-to-clipboard for code blocks -->
+<script>
+  document.querySelectorAll('[data-copy]').forEach(function(btn) {
+    var label = btn.querySelector('.copy-label');
+    var defaultText = label ? label.textContent : '';
+    var copiedText = btn.getAttribute('data-copied-label') || defaultText;
+    btn.addEventListener('click', function() {
+      if (!navigator.clipboard) return;
+      navigator.clipboard.writeText(btn.getAttribute('data-copy')).then(function() {
+        btn.classList.add('copied');
+        if (label) label.textContent = copiedText;
+        clearTimeout(btn._copyTimeout);
+        btn._copyTimeout = setTimeout(function() {
+          btn.classList.remove('copied');
+          if (label) label.textContent = defaultText;
+        }, 1800);
+      });
+    });
+  });
+</script>
+
 <!-- Scroll reveal IntersectionObserver -->
 <script>
   document.addEventListener('DOMContentLoaded', function() {

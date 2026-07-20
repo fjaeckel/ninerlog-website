@@ -1,3 +1,41 @@
+{% if pageLang == "de" %}
+  {% set footTagline = "Das freie, quelloffene Flugbuch für Piloten. Deine Daten, deine Regeln, dauerhaft kostenlos." %}
+  {% set footProductHeading = "Produkt" %}
+  {% set footProductLinks = [
+    { href: "/de/flugbuch", label: "Digitales Flugbuch" },
+    { href: "/de/selbst-hosten", label: "Selbst hosten" },
+    { href: "https://app.ninerlog.com", label: "Zur App" }
+  ] %}
+  {% set footResourcesHeading = "Mehr" %}
+  {% set footResourcesLinks = [
+    { href: "/de/open-source-flugbuch", label: "Open Source" },
+    { href: "/about", label: "Über NinerLog (EN)" },
+    { href: "/report-a-bug", label: "Fehler melden" },
+    { href: "/donate", label: "Projekt unterstützen" }
+  ] %}
+  {% set footLegalHeading = "Rechtliches" %}
+  {% set footCopy = "&copy; 2026 NinerLog. Open Source unter AGPL-3.0 &amp; MIT." %}
+  {% set footMadeBy = "Von Piloten für Piloten." %}
+{% else %}
+  {% set footTagline = "The free, open-source pilot logbook. Your data, your rules, forever free." %}
+  {% set footProductHeading = "Product" %}
+  {% set footProductLinks = [
+    { href: "/features", label: "Features" },
+    { href: "/self-hosted", label: "Self-Hosted" },
+    { href: "https://app.ninerlog.com", label: "Launch App" }
+  ] %}
+  {% set footResourcesHeading = "Resources" %}
+  {% set footResourcesLinks = [
+    { href: "/open-source", label: "Open Source" },
+    { href: "/about", label: "About" },
+    { href: "/report-a-bug", label: "Report a Bug" },
+    { href: "https://github.com/fjaeckel/ninerlog-api/blob/main/api-spec/openapi.yaml", label: "API Docs" }
+  ] %}
+  {% set footLegalHeading = "Legal" %}
+  {% set footCopy = "&copy; 2026 NinerLog. Open source under AGPL-3.0 &amp; MIT." %}
+  {% set footMadeBy = "Made with <span class=\"text-rose-400\">&hearts;</span> by pilots, for pilots." %}
+{% endif %}
+
 <!-- Footer -->
 <footer class="bg-navy-950 border-t border-white/5">
   <!-- Runway centerline divider at top -->
@@ -10,12 +48,12 @@
 
       <!-- Brand column -->
       <div class="lg:col-span-1">
-        <a href="/" class="flex items-center gap-2 text-xl font-bold text-white font-display">
+        <a href="{{ '/de/flugbuch' if pageLang == 'de' else '/' }}" class="flex items-center gap-2 text-xl font-bold text-white font-display">
           <span class="inline-flex items-center justify-center w-7 h-7 rounded-sm bg-sky-500/15 text-sky-400 text-xs font-mono font-bold">N9</span>
           <span><span>Niner</span><span class="text-sky-400">Log</span></span>
         </a>
         <p class="mt-3 text-sm text-slate-400 max-w-xs">
-          The free, open-source pilot logbook. Your data, your rules, forever free.
+          {{ footTagline }}
         </p>
         <div class="flex gap-4 mt-4">
           <a href="https://github.com/fjaeckel" class="text-slate-400 hover:text-white transition-colors" aria-label="GitHub">
@@ -26,28 +64,27 @@
 
       <!-- Product -->
       <div>
-        <h4 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Product</h4>
+        <h4 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">{{ footProductHeading }}</h4>
         <ul class="space-y-2 text-sm text-slate-400">
-          <li><a href="/features" class="hover:text-white transition-colors">Features</a></li>
-          <li><a href="/open-source" class="hover:text-white transition-colors">Open Source</a></li>
-          <li><a href="https://app.ninerlog.com" class="hover:text-white transition-colors">Launch App</a></li>
+          {% for link in footProductLinks %}
+          <li><a href="{{ link.href }}" class="hover:text-white transition-colors">{{ link.label }}</a></li>
+          {% endfor %}
         </ul>
       </div>
 
       <!-- Resources -->
       <div>
-        <h4 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Resources</h4>
+        <h4 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">{{ footResourcesHeading }}</h4>
         <ul class="space-y-2 text-sm text-slate-400">
-          <li><a href="/about" class="hover:text-white transition-colors">About</a></li>
-          <li><a href="/report-a-bug" class="hover:text-white transition-colors">Report a Bug</a></li>
-          <li><a href="https://github.com/fjaeckel/ninerlog-api/blob/main/api-spec/openapi.yaml" class="hover:text-white transition-colors">API Docs</a></li>
-          <li><a href="https://github.com/fjaeckel/ninerlog-api/blob/main/CONTRIBUTING.md" class="hover:text-white transition-colors">Contributing</a></li>
+          {% for link in footResourcesLinks %}
+          <li><a href="{{ link.href }}" class="hover:text-white transition-colors">{{ link.label }}</a></li>
+          {% endfor %}
         </ul>
       </div>
 
       <!-- Legal -->
       <div>
-        <h4 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Legal</h4>
+        <h4 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">{{ footLegalHeading }}</h4>
         <ul class="space-y-2 text-sm text-slate-400">
           <li><a href="/privacy" class="hover:text-white transition-colors">Datenschutz / Privacy</a></li>
           <li><a href="/terms" class="hover:text-white transition-colors">Terms of Service</a></li>
@@ -57,8 +94,8 @@
     </div>
 
     <div class="mt-12 pt-8 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-4">
-      <p class="text-xs text-slate-500">&copy; 2026 NinerLog. Open source under AGPL-3.0 &amp; MIT.</p>
-      <p class="text-xs text-slate-500 font-mono tracking-wide">Made with <span class="text-rose-400">&hearts;</span> by pilots, for pilots.</p>
+      <p class="text-xs text-slate-500">{{ footCopy | safe }}</p>
+      <p class="text-xs text-slate-500 font-mono tracking-wide">{{ footMadeBy | safe }}</p>
     </div>
   </div>
 </footer>

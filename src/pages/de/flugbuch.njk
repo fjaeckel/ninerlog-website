@@ -1,0 +1,193 @@
+{% set pageLang = "de" %}
+{% set pageTitle = "Digitales Flugbuch, kostenlos — Open Source für EASA & FAA | NinerLog" %}
+{% set pageDescription = "Kostenloses digitales Flugbuch für Privatpiloten. Flüge erfassen, Flugerfahrung nach FCL.740 und FCL.140 überwachen, Lizenzen verwalten. Open Source, kein Abo." %}
+{% set pagePath = "/de/flugbuch" %}
+{% set altEn = "/" %}
+{% set skipToContentLabel = "Zum Inhalt springen" %}
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<section class="relative bg-linear-to-br from-navy-900 via-navy-800 to-navy-950 py-16 lg:py-24 overflow-hidden">
+  <div class="absolute inset-0 bg-topo-pattern pointer-events-none" aria-hidden="true"></div>
+  <div class="max-w-6xl mx-auto px-4 text-center relative z-10">
+    <div class="mb-4 reveal">
+      <span class="freq-badge">
+        <span class="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 animate-blink"></span>
+        OPEN SOURCE &bull; DAUERHAFT KOSTENLOS
+      </span>
+    </div>
+    <h1 class="text-4xl lg:text-5xl font-extrabold tracking-tight text-white text-balance reveal reveal-delay-1">
+      Dein digitales Flugbuch.<br class="hidden sm:block" /> Kostenlos, offen, auf Deutsch.
+    </h1>
+    <p class="mt-6 text-lg text-slate-300 leading-relaxed max-w-2xl mx-auto reveal reveal-delay-2">
+      NinerLog ist ein quelloffenes Flugbuch für die Allgemeine Luftfahrt &mdash; mit Flugerfahrungs&uuml;berwachung nach EASA Part-FCL, f&uuml;r UL nach LuftPersV, und komplett auf Deutsch. Ohne Abo, ohne Werbung, ohne Haken.
+    </p>
+    <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 reveal reveal-delay-3">
+      <a href="https://app.ninerlog.com/register"
+         class="inline-flex items-center gap-2 px-8 py-4 bg-linear-to-r from-amber-400 to-amber-500 text-navy-900 font-semibold text-lg rounded-full shadow-lg shadow-amber-400/30 hover:shadow-xl hover:shadow-amber-400/40 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-navy-900 w-full sm:w-auto justify-center">
+        Kostenlos loslegen
+      </a>
+      <a href="/de/open-source-flugbuch"
+         class="inline-flex items-center gap-2 px-6 py-3 border border-white/20 text-white rounded-full hover:bg-white/10 hover:border-white/30 transition-all duration-200 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-white/50 w-full sm:w-auto justify-center">
+        Warum Open Source? &rarr;
+      </a>
+    </div>
+  </div>
+  <div class="absolute bottom-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-sky-500/20 to-transparent" aria-hidden="true"></div>
+</section>
+
+<!-- ============================================================
+     DEUTSCH
+     ============================================================ -->
+<section class="bg-white dark:bg-navy-950 py-16 lg:py-24">
+  <div class="max-w-3xl mx-auto px-4">
+    <h2 class="text-2xl lg:text-3xl font-bold tracking-tight text-slate-800 dark:text-white mb-6 reveal">
+      Wirklich auf Deutsch &mdash; nicht nur die Men&uuml;s.
+    </h2>
+    <div class="prose prose-slate prose-lg dark:prose-invert max-w-none reveal reveal-delay-1">
+      <p>
+        Die meisten Flugbuch-Apps kommen aus dem englischsprachigen Raum. Im besten Fall bekommt man eine halbherzige &Uuml;bersetzung, im schlechtesten Fall &bdquo;Landungen bei Nacht&ldquo; in einem sonst englischen Formular.
+      </p>
+      <p>
+        Bei NinerLog ist die gesamte Anwendung &uuml;bersetzt: Eingabemasken, Auswertungen, Berichte, Hinweise und die E-Mails, die dich an ablaufende Berechtigungen erinnern. Und wo die Regelung deutsch ist &mdash; etwa bei UL nach LuftPersV &sect;45 &mdash; ist auch die Bewertung auf Deutsch formuliert.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FUNKTIONEN
+     ============================================================ -->
+<section class="bg-slate-50 dark:bg-navy-900 py-16 lg:py-24">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="text-center mb-12 lg:mb-16">
+      <h2 class="text-3xl lg:text-4xl font-bold tracking-tight text-slate-800 dark:text-white reveal">
+        Was NinerLog kann.
+      </h2>
+      <p class="mt-4 text-lg text-slate-500 dark:text-slate-400 max-w-2xl mx-auto reveal reveal-delay-1">
+        Alle Funktionen sind f&uuml;r alle da. Es gibt keine Pro-Version.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+      <div class="group p-6 bg-white dark:bg-navy-800 border border-slate-200 dark:border-navy-700 rounded-xl hover:shadow-lg hover:-translate-y-1 transition-all duration-200 reveal reveal-delay-1">
+        <h3 class="text-lg font-semibold text-slate-800 dark:text-white mb-2">Flugerfahrung im Blick</h3>
+        <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+          Verl&auml;ngerung der Klassenberechtigung nach FCL.740.A, Fortbestand der Rechte bei LAPL und SPL nach FCL.140, Instrumentenflugberechtigung nach FCL.625.A &mdash; jeweils mit Angabe des Absatzes, auf dem das Ergebnis beruht.
+        </p>
+      </div>
+      <div class="group p-6 bg-white dark:bg-navy-800 border border-slate-200 dark:border-navy-700 rounded-xl hover:shadow-lg hover:-translate-y-1 transition-all duration-200 reveal reveal-delay-2">
+        <h3 class="text-lg font-semibold text-slate-800 dark:text-white mb-2">Ultraleicht nach LuftPersV</h3>
+        <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+          UL f&auml;llt nicht unter Part-FCL. Daf&uuml;r gibt es eine eigene Bewertung nach &sect;45: 12 Stunden, 12 Starts und Landungen und ein &Uuml;bungsflug mit Fluglehrer in 24 Monaten.
+        </p>
+      </div>
+      <div class="group p-6 bg-white dark:bg-navy-800 border border-slate-200 dark:border-navy-700 rounded-xl hover:shadow-lg hover:-translate-y-1 transition-all duration-200 reveal reveal-delay-3">
+        <h3 class="text-lg font-semibold text-slate-800 dark:text-white mb-2">Segelflug richtig gez&auml;hlt</h3>
+        <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+          Im Segelflug z&auml;hlen Starts, nicht Landungen &mdash; und jede Startart einzeln. Windenstart, F-Schlepp und Eigenstart werden nach FCL.140.S getrennt gef&uuml;hrt.
+        </p>
+      </div>
+      <div class="group p-6 bg-white dark:bg-navy-800 border border-slate-200 dark:border-navy-700 rounded-xl hover:shadow-lg hover:-translate-y-1 transition-all duration-200 reveal reveal-delay-4">
+        <h3 class="text-lg font-semibold text-slate-800 dark:text-white mb-2">Mehrere Lizenzen</h3>
+        <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+          SPL und PPL nebeneinander, dazu vielleicht noch eine FAA-Lizenz: jede Lizenz bringt ihre eigenen Berechtigungen mit und wird nach den Regeln ihrer Beh&ouml;rde bewertet.
+        </p>
+      </div>
+      <div class="group p-6 bg-white dark:bg-navy-800 border border-slate-200 dark:border-navy-700 rounded-xl hover:shadow-lg hover:-translate-y-1 transition-all duration-200 reveal reveal-delay-5">
+        <h3 class="text-lg font-semibold text-slate-800 dark:text-white mb-2">Unterschrift vom Fluglehrer</h3>
+        <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+          Schulungsfl&uuml;ge werden direkt am Ger&auml;t oder sp&auml;ter &uuml;ber einen sicheren Link unterschrieben. Danach ist der Eintrag gesperrt und bleibt so, wie er best&auml;tigt wurde.
+        </p>
+      </div>
+      <div class="group p-6 bg-white dark:bg-navy-800 border border-slate-200 dark:border-navy-700 rounded-xl hover:shadow-lg hover:-translate-y-1 transition-all duration-200 reveal reveal-delay-6">
+        <h3 class="text-lg font-semibold text-slate-800 dark:text-white mb-2">Fristen im Auge</h3>
+        <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+          Tauglichkeitszeugnis, Sprachvermerk, Berechtigungen: NinerLog kennt die Ablaufdaten und meldet sich per E-Mail, bevor etwas abl&auml;uft.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     UMSTIEG
+     ============================================================ -->
+<section class="bg-white dark:bg-navy-950 py-16 lg:py-24">
+  <div class="max-w-3xl mx-auto px-4">
+    <h2 class="text-2xl lg:text-3xl font-bold tracking-tight text-slate-800 dark:text-white mb-6 reveal">
+      Deine Stunden kommen mit.
+    </h2>
+    <div class="prose prose-slate prose-lg dark:prose-invert max-w-none reveal reveal-delay-1">
+      <p>
+        Ein Flugbuch wechselt man ungern, weil der Umzug wehtut. Genau deshalb gibt es NinerLog: Der Import liest CSV-Dateien aus anderen Flugb&uuml;chern, erkennt das ForeFlight-Format selbstst&auml;ndig und l&auml;sst dich bei allem anderen die Spalten selbst zuordnen. Deutsche wie amerikanische Datumsformate werden verstanden.
+      </p>
+      <p>
+        Und genauso wichtig: Du kommst jederzeit wieder raus. Vollst&auml;ndiger Export als CSV, PDF oder JSON &mdash; ohne Bezahlschranke, ohne Begrenzung. Dein Flugbuch ist deins.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     KOSTENLOS
+     ============================================================ -->
+<section class="bg-slate-50 dark:bg-navy-900 py-16 lg:py-24">
+  <div class="max-w-3xl mx-auto px-4">
+    <h2 class="text-2xl lg:text-3xl font-bold tracking-tight text-slate-800 dark:text-white mb-6 reveal">
+      Und wo ist der Haken?
+    </h2>
+    <div class="prose prose-slate prose-lg dark:prose-invert max-w-none reveal reveal-delay-1">
+      <p>
+        Es gibt keinen, aber die Frage ist berechtigt. NinerLog wird von einer einzelnen Person entwickelt &mdash; einem Softwareentwickler, der seit 2018 selbst fliegt. Der Betrieb kostet rund <strong>30 US-Dollar im Monat</strong> f&uuml;r Server, Datenbank und Zertifikate; das tragen <a href="/donate">freiwillige Spenden</a>.
+      </p>
+      <p>
+        Dahinter steht kein Investor, der irgendwann eine Rendite sehen will. Genau dieser Druck ist sonst der Grund, warum aus einem kostenlosen Flugbuch nach ein paar Jahren ein Abo wird.
+      </p>
+      <p>
+        Ehrlich dazugesagt: Ein Ein-Personen-Projekt hat auch Nachteile. Es gibt keine Hotline, neue Funktionen entstehen in der Freizeit, und manche kommerzielle App ist ausgereifter. Daf&uuml;r ist der Quellcode offen &mdash; du kannst alles hier Behauptete nachpr&uuml;fen.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     VEREIN
+     ============================================================ -->
+<section class="bg-white dark:bg-navy-950 py-16 lg:py-24">
+  <div class="max-w-3xl mx-auto px-4 text-center">
+    <h2 class="text-2xl lg:text-3xl font-bold tracking-tight text-slate-800 dark:text-white mb-4 reveal">
+      Du fliegst im Verein?
+    </h2>
+    <p class="text-lg text-slate-600 dark:text-slate-300 leading-relaxed mb-8 reveal reveal-delay-1">
+      NinerLog l&auml;sst sich auf dem eigenen Server betreiben &mdash; eine Instanz f&uuml;r den ganzen Verein, jedes Mitglied mit eigenem Flugbuch, Verwaltung inklusive.
+    </p>
+    <a href="/de/vereinsflugbuch" class="inline-flex items-center gap-2 px-6 py-3 border border-sky-500 text-sky-500 hover:bg-sky-500 hover:text-white rounded-full transition-all duration-200 font-semibold reveal reveal-delay-2">
+      Flugbuch f&uuml;r Vereine &rarr;
+    </a>
+  </div>
+</section>
+
+<!-- ============================================================
+     CTA
+     ============================================================ -->
+<section class="bg-navy-900 py-16 lg:py-24">
+  <div class="max-w-3xl mx-auto px-4 text-center">
+    <h2 class="text-3xl lg:text-4xl font-bold tracking-tight text-white mb-6 reveal">
+      Schluss mit dem Papierflugbuch?
+    </h2>
+    <p class="text-lg text-slate-300 leading-relaxed mb-8 reveal reveal-delay-1">
+      Anmelden, Lizenz eintragen, losfliegen. Keine Kreditkarte, keine Testphase.
+    </p>
+    <a href="https://app.ninerlog.com/register"
+       class="inline-flex items-center gap-2 px-8 py-4 bg-linear-to-r from-amber-400 to-amber-500 text-navy-900 font-semibold text-lg rounded-full shadow-lg shadow-amber-400/30 hover:shadow-xl hover:shadow-amber-400/40 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-navy-900 reveal reveal-delay-2">
+      Kostenlos loslegen
+    </a>
+  </div>
+</section>
+
+{% endblock %}

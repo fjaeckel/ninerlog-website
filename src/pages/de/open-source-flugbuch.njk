@@ -1,0 +1,170 @@
+{% set pageLang = "de" %}
+{% set pageTitle = "Open Source Flugbuch — quelloffen, prüfbar, kostenlos | NinerLog" %}
+{% set pageDescription = "Ein quelloffenes Flugbuch für Piloten: der gesamte Quellcode ist öffentlich, prüfbar und selbst betreibbar. AGPL-3.0 und MIT, ohne Abo und ohne Anbieterbindung." %}
+{% set pagePath = "/de/open-source-flugbuch" %}
+{% set altEn = "/open-source" %}
+{% set skipToContentLabel = "Zum Inhalt springen" %}
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<section class="relative bg-linear-to-br from-navy-900 via-navy-800 to-navy-950 py-16 lg:py-24 overflow-hidden">
+  <div class="absolute inset-0 bg-topo-pattern pointer-events-none" aria-hidden="true"></div>
+  <div class="max-w-6xl mx-auto px-4 text-center relative z-10">
+    <div class="mb-4 reveal">
+      <span class="freq-badge">
+        <span class="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 animate-blink"></span>
+        AGPL-3.0 &amp; MIT &bull; VOLLST&Auml;NDIG EINSEHBAR
+      </span>
+    </div>
+    <h1 class="text-4xl lg:text-5xl font-extrabold tracking-tight text-white text-balance reveal reveal-delay-1">
+      Open Source Flugbuch
+    </h1>
+    <p class="mt-6 text-lg text-slate-300 leading-relaxed max-w-2xl mx-auto reveal reveal-delay-2">
+      Dein Flugbuch ist ein Nachweis &uuml;ber deine gesamte fliegerische Laufbahn. Bei der Software dahinter sollte man nicht raten m&uuml;ssen, was sie tut.
+    </p>
+  </div>
+  <div class="absolute bottom-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-sky-500/20 to-transparent" aria-hidden="true"></div>
+</section>
+
+<!-- ============================================================
+     WARUM
+     ============================================================ -->
+<section class="bg-white dark:bg-navy-950 py-16 lg:py-24">
+  <div class="max-w-3xl mx-auto px-4">
+    <h2 class="text-2xl lg:text-3xl font-bold tracking-tight text-slate-800 dark:text-white mb-6 reveal">
+      Was Open Source f&uuml;r dein Flugbuch bedeutet.
+    </h2>
+    <div class="prose prose-slate prose-lg dark:prose-invert max-w-none reveal reveal-delay-1">
+      <p>
+        &bdquo;Wir gehen sorgsam mit deinen Daten um&ldquo; steht in jeder Datenschutzerkl&auml;rung. Der Unterschied bei quelloffener Software ist, dass man es nachlesen kann statt es glauben zu m&uuml;ssen.
+      </p>
+      <p>
+        Der gesamte Quellcode von NinerLog liegt &ouml;ffentlich auf GitHub. Jeder kann nachvollziehen, wie die Daten gespeichert, verarbeitet und gesichert werden &mdash; und ob wirklich nichts abflie&szlig;t, was nicht abflie&szlig;en soll.
+      </p>
+      <p>
+        Genauso wichtig ist, was daraus folgt: <strong>Es gibt keine Anbieterbindung.</strong> Sollte dieses Projekt eines Tages eingestellt werden, kannst du den Code nehmen und die Anwendung selbst weiterbetreiben. Dein Flugbuch h&auml;ngt nicht am Fortbestand eines Unternehmens.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     NACHPRÜFBARKEIT DER REGELN
+     ============================================================ -->
+<section class="bg-slate-50 dark:bg-navy-900 py-16 lg:py-24">
+  <div class="max-w-3xl mx-auto px-4">
+    <h2 class="text-2xl lg:text-3xl font-bold tracking-tight text-slate-800 dark:text-white mb-6 reveal">
+      Besonders relevant: die Regelauslegung.
+    </h2>
+    <div class="prose prose-slate prose-lg dark:prose-invert max-w-none reveal reveal-delay-1">
+      <p>
+        Bei einem Flugbuch ist Quelloffenheit mehr als eine Haltung. Wenn dir eine Anwendung sagt, deine Klassenberechtigung sei noch g&uuml;ltig, dann steckt dahinter jemandes Auslegung von FCL.740.A &mdash; und die kann falsch sein.
+      </p>
+      <p>
+        NinerLog nennt bei jedem Ergebnis den Absatz, auf dem es beruht. Und weil der Code offen liegt, kannst du im
+        <a href="https://github.com/fjaeckel/ninerlog-api" target="_blank" rel="noopener noreferrer">ninerlog-api</a>-Repository
+        genau nachlesen, wie gez&auml;hlt wird: welcher Zeitraum betrachtet wird, was als Start z&auml;hlt, wie mit der Startart im Segelflug umgegangen wird.
+      </p>
+      <p>
+        Findest du einen Fehler, l&auml;sst er sich melden &mdash; und beheben. Bei einer geschlossenen Anwendung bleibt nur, dem Ergebnis zu vertrauen.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     DIE REPOSITORIES
+     ============================================================ -->
+<section class="bg-white dark:bg-navy-950 py-16 lg:py-24">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="text-center mb-12 lg:mb-16">
+      <h2 class="text-3xl lg:text-4xl font-bold tracking-tight text-slate-800 dark:text-white reveal">
+        Der Code.
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+      <a href="https://github.com/fjaeckel/ninerlog-api" target="_blank" rel="noopener noreferrer"
+         class="group p-6 bg-white dark:bg-navy-800 border border-slate-200 dark:border-navy-700 rounded-xl hover:border-sky-500 dark:hover:border-sky-500 transition-colors reveal reveal-delay-1">
+        <span class="font-semibold text-slate-800 dark:text-white">ninerlog-api</span>
+        <p class="mt-3 text-sm text-slate-600 dark:text-slate-300 mb-4">Go-REST-API mit JWT-Anmeldung, PostgreSQL und OpenAPI-Spezifikation. Hier liegt auch die Flugerfahrungsbewertung.</p>
+        <div class="flex items-center gap-4 text-xs text-slate-500 dark:text-slate-400">
+          <span>AGPL-3.0</span>
+          <span class="text-sky-500 group-hover:text-sky-400 transition-colors">Auf GitHub ansehen &rarr;</span>
+        </div>
+      </a>
+
+      <a href="https://github.com/fjaeckel/ninerlog-frontend" target="_blank" rel="noopener noreferrer"
+         class="group p-6 bg-white dark:bg-navy-800 border border-slate-200 dark:border-navy-700 rounded-xl hover:border-sky-500 dark:hover:border-sky-500 transition-colors reveal reveal-delay-2">
+        <span class="font-semibold text-slate-800 dark:text-white">ninerlog-frontend</span>
+        <p class="mt-3 text-sm text-slate-600 dark:text-slate-300 mb-4">React und TypeScript als PWA. Hier liegen auch die deutschen &Uuml;bersetzungen &mdash; Verbesserungen sind willkommen.</p>
+        <div class="flex items-center gap-4 text-xs text-slate-500 dark:text-slate-400">
+          <span>MIT</span>
+          <span class="text-sky-500 group-hover:text-sky-400 transition-colors">Auf GitHub ansehen &rarr;</span>
+        </div>
+      </a>
+
+      <a href="https://github.com/fjaeckel/ninerlog-dockerized" target="_blank" rel="noopener noreferrer"
+         class="group p-6 bg-white dark:bg-navy-800 border border-slate-200 dark:border-navy-700 rounded-xl hover:border-sky-500 dark:hover:border-sky-500 transition-colors reveal reveal-delay-3">
+        <span class="font-semibold text-slate-800 dark:text-white">ninerlog-dockerized</span>
+        <p class="mt-3 text-sm text-slate-600 dark:text-slate-300 mb-4">Docker Compose zum <a href="/de/selbst-hosten" class="text-sky-500">Selbsthosten</a>. Fertige Images, TLS, kein Build n&ouml;tig.</p>
+        <div class="flex items-center gap-4 text-xs text-slate-500 dark:text-slate-400">
+          <span>MIT</span>
+          <span class="text-sky-500 group-hover:text-sky-400 transition-colors">Auf GitHub ansehen &rarr;</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     MITMACHEN
+     ============================================================ -->
+<section class="bg-slate-50 dark:bg-navy-900 py-16 lg:py-24">
+  <div class="max-w-3xl mx-auto px-4">
+    <h2 class="text-2xl lg:text-3xl font-bold tracking-tight text-slate-800 dark:text-white mb-6 reveal">
+      Mitmachen &mdash; gerade beim Deutschen.
+    </h2>
+    <div class="prose prose-slate prose-lg dark:prose-invert max-w-none reveal reveal-delay-1">
+      <p>
+        NinerLog wird von einer einzelnen Person entwickelt, die seit 2018 selbst fliegt. Entsprechend viel gibt es zu tun, und Beitr&auml;ge sind ausdr&uuml;cklich erw&uuml;nscht &mdash; nicht nur Code.
+      </p>
+      <p>
+        Besonders hilfreich ist Fachsprache: Ob ein Begriff im Vereinsalltag wirklich so hei&szlig;t, wei&szlig; man nur, wenn man ihn benutzt. Wenn dir in der deutschen Oberfl&auml;che etwas schief vorkommt, ist ein kurzer Hinweis auf GitHub schon ein Beitrag.
+      </p>
+      <p>
+        Ebenso wertvoll: Hinweise auf falsch ausgelegte Regelungen, Fehlerberichte und Erfahrungen aus dem Segelflug- und UL-Betrieb.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CTA
+     ============================================================ -->
+<section class="bg-navy-900 py-16 lg:py-24">
+  <div class="max-w-3xl mx-auto px-4 text-center">
+    <h2 class="text-3xl lg:text-4xl font-bold tracking-tight text-white mb-6 reveal">
+      Erst ansehen, dann vertrauen.
+    </h2>
+    <p class="text-lg text-slate-300 leading-relaxed mb-8 reveal reveal-delay-1">
+      Der Code ist offen, das Flugbuch ist kostenlos, und der Export steht dir jederzeit offen.
+    </p>
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 reveal reveal-delay-2">
+      <a href="https://app.ninerlog.com/register"
+         class="inline-flex items-center gap-2 px-8 py-4 bg-linear-to-r from-amber-400 to-amber-500 text-navy-900 font-semibold text-lg rounded-full shadow-lg shadow-amber-400/30 hover:shadow-xl hover:shadow-amber-400/40 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-navy-900">
+        Kostenlos loslegen
+      </a>
+      <a href="/de/flugbuch"
+         class="inline-flex items-center gap-2 px-6 py-3 border border-white/20 text-white rounded-full hover:bg-white/10 hover:border-white/30 transition-all duration-200 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-white/50">
+        Alle Funktionen &rarr;
+      </a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

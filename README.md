@@ -22,16 +22,26 @@ npm run build     # Production build → _site/
 
 ```
 src/
-├── pages/          # Nunjucks page templates → _site/*.html
-│   ├── index.njk        # Landing page
-│   ├── features.njk     # Features page
-│   ├── open-source.njk  # Open Source page
-│   ├── donate.njk       # Donate page
-│   ├── about.njk        # About page
-│   ├── privacy.njk      # Privacy Policy
-│   ├── terms.njk        # Terms of Service
-│   ├── imprint.njk      # Impressum
-│   └── 404.njk          # Custom 404
+├── pages/          # Nunjucks page templates → _site/*.html (subdirs preserved)
+│   ├── index.njk               # Landing page
+│   ├── features.njk            # Features page
+│   ├── easa-logbook.njk        # EASA currency landing page
+│   ├── faa-logbook.njk         # FAA currency landing page
+│   ├── free-pilot-logbook.njk  # No-subscription landing page
+│   ├── self-hosted.njk         # Self-hosting / flying club landing page
+│   ├── import-export.njk       # Import & export landing page
+│   ├── open-source.njk         # Open Source page
+│   ├── donate.njk              # Donate page
+│   ├── about.njk               # About page
+│   ├── privacy.njk             # Privacy Policy
+│   ├── terms.njk               # Terms of Service
+│   ├── imprint.njk             # Impressum
+│   ├── 404.njk                 # Custom 404
+│   └── de/                     # German pages → _site/de/*.html
+│       ├── flugbuch.njk
+│       ├── open-source-flugbuch.njk
+│       ├── vereinsflugbuch.njk
+│       └── selbst-hosten.njk
 ├── layouts/
 │   └── base.njk         # Base HTML shell
 ├── partials/
@@ -46,9 +56,27 @@ src/
 
 1. Create `src/pages/new-page.njk` extending `layouts/base.njk`
 2. Set page metadata variables (`pageTitle`, `pageDescription`, `pagePath`)
-3. Update nav links in `src/partials/header.njk`
+3. Update nav links in `src/partials/header.njk` and `src/partials/footer.njk`
 4. Update `sitemap.xml`
 5. Run `npm run build`
+
+## Languages (EN / DE)
+
+German pages live in `src/pages/de/` and build to `_site/de/*.html`. A page
+declares its language and its counterpart with page variables:
+
+| Variable | Purpose |
+|---|---|
+| `pageLang` | `"de"` on German pages; sets `<html lang>`, `og:locale`, and switches nav/footer labels |
+| `altDe` | On an **English** page: path of its German counterpart |
+| `altEn` | On a **German** page: path of its English counterpart |
+| `skipToContentLabel` | Translated skip link text |
+
+`altDe` / `altEn` drive the `hreflang` block in `src/partials/head.njk`. They are
+emitted **only** when a genuine counterpart exists — hreflang must be reciprocal
+and point at real equivalents, so a page with no translation (e.g.
+`/de/vereinsflugbuch`) deliberately emits none. Keep `sitemap.xml`'s
+`xhtml:link` alternates in sync when adding a pair.
 
 ## Deployment
 

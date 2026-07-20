@@ -1,0 +1,242 @@
+{% set pageTitle = "Self-Hosted Pilot Logbook — Docker, Club-Ready | NinerLog" %}
+{% set pageDescription = "Run your own pilot logbook on your own server. Docker Compose, pre-built images, PostgreSQL, built-in admin panel for flying clubs, and backups to storage you own." %}
+{% set pagePath = "/self-hosted" %}
+{% set altDe = "/de/selbst-hosten" %}
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<section class="relative bg-linear-to-br from-navy-900 via-navy-800 to-navy-950 py-16 lg:py-24 overflow-hidden">
+  <div class="absolute inset-0 bg-topo-pattern pointer-events-none" aria-hidden="true"></div>
+  <div class="max-w-6xl mx-auto px-4 text-center relative z-10">
+    <div class="mb-4 reveal">
+      <span class="freq-badge">
+        <span class="inline-block w-1.5 h-1.5 rounded-full bg-sky-400 animate-blink"></span>
+        DOCKER COMPOSE &bull; MIT &amp; AGPL-3.0
+      </span>
+    </div>
+    <h1 class="text-4xl lg:text-5xl font-extrabold tracking-tight text-white text-balance reveal reveal-delay-1">
+      Self-Hosted Pilot Logbook
+    </h1>
+    <p class="mt-6 text-lg text-slate-300 leading-relaxed max-w-2xl mx-auto reveal reveal-delay-2">
+      The same logbook, on a machine you control. For pilots who would rather own the box, and for clubs who need to.
+    </p>
+  </div>
+  <div class="absolute bottom-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-sky-500/20 to-transparent" aria-hidden="true"></div>
+</section>
+
+<!-- ============================================================
+     QUICK START
+     ============================================================ -->
+<section class="bg-white dark:bg-navy-950 py-16 lg:py-24">
+  <div class="max-w-3xl mx-auto px-4">
+    <h2 class="text-2xl lg:text-3xl font-bold tracking-tight text-slate-800 dark:text-white mb-6 reveal">
+      Four commands.
+    </h2>
+    <div class="prose prose-slate prose-lg dark:prose-invert max-w-none reveal reveal-delay-1">
+      <p>
+        The deployment repository pulls pre-built images from GitHub Container Registry, so there is no build step and no registry login:
+      </p>
+      <div class="not-prose rounded-lg border border-navy-700 dark:border-navy-600 overflow-hidden">
+        <div class="flex items-center justify-between px-4 py-2 bg-navy-800 border-b border-navy-700 dark:border-navy-600">
+          <span class="font-mono text-xs text-slate-400 tracking-wide">bash</span>
+          <button type="button"
+                  class="group copy-btn inline-flex items-center gap-1.5 text-xs font-medium text-slate-400 hover:text-white transition-colors rounded-sm focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-sky-400"
+                  data-copy="git clone https://github.com/fjaeckel/ninerlog-dockerized.git&#10;cd ninerlog-dockerized&#10;cp .env.example .env   # set JWT_SECRET, REFRESH_SECRET, POSTGRES_PASSWORD&#10;docker compose up -d"
+                  data-copied-label="Copied"
+                  aria-label="Copy commands to clipboard">
+            <svg class="copy-icon w-3.5 h-3.5 group-[.copied]:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+            <svg class="check-icon w-3.5 h-3.5 hidden group-[.copied]:block text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+            <span class="copy-label">Copy</span>
+          </button>
+        </div>
+        <pre class="bg-navy-950 text-slate-300 text-sm p-4 overflow-x-auto"><code>git clone https://github.com/fjaeckel/ninerlog-dockerized.git
+cd ninerlog-dockerized
+cp .env.example .env   # set JWT_SECRET, REFRESH_SECRET, POSTGRES_PASSWORD
+docker compose up -d</code></pre>
+      </div>
+      <p>
+        That brings up the Go API, the nginx-served frontend, PostgreSQL with TLS, a Certbot container for certificates, and a scheduled <code>pg_dump</code> backup job. Visit the host in a browser and you have a working logbook.
+      </p>
+    </div>
+
+    <div class="mt-10 reveal reveal-delay-2">
+      <h3 class="text-sm font-semibold text-slate-800 dark:text-white uppercase tracking-wider mb-4">Configuration guides</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <a href="https://github.com/fjaeckel/ninerlog-dockerized/blob/main/docs/CONFIGURATION.md" target="_blank" rel="noopener noreferrer"
+           class="flex items-center justify-between px-4 py-3 bg-slate-50 dark:bg-navy-800 border border-slate-200 dark:border-navy-700 rounded-lg text-sm text-slate-700 dark:text-slate-300 hover:border-sky-500 dark:hover:border-sky-500 transition-colors">
+          Configuration reference (all env vars)
+          <svg class="w-4 h-4 text-slate-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+        </a>
+        <a href="https://github.com/fjaeckel/ninerlog-dockerized/blob/main/docs/HTTPS.md" target="_blank" rel="noopener noreferrer"
+           class="flex items-center justify-between px-4 py-3 bg-slate-50 dark:bg-navy-800 border border-slate-200 dark:border-navy-700 rounded-lg text-sm text-slate-700 dark:text-slate-300 hover:border-sky-500 dark:hover:border-sky-500 transition-colors">
+          HTTPS setup with Let&rsquo;s Encrypt
+          <svg class="w-4 h-4 text-slate-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+        </a>
+        <a href="https://github.com/fjaeckel/ninerlog-dockerized/blob/main/docs/BACKUPS.md" target="_blank" rel="noopener noreferrer"
+           class="flex items-center justify-between px-4 py-3 bg-slate-50 dark:bg-navy-800 border border-slate-200 dark:border-navy-700 rounded-lg text-sm text-slate-700 dark:text-slate-300 hover:border-sky-500 dark:hover:border-sky-500 transition-colors">
+          Database backups
+          <svg class="w-4 h-4 text-slate-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+        </a>
+        <a href="https://github.com/fjaeckel/ninerlog-dockerized/blob/main/docs/CLOUD_BACKUPS.md" target="_blank" rel="noopener noreferrer"
+           class="flex items-center justify-between px-4 py-3 bg-slate-50 dark:bg-navy-800 border border-slate-200 dark:border-navy-700 rounded-lg text-sm text-slate-700 dark:text-slate-300 hover:border-sky-500 dark:hover:border-sky-500 transition-colors">
+          Per-user cloud backups (S3, SFTP, WebDAV)
+          <svg class="w-4 h-4 text-slate-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+        </a>
+        <a href="https://github.com/fjaeckel/ninerlog-dockerized/blob/main/docs/PASSKEYS.md" target="_blank" rel="noopener noreferrer"
+           class="flex items-center justify-between px-4 py-3 bg-slate-50 dark:bg-navy-800 border border-slate-200 dark:border-navy-700 rounded-lg text-sm text-slate-700 dark:text-slate-300 hover:border-sky-500 dark:hover:border-sky-500 transition-colors">
+          Enabling passkeys (WebAuthn)
+          <svg class="w-4 h-4 text-slate-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+        </a>
+        <a href="https://github.com/fjaeckel/ninerlog-dockerized/blob/main/docs/MONITORING.md" target="_blank" rel="noopener noreferrer"
+           class="flex items-center justify-between px-4 py-3 bg-slate-50 dark:bg-navy-800 border border-slate-200 dark:border-navy-700 rounded-lg text-sm text-slate-700 dark:text-slate-300 hover:border-sky-500 dark:hover:border-sky-500 transition-colors">
+          Monitoring with Prometheus
+          <svg class="w-4 h-4 text-slate-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+        </a>
+        <a href="https://github.com/fjaeckel/ninerlog-dockerized/blob/main/docs/UPGRADING.md" target="_blank" rel="noopener noreferrer"
+           class="flex items-center justify-between px-4 py-3 bg-slate-50 dark:bg-navy-800 border border-slate-200 dark:border-navy-700 rounded-lg text-sm text-slate-700 dark:text-slate-300 hover:border-sky-500 dark:hover:border-sky-500 transition-colors sm:col-span-2">
+          Upgrading to new releases
+          <svg class="w-4 h-4 text-slate-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+        </a>
+      </div>
+      <p class="mt-4 text-sm text-slate-500 dark:text-slate-400">
+        <a href="https://github.com/fjaeckel/ninerlog-dockerized/tree/main/docs" target="_blank" rel="noopener noreferrer" class="text-sky-500 hover:text-sky-400">Browse all deployment docs on GitHub &rarr;</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WHAT YOU GET
+     ============================================================ -->
+<section class="bg-slate-50 dark:bg-navy-900 py-16 lg:py-24">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="text-center mb-12 lg:mb-16">
+      <h2 class="text-3xl lg:text-4xl font-bold tracking-tight text-slate-800 dark:text-white reveal">
+        The whole stack, not a stripped-down edition.
+      </h2>
+      <p class="mt-4 text-lg text-slate-500 dark:text-slate-400 max-w-2xl mx-auto reveal reveal-delay-1">
+        The self-hosted build is the same code that runs the hosted service &mdash; plus the club features that only make sense on your own instance.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+      <div class="group p-6 bg-white dark:bg-navy-800 border border-slate-200 dark:border-navy-700 rounded-xl hover:shadow-lg hover:-translate-y-1 transition-all duration-200 reveal reveal-delay-1">
+        <h3 class="text-lg font-semibold text-slate-800 dark:text-white mb-2">Every feature</h3>
+        <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Currency tracking, instructor signing, import and export, reports, passkeys and 2FA. Nothing is reserved for a cloud tier, because there is no cloud tier.</p>
+      </div>
+      <div class="group p-6 bg-white dark:bg-navy-800 border border-slate-200 dark:border-navy-700 rounded-xl hover:shadow-lg hover:-translate-y-1 transition-all duration-200 reveal reveal-delay-2">
+        <h3 class="text-lg font-semibold text-slate-800 dark:text-white mb-2">Your database</h3>
+        <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">PostgreSQL with versioned migrations, running on your host with TLS. You can query it, dump it, and move it whenever you like.</p>
+      </div>
+      <div class="group p-6 bg-white dark:bg-navy-800 border border-slate-200 dark:border-navy-700 rounded-xl hover:shadow-lg hover:-translate-y-1 transition-all duration-200 reveal reveal-delay-3">
+        <h3 class="text-lg font-semibold text-slate-800 dark:text-white mb-2">Backups you own</h3>
+        <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Scheduled offsite backups to any S3-compatible bucket, SFTP server or WebDAV share. Your storage, your credentials, your retention policy.</p>
+      </div>
+      <div class="group p-6 bg-white dark:bg-navy-800 border border-slate-200 dark:border-navy-700 rounded-xl hover:shadow-lg hover:-translate-y-1 transition-all duration-200 reveal reveal-delay-4">
+        <h3 class="text-lg font-semibold text-slate-800 dark:text-white mb-2">A documented API</h3>
+        <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">The REST API ships with an OpenAPI specification, so anything you want to automate against your own instance, you can.</p>
+      </div>
+      <div class="group p-6 bg-white dark:bg-navy-800 border border-slate-200 dark:border-navy-700 rounded-xl hover:shadow-lg hover:-translate-y-1 transition-all duration-200 reveal reveal-delay-5">
+        <h3 class="text-lg font-semibold text-slate-800 dark:text-white mb-2">No phone home</h3>
+        <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Your instance does not need us. There is no licence server to check in with and no account to keep active.</p>
+      </div>
+      <div class="group p-6 bg-white dark:bg-navy-800 border border-slate-200 dark:border-navy-700 rounded-xl hover:shadow-lg hover:-translate-y-1 transition-all duration-200 reveal reveal-delay-6">
+        <h3 class="text-lg font-semibold text-slate-800 dark:text-white mb-2">Readable source</h3>
+        <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Go API under AGPL-3.0, React frontend and deployment repo under MIT. Audit it before you trust your members&rsquo; records to it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FLYING CLUBS
+     ============================================================ -->
+<section class="bg-white dark:bg-navy-950 py-16 lg:py-24">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <img src="/images/feature-flying-club.png" alt="NinerLog admin console showing a flying club member roster with account status, 2FA, and flight counts" class="rounded-xl shadow-xl w-full order-last lg:order-none" loading="lazy" width="1200" height="675" />
+      <div class="reveal">
+        <span class="freq-badge mb-4">
+          <span class="inline-block w-1.5 h-1.5 rounded-full bg-amber-400 animate-blink"></span>
+          CLUB-READY
+        </span>
+        <h2 class="text-2xl lg:text-3xl font-bold tracking-tight text-slate-800 dark:text-white mb-4 mt-3">One instance, every member&rsquo;s own logbook</h2>
+        <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
+          Flying clubs and schools are the reason the self-hosted mode exists. Run one instance for the whole club and each pilot gets their own private logbook on it &mdash; while the committee gets the administration it needs, without anyone touching the database by hand.
+        </p>
+        <ul class="space-y-3">
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-emerald-500 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            <span class="text-slate-600 dark:text-slate-300"><strong>Built-in admin panel.</strong> Invite, enable, disable and reset members from one screen</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-emerald-500 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            <span class="text-slate-600 dark:text-slate-300"><strong>Separate logbooks.</strong> The admin screens cover accounts and totals &mdash; there is no view that opens up another member&rsquo;s flight entries</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-emerald-500 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            <span class="text-slate-600 dark:text-slate-300"><strong>Announcements.</strong> Club notices, maintenance windows and safety updates land on members&rsquo; dashboards</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-emerald-500 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            <span class="text-slate-600 dark:text-slate-300"><strong>Instructors on the same instance.</strong> Training flights get signed and locked without members leaving the club&rsquo;s server</span>
+          </li>
+        </ul>
+        <p class="mt-6 text-sm text-slate-500 dark:text-slate-400">
+          German-speaking club? <a href="/de/vereinsflugbuch" class="text-sky-600 dark:text-sky-400 hover:underline">Diese Seite auf Deutsch &rarr;</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     HONEST NOTE
+     ============================================================ -->
+<section class="bg-slate-50 dark:bg-navy-900 py-16 lg:py-24">
+  <div class="max-w-3xl mx-auto px-4">
+    <div class="p-6 lg:p-8 bg-amber-500/5 border border-amber-500/30 rounded-xl reveal">
+      <h2 class="text-xl lg:text-2xl font-bold tracking-tight text-slate-800 dark:text-white mb-4">
+        Should you actually self-host?
+      </h2>
+      <div class="prose prose-slate dark:prose-invert max-w-none">
+        <p>
+          Honestly: for most individual pilots, no. You&rsquo;d own the uptime, certificates, Postgres upgrades and backups for a legal record you can&rsquo;t afford to lose &mdash; the <a href="https://app.ninerlog.com">hosted version</a> is the same code without that work. It earns its keep for a club or org with a reason to want the data on its own infrastructure.
+        </p>
+        <p class="mb-0">
+          One caveat for club members: whoever runs the server can access the database underneath it. Logbooks stay separate in the app, but self-hosting means trusting your admin instead of us &mdash; worth knowing, not a reason to avoid it.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CTA
+     ============================================================ -->
+<section class="bg-navy-900 py-16 lg:py-24">
+  <div class="max-w-3xl mx-auto px-4 text-center">
+    <h2 class="text-3xl lg:text-4xl font-bold tracking-tight text-white mb-6 reveal">
+      Run it yourself.
+    </h2>
+    <p class="text-lg text-slate-300 leading-relaxed mb-8 reveal reveal-delay-1">
+      Deployment repository, environment reference and upgrade notes are all on GitHub.
+    </p>
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 reveal reveal-delay-2">
+      <a href="https://github.com/fjaeckel/ninerlog-dockerized" target="_blank" rel="noopener noreferrer"
+         class="inline-flex items-center gap-2 px-8 py-4 bg-linear-to-r from-amber-400 to-amber-500 text-navy-900 font-semibold text-lg rounded-full shadow-lg shadow-amber-400/30 hover:shadow-xl hover:shadow-amber-400/40 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-navy-900">
+        ninerlog-dockerized on GitHub &rarr;
+      </a>
+      <a href="/open-source"
+         class="inline-flex items-center gap-2 px-6 py-3 border border-white/20 text-white rounded-full hover:bg-white/10 hover:border-white/30 transition-all duration-200 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-white/50">
+        How the stack fits together
+      </a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
