@@ -56,9 +56,15 @@ src/
 
 1. Create `src/pages/new-page.njk` extending `layouts/base.njk`
 2. Set page metadata variables (`pageTitle`, `pageDescription`, `pagePath`)
-3. Update nav links in `src/partials/header.njk` and `src/partials/footer.njk`
-4. Update `sitemap.xml`
+3. Set `sitemapChangefreq` and `sitemapPriority` — the build fails without them,
+   so a page cannot silently go missing from the sitemap
+4. Update nav links in `src/partials/header.njk` and `src/partials/footer.njk`
 5. Run `npm run build`
+
+`sitemap.xml` is generated from the pages by `scripts/generate-sitemap.mjs` and
+written to `_site/`; it is not checked in. `<lastmod>` comes from the last commit
+touching each page file, which is why CI checks out full history. To exclude a
+page from the sitemap entirely, add it to `EXCLUDED` in that script (as `404.njk` is).
 
 ## Languages (EN / DE)
 
@@ -75,8 +81,13 @@ declares its language and its counterpart with page variables:
 `altDe` / `altEn` drive the `hreflang` block in `src/partials/head.njk`. They are
 emitted **only** when a genuine counterpart exists — hreflang must be reciprocal
 and point at real equivalents, so a page with no translation (e.g.
-`/de/vereinsflugbuch`) deliberately emits none. Keep `sitemap.xml`'s
-`xhtml:link` alternates in sync when adding a pair.
+`/de/vereinsflugbuch`) deliberately emits none.
+
+The sitemap's `xhtml:link` alternates are derived from the same variables, so
+they cannot drift from the page markup. The generator also enforces reciprocity:
+if one page of a pair declares its counterpart and the counterpart does not
+declare it back, the build fails rather than shipping an annotation that search
+engines would discard.
 
 ## Deployment
 
