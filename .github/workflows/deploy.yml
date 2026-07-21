@@ -19,6 +19,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
+        with:
+          # Full history: the sitemap derives <lastmod> from the last commit
+          # touching each page. A shallow clone would date every page to the
+          # most recent deploy, telling search engines the whole site changes
+          # on every push.
+          fetch-depth: 0
       - uses: actions/setup-node@v7
         with:
           node-version: 26
@@ -51,11 +57,13 @@ jobs:
       HOST: ninerlog.com
       KEY: b800d4dc908c442cbb0ef2112f93e191
     steps:
-      - uses: actions/checkout@v7
+      # The sitemap is generated at build time and no longer exists in the
+      # repo, so read it from the site that was just published. This also
+      # means we only ever submit URLs that are genuinely live.
       - name: Submit sitemap URLs to IndexNow
         run: |
           set -euo pipefail
-          urls=$(grep -oP '(?<=<loc>)[^<]+' sitemap.xml | jq -R . | jq -s .)
+          urls=$(curl -sSf "https://$HOST/sitemap.xml" | grep -oP '(?<=<loc>)[^<]+' | jq -R . | jq -s .)
           count=$(printf '%s' "$urls" | jq length)
           echo "Submitting $count URL(s) to IndexNow"
           payload=$(jq -n \
