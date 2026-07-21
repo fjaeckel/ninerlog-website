@@ -45,7 +45,7 @@
           <span class="font-mono text-xs text-slate-400 tracking-wide">bash</span>
           <button type="button"
                   class="group copy-btn inline-flex items-center gap-1.5 text-xs font-medium text-slate-400 hover:text-white transition-colors rounded-sm focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-sky-400"
-                  data-copy="git clone https://github.com/fjaeckel/ninerlog-dockerized.git&#10;cd ninerlog-dockerized&#10;cp .env.example .env   # set JWT_SECRET, REFRESH_SECRET, POSTGRES_PASSWORD&#10;docker compose up -d"
+                  data-copy="git clone https://github.com/fjaeckel/ninerlog.git&#10;cd ninerlog&#10;cp .env.example .env   # set JWT_SECRET, REFRESH_SECRET, POSTGRES_PASSWORD&#10;docker compose up -d"
                   data-copied-label="Copied"
                   aria-label="Copy commands to clipboard">
             <svg class="copy-icon w-3.5 h-3.5 group-[.copied]:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
@@ -53,8 +53,8 @@
             <span class="copy-label">Copy</span>
           </button>
         </div>
-        <pre class="bg-navy-950 text-slate-300 text-sm p-4 overflow-x-auto"><code>git clone https://github.com/fjaeckel/ninerlog-dockerized.git
-cd ninerlog-dockerized
+        <pre class="bg-navy-950 text-slate-300 text-sm p-4 overflow-x-auto"><code>git clone https://github.com/fjaeckel/ninerlog.git
+cd ninerlog
 cp .env.example .env   # set JWT_SECRET, REFRESH_SECRET, POSTGRES_PASSWORD
 docker compose up -d</code></pre>
       </div>
@@ -66,44 +66,44 @@ docker compose up -d</code></pre>
     <div class="mt-10 reveal reveal-delay-2">
       <h3 class="text-sm font-semibold text-slate-800 dark:text-white uppercase tracking-wider mb-4">Configuration guides</h3>
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-        <a href="https://github.com/fjaeckel/ninerlog-dockerized/blob/main/docs/CONFIGURATION.md" target="_blank" rel="noopener noreferrer"
+        <a href="https://github.com/fjaeckel/ninerlog/blob/main/docs/CONFIGURATION.md" target="_blank" rel="noopener noreferrer"
            class="flex items-center justify-between px-4 py-3 bg-slate-50 dark:bg-navy-800 border border-slate-200 dark:border-navy-700 rounded-lg text-sm text-slate-700 dark:text-slate-300 hover:border-sky-500 dark:hover:border-sky-500 transition-colors">
           Configuration reference (all env vars)
           <svg class="w-4 h-4 text-slate-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
         </a>
-        <a href="https://github.com/fjaeckel/ninerlog-dockerized/blob/main/docs/HTTPS.md" target="_blank" rel="noopener noreferrer"
+        <a href="https://github.com/fjaeckel/ninerlog/blob/main/docs/HTTPS.md" target="_blank" rel="noopener noreferrer"
            class="flex items-center justify-between px-4 py-3 bg-slate-50 dark:bg-navy-800 border border-slate-200 dark:border-navy-700 rounded-lg text-sm text-slate-700 dark:text-slate-300 hover:border-sky-500 dark:hover:border-sky-500 transition-colors">
           HTTPS setup with Let&rsquo;s Encrypt
           <svg class="w-4 h-4 text-slate-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
         </a>
-        <a href="https://github.com/fjaeckel/ninerlog-dockerized/blob/main/docs/BACKUPS.md" target="_blank" rel="noopener noreferrer"
+        <a href="https://github.com/fjaeckel/ninerlog/blob/main/docs/BACKUPS.md" target="_blank" rel="noopener noreferrer"
            class="flex items-center justify-between px-4 py-3 bg-slate-50 dark:bg-navy-800 border border-slate-200 dark:border-navy-700 rounded-lg text-sm text-slate-700 dark:text-slate-300 hover:border-sky-500 dark:hover:border-sky-500 transition-colors">
           Database backups
           <svg class="w-4 h-4 text-slate-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
         </a>
-        <a href="https://github.com/fjaeckel/ninerlog-dockerized/blob/main/docs/CLOUD_BACKUPS.md" target="_blank" rel="noopener noreferrer"
+        <a href="https://github.com/fjaeckel/ninerlog/blob/main/docs/CLOUD_BACKUPS.md" target="_blank" rel="noopener noreferrer"
            class="flex items-center justify-between px-4 py-3 bg-slate-50 dark:bg-navy-800 border border-slate-200 dark:border-navy-700 rounded-lg text-sm text-slate-700 dark:text-slate-300 hover:border-sky-500 dark:hover:border-sky-500 transition-colors">
           Per-user cloud backups (S3, SFTP, WebDAV)
           <svg class="w-4 h-4 text-slate-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
         </a>
-        <a href="https://github.com/fjaeckel/ninerlog-dockerized/blob/main/docs/PASSKEYS.md" target="_blank" rel="noopener noreferrer"
+        <a href="https://github.com/fjaeckel/ninerlog/blob/main/docs/PASSKEYS.md" target="_blank" rel="noopener noreferrer"
            class="flex items-center justify-between px-4 py-3 bg-slate-50 dark:bg-navy-800 border border-slate-200 dark:border-navy-700 rounded-lg text-sm text-slate-700 dark:text-slate-300 hover:border-sky-500 dark:hover:border-sky-500 transition-colors">
           Enabling passkeys (WebAuthn)
           <svg class="w-4 h-4 text-slate-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
         </a>
-        <a href="https://github.com/fjaeckel/ninerlog-dockerized/blob/main/docs/MONITORING.md" target="_blank" rel="noopener noreferrer"
+        <a href="https://github.com/fjaeckel/ninerlog/blob/main/docs/MONITORING.md" target="_blank" rel="noopener noreferrer"
            class="flex items-center justify-between px-4 py-3 bg-slate-50 dark:bg-navy-800 border border-slate-200 dark:border-navy-700 rounded-lg text-sm text-slate-700 dark:text-slate-300 hover:border-sky-500 dark:hover:border-sky-500 transition-colors">
           Monitoring with Prometheus
           <svg class="w-4 h-4 text-slate-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
         </a>
-        <a href="https://github.com/fjaeckel/ninerlog-dockerized/blob/main/docs/UPGRADING.md" target="_blank" rel="noopener noreferrer"
+        <a href="https://github.com/fjaeckel/ninerlog/blob/main/docs/UPGRADING.md" target="_blank" rel="noopener noreferrer"
            class="flex items-center justify-between px-4 py-3 bg-slate-50 dark:bg-navy-800 border border-slate-200 dark:border-navy-700 rounded-lg text-sm text-slate-700 dark:text-slate-300 hover:border-sky-500 dark:hover:border-sky-500 transition-colors sm:col-span-2">
           Upgrading to new releases
           <svg class="w-4 h-4 text-slate-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
         </a>
       </div>
       <p class="mt-4 text-sm text-slate-500 dark:text-slate-400">
-        <a href="https://github.com/fjaeckel/ninerlog-dockerized/tree/main/docs" target="_blank" rel="noopener noreferrer" class="text-sky-500 hover:text-sky-400">Browse all deployment docs on GitHub &rarr;</a>
+        <a href="https://github.com/fjaeckel/ninerlog/tree/main/docs" target="_blank" rel="noopener noreferrer" class="text-sky-500 hover:text-sky-400">Browse all deployment docs on GitHub &rarr;</a>
       </p>
     </div>
   </div>
@@ -227,9 +227,9 @@ docker compose up -d</code></pre>
       Deployment repository, environment reference and upgrade notes are all on GitHub.
     </p>
     <div class="flex flex-col sm:flex-row items-center justify-center gap-4 reveal reveal-delay-2">
-      <a href="https://github.com/fjaeckel/ninerlog-dockerized" target="_blank" rel="noopener noreferrer"
+      <a href="https://github.com/fjaeckel/ninerlog" target="_blank" rel="noopener noreferrer"
          class="inline-flex items-center gap-2 px-8 py-4 bg-linear-to-r from-amber-400 to-amber-500 text-navy-900 font-semibold text-lg rounded-full shadow-lg shadow-amber-400/30 hover:shadow-xl hover:shadow-amber-400/40 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-navy-900">
-        ninerlog-dockerized on GitHub &rarr;
+        ninerlog on GitHub &rarr;
       </a>
       <a href="/open-source"
          class="inline-flex items-center gap-2 px-6 py-3 border border-white/20 text-white rounded-full hover:bg-white/10 hover:border-white/30 transition-all duration-200 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-white/50">
