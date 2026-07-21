@@ -12,7 +12,7 @@
          GERMAN VERSION
          ============================================================ -->
     <h1>Datenschutzerkl&auml;rung</h1>
-    <p class="text-sm text-slate-500 dark:text-slate-400">Stand: April 2026</p>
+    <p class="text-sm text-slate-500 dark:text-slate-400">Stand: Juli 2026</p>
 
     <h2>1. Verantwortlicher</h2>
     <p>
@@ -33,7 +33,7 @@
     <ul>
       <li><strong>Kontodaten:</strong> E-Mail-Adresse und gehashtes Passwort bei der Registrierung</li>
       <li><strong>Flugbuchdaten:</strong> Flugeintr&auml;ge, Luftfahrzeuge, Lizenzen, Berechtigungen und zugeh&ouml;rige Daten, die Sie anlegen</li>
-      <li><strong>Nutzungsanalyse:</strong> Anonyme, cookiefreie Seitenaufrufe (via Plausible/Umami &mdash; keine personenbezogenen Daten)</li>
+      <li><strong>Nutzungsanalyse:</strong> Anonyme, cookiefreie Seitenaufrufe (via Ridiculytics, selbst gehostet &mdash; siehe Abschnitt 10)</li>
       <li><strong>Server-Logfiles:</strong> Beim Aufruf unserer Website erhebt der Hostinganbieter automatisch Informationen in Server-Logfiles (Browsertyp, Betriebssystem, Referrer-URL, IP-Adresse, Uhrzeit). Diese Daten sind nicht bestimmten Personen zuordenbar und werden nach 7 Tagen automatisch gel&ouml;scht.</li>
     </ul>
     <p>Wir erheben <strong>nicht</strong>:</p>
@@ -68,6 +68,10 @@
     <p>
       Die NinerLog-Anwendung und Datenbank werden auf Servern von <strong>OVH</strong> (OVH GmbH, St. Johanner Str. 41-43, 66111 Saarbr&uuml;cken, Deutschland) in der EU gehostet. Ihre Flugbuchdaten verlassen den europ&auml;ischen Wirtschaftsraum nicht.
     </p>
+    <h3>Content Delivery Network (jsDelivr)</h3>
+    <p>
+      Das Analyse-Skript (siehe Abschnitt 10) wird &uuml;ber das &ouml;ffentliche CDN <strong>jsDelivr</strong> (cdn.jsdelivr.net) ausgeliefert. Beim Laden des Skripts &uuml;bermittelt Ihr Browser technisch zwingend Ihre IP-Adresse und Ihren User-Agent an den CDN-Betreiber; ohne diese &Uuml;bermittlung kann keine Datei abgerufen werden. Wir haben auf die Verarbeitung durch den CDN-Betreiber keinen Einfluss und erhalten von dort keine Daten. Das Skript ist auf eine feste Version mit Subresource-Integrity-Pr&uuml;fsumme festgelegt, sodass ver&auml;nderter Code vom Browser abgelehnt wird. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (sichere und effiziente Auslieferung). Weitere Informationen: <a href="https://www.jsdelivr.com/terms/privacy-policy" target="_blank" rel="noopener noreferrer">Datenschutzerkl&auml;rung von jsDelivr</a>.
+    </p>
 
     <h2>7. Datensicherheit</h2>
     <p>
@@ -90,9 +94,25 @@
       Technisch notwendige Cookies werden auf Basis von Art. 6 Abs. 1 lit. f DSGVO gesetzt. Ein Cookie-Banner ist nicht erforderlich, da keine einwilligungsbed&uuml;rftigen Cookies verwendet werden.
     </p>
 
-    <h2>10. Analyse-Tools</h2>
+    <h2>10. Analyse-Tools (Ridiculytics)</h2>
     <p>
-      Wir verwenden datenschutzfreundliche Analyse-Tools (Plausible oder Umami), die keine Cookies setzen, keine personenbezogenen Daten erheben und vollst&auml;ndig DSGVO-konform sind.
+      Wir verwenden <strong>Ridiculytics</strong>, eine quelloffene Analyse-Software, die wir selbst auf eigener Infrastruktur unter <strong>stats.ninerlog.com</strong> betreiben. Es findet keine &Uuml;bermittlung an einen Analyse-Dienstleister statt. Der Quellcode ist unter <a href="https://github.com/fjaeckel/ridiculytics" target="_blank" rel="noopener noreferrer">github.com/fjaeckel/ridiculytics</a> einsehbar.
+    </p>
+    <p>Bei jedem Seitenaufruf &uuml;bermittelt Ihr Browser an diesen Server:</p>
+    <ul>
+      <li>die aufgerufene Adresse dieser Website</li>
+      <li>die verweisende Seite (Referrer), sofern vorhanden</li>
+      <li>die Breite Ihres Browserfensters</li>
+      <li>die Verweildauer auf der Seite in Sekunden</li>
+    </ul>
+    <p>
+      Zus&auml;tzlich sind IP-Adresse und User-Agent technisch bei jeder HTTP-Anfrage enthalten. Beide werden ausschlie&szlig;lich fl&uuml;chtig im Arbeitsspeicher verarbeitet &mdash; zur Missbrauchsabwehr (Ratenbegrenzung) und um daraus grobe Merkmale wie Browser, Betriebssystem und Ger&auml;teklasse abzuleiten. Sie werden <strong>nicht gespeichert</strong> und nicht protokolliert.
+    </p>
+    <p>
+      Die Software setzt <strong>keine Cookies</strong>, verwendet <strong>kein localStorage</strong>, erstellt <strong>keinen Fingerabdruck</strong> und vergibt <strong>keine dauerhafte oder website&uuml;bergreifende Kennung</strong>. Zur Unterscheidung wiederkehrender Aufrufe wird ein Hashwert mit einem geheimen, alle 24 Stunden automatisch wechselnden Zufallswert (Salt) gebildet; nach dem Wechsel ist eine Zuordnung auch uns selbst dauerhaft unm&ouml;glich. Es entstehen keine personenbezogenen Einzeldatens&auml;tze und keine Nutzerprofile, sondern ausschlie&szlig;lich aggregierte Z&auml;hlerst&auml;nde (z.&nbsp;B. &bdquo;Seite X wurde n-mal aufgerufen&ldquo;).
+    </p>
+    <p>
+      Rechtsgrundlage ist unser berechtigtes Interesse an einer datensparsamen Reichweitenmessung (Art. 6 Abs. 1 lit. f DSGVO). Da keine Informationen in Ihrem Endger&auml;t gespeichert oder ausgelesen werden, ist weder eine Einwilligung nach &sect; 25 TDDDG noch ein Cookie-Banner erforderlich. Sie k&ouml;nnen die Erfassung jederzeit unterbinden, indem Sie Anfragen an <code>stats.ninerlog.com</code> blockieren, etwa mit einem Inhaltsblocker &mdash; die Website funktioniert davon unbeeintr&auml;chtigt.
     </p>
 
     <h2>11. Ihre Rechte (DSGVO)</h2>
@@ -139,7 +159,7 @@
     <hr class="my-12 border-slate-300 dark:border-navy-700" />
 
     <h1>Privacy Policy</h1>
-    <p class="text-sm text-slate-500 dark:text-slate-400">Last updated: April 2026</p>
+    <p class="text-sm text-slate-500 dark:text-slate-400">Last updated: July 2026</p>
 
     <h2>1. Data Controller</h2>
     <p>
@@ -155,7 +175,7 @@
     <ul>
       <li><strong>Account data:</strong> Email address and hashed password when you register</li>
       <li><strong>Flight log data:</strong> Flight records, aircraft, licenses, credentials, and related logbook entries you create</li>
-      <li><strong>Usage analytics:</strong> Anonymous, cookie-free page view analytics (via Plausible/Umami &mdash; no personal data collected)</li>
+      <li><strong>Usage analytics:</strong> Anonymous, cookie-free page view analytics (via self-hosted Ridiculytics &mdash; see section 9)</li>
       <li><strong>Server log files:</strong> When you visit our website, the hosting provider automatically collects information in server log files (browser type, operating system, referrer URL, IP address, time of access). This data cannot be attributed to specific persons and is automatically deleted after 7 days.</li>
     </ul>
     <p>We do <strong>not</strong> collect:</p>
@@ -189,6 +209,10 @@
     <p>
       The NinerLog application and database are hosted on servers by <strong>OVH</strong> (OVH GmbH, Saarbr&uuml;cken, Germany) within the EU. Your flight log data does not leave the European Economic Area.
     </p>
+    <h3>Content delivery network (jsDelivr)</h3>
+    <p>
+      The analytics script (see section 9) is delivered via the public <strong>jsDelivr</strong> CDN (cdn.jsdelivr.net). Loading it necessarily transmits your IP address and user agent to the CDN operator &mdash; no file can be retrieved without it. We have no control over, and receive no data from, that processing. The script is pinned to a fixed version with a Subresource Integrity checksum, so a browser will refuse to execute it if the file is ever altered. Legal basis: Art. 6(1)(f) GDPR (secure and efficient delivery). See the <a href="https://www.jsdelivr.com/terms/privacy-policy" target="_blank" rel="noopener noreferrer">jsDelivr privacy policy</a>.
+    </p>
 
     <h2>6. Data Security</h2>
     <p>
@@ -205,9 +229,25 @@
       This website (ninerlog.com) uses <strong>no cookies</strong>. The NinerLog app (app.ninerlog.com) uses only essential session cookies for authentication &mdash; no tracking cookies, no third-party cookies.
     </p>
 
-    <h2>9. Analytics</h2>
+    <h2>9. Analytics (Ridiculytics)</h2>
     <p>
-      We use privacy-respecting analytics (Plausible or Umami) that do not use cookies, do not collect personal data, and are fully GDPR-compliant without requiring a cookie banner.
+      We use <strong>Ridiculytics</strong>, open-source analytics software we run ourselves on our own infrastructure at <strong>stats.ninerlog.com</strong>. No data is sent to an analytics vendor. The source code is public at <a href="https://github.com/fjaeckel/ridiculytics" target="_blank" rel="noopener noreferrer">github.com/fjaeckel/ridiculytics</a>.
+    </p>
+    <p>On each page view, your browser sends that server:</p>
+    <ul>
+      <li>the address you visited on this website</li>
+      <li>the referring page, if any</li>
+      <li>the width of your browser window</li>
+      <li>how long you stayed on the page, in seconds</li>
+    </ul>
+    <p>
+      Your IP address and user agent are, as with any HTTP request, unavoidably part of the connection. Both are processed transiently in memory only &mdash; for abuse prevention (rate limiting) and to derive coarse attributes such as browser, operating system, and device class. Neither is <strong>stored</strong> or written to a log.
+    </p>
+    <p>
+      The software sets <strong>no cookies</strong>, uses <strong>no localStorage</strong>, performs <strong>no fingerprinting</strong>, and assigns <strong>no persistent or cross-site identifier</strong>. To tell repeat requests apart it derives a hash using a secret random salt that rotates automatically every 24 hours; once it rotates, re-identification is permanently impossible, including for us. No per-visitor records and no user profiles are created &mdash; only aggregate counters (e.g. &ldquo;page X was viewed n times&rdquo;).
+    </p>
+    <p>
+      Legal basis: our legitimate interest in privacy-preserving audience measurement (Art. 6(1)(f) GDPR). Because nothing is stored on or read from your device, neither consent under &sect; 25 TDDDG nor a cookie banner is required. You can opt out at any time by blocking requests to <code>stats.ninerlog.com</code>, for example with a content blocker &mdash; the website works exactly the same either way.
     </p>
 
     <h2>10. Your Rights (GDPR)</h2>
