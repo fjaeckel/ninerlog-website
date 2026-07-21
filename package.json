@@ -11,7 +11,7 @@
     "build": "npm run build:njk && npm run build:css && npm run build:assets && npm run build:cachebust",
     "build:njk": "nunjucks 'pages/**/*.njk' -p src -o _site && cp -R _site/pages/. _site/ && rm -rf _site/pages",
     "build:css": "tailwindcss -i src/input.css -o _site/styles.css --minify",
-    "build:assets": "cp -r images _site/ 2>/dev/null || true && cp favicon.svg favicon.ico apple-touch-icon.png robots.txt sitemap.xml CNAME _site/ 2>/dev/null || true",
+    "build:assets": "cp -r images _site/ 2>/dev/null || true && cp favicon.svg favicon.ico apple-touch-icon.png robots.txt sitemap.xml CNAME b800d4dc908c442cbb0ef2112f93e191.txt _site/ 2>/dev/null || true",
     "build:cachebust": "HASH=$(shasum -a 256 _site/styles.css | cut -c1-10) && find _site -name '*.html' -exec perl -i -pe \"s|/styles\\.css(?![\\?\\w])|/styles.css?v=$HASH|g\" {} +"
   },
   "dependencies": {
