@@ -38,3 +38,40 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v5
+
+  # Notify IndexNow (Bing, Yandex, Seznam, …) only after the site is live.
+  # Runs as a downstream job of `deploy`, so it fires exclusively on a
+  # successful Pages deployment — never on a failed or skipped one.
+  indexnow:
+    needs: deploy
+    runs-on: ubuntu-latest
+    env:
+      # IndexNow keys are public by design (the same value is hosted at
+      # https://ninerlog.com/<key>.txt), so it lives in the workflow, not secrets.
+      HOST: ninerlog.com
+      KEY: b800d4dc908c442cbb0ef2112f93e191
+    steps:
+      - uses: actions/checkout@v7
+      - name: Submit sitemap URLs to IndexNow
+        run: |
+          set -euo pipefail
+          urls=$(grep -oP '(?<=<loc>)[^<]+' sitemap.xml | jq -R . | jq -s .)
+          count=$(printf '%s' "$urls" | jq length)
+          echo "Submitting $count URL(s) to IndexNow"
+          payload=$(jq -n \
+            --arg host "$HOST" \
+            --arg key "$KEY" \
+            --arg keyLocation "https://$HOST/$KEY.txt" \
+            --argjson urlList "$urls" \
+            '{host: $host, key: $key, keyLocation: $keyLocation, urlList: $urlList}')
+          code=$(curl -sS -X POST "https://api.indexnow.org/indexnow" \
+            -H "Content-Type: application/json; charset=utf-8" \
+            --data "$payload" \
+            -o /tmp/indexnow-response.txt -w '%{http_code}')
+          echo "IndexNow responded HTTP $code"
+          cat /tmp/indexnow-response.txt || true
+          # 200 OK and 202 Accepted both mean success; anything >=400 is a real failure.
+          if [ "$code" -ge 400 ]; then
+            echo "::error::IndexNow submission failed with HTTP $code"
+            exit 1
+          fi
