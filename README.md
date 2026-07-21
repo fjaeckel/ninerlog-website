@@ -6,7 +6,7 @@ Public-facing marketing website for [NinerLog](https://ninerlog.com) — the fre
 
 - **Markup:** HTML + [Nunjucks](https://mozilla.github.io/nunjucks/) templates
 - **Styling:** [Tailwind CSS](https://tailwindcss.com/) + [@tailwindcss/typography](https://tailwindcss.com/docs/typography-plugin)
-- **Fonts:** [Fontsource](https://fontsource.org/) via jsdelivr CDN (Plus Jakarta Sans, Inter)
+- **Fonts:** [Fontsource](https://fontsource.org/), self-hosted (Plus Jakarta Sans, Inter, JetBrains Mono) — latin-subset woff2 files copied from `node_modules` into `_site/fonts` by `npm run build:fonts`
 - **Icons:** Inline SVGs from [Lucide](https://lucide.dev/)
 - **Hosting:** [GitHub Pages](https://pages.github.com/)
 
