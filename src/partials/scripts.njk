@@ -1,3 +1,22 @@
+{#
+  Ridiculytics — cookieless analytics, collector at stats.ninerlog.com.
+
+  Pinned to an exact version rather than the @1 range the upstream README
+  suggests: SRI hashes a specific build, so a floating range would break the
+  page the moment 1.0.2 ships. Bumping the version means recomputing
+  `integrity` — see docs in the PR that introduced this.
+
+  The collector's site allowlist covers ninerlog.com and www.ninerlog.com;
+  events from any other origin are rejected server-side.
+#}
+<script defer
+        src="https://cdn.jsdelivr.net/npm/ridiculytics@1.0.1/web/counter.min.js"
+        integrity="sha384-uNCU8e2RB7Yn6lVNut2gupQsJwKwXPZu2i4t/Eg6Q59ki0kchBR4L4yoS3ZxxjEX"
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+        data-host="https://stats.ninerlog.com"
+        data-site="ninerlog.com"></script>
+
 <!-- Mobile menu JS -->
 <script>
   const toggle = document.getElementById('menu-toggle');
