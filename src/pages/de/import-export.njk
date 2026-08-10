@@ -1,9 +1,11 @@
-{% set pageTitle = "Import & Export Your Logbook — ForeFlight CSV, PDF, JSON | NinerLog" %}
-{% set pageDescription = "Move your flight history into NinerLog from a ForeFlight CSV or any other spreadsheet, and take it out again as CSV, PDF or JSON. Your logbook data is never trapped." %}
-{% set pagePath = "/import-export" %}
-{% set altDe = "/de/import-export" %}
+{% set pageLang = "de" %}
+{% set pageTitle = "Flugbuch importieren & exportieren — ForeFlight-CSV, PDF, JSON | NinerLog" %}
+{% set pageDescription = "Hol deine Flughistorie aus einer ForeFlight-CSV oder jeder anderen Tabelle nach NinerLog und wieder heraus als CSV, PDF oder JSON. Deine Flugbuchdaten sitzen nie fest." %}
+{% set pagePath = "/de/import-export" %}
+{% set altEn = "/import-export" %}
 {% set sitemapChangefreq = "monthly" %}
 {% set sitemapPriority = "0.8" %}
+{% set skipToContentLabel = "Zum Inhalt springen" %}
 {% extends "layouts/base.njk" %}
 
 {% block content %}
@@ -21,29 +23,29 @@
       </span>
     </div>
     <h1 class="text-4xl lg:text-5xl font-extrabold tracking-tight text-white text-balance reveal reveal-delay-1">
-      Import &amp; Export Your Logbook
+      Flugbuch importieren &amp; exportieren
     </h1>
     <p class="mt-6 text-lg text-slate-300 leading-relaxed max-w-2xl mx-auto reveal reveal-delay-2">
-      Migration pain is the reason NinerLog exists at all. So the way in and the way out both got built properly.
+      Der Schmerz beim Umziehen ist überhaupt der Grund, warum es NinerLog gibt. Also wurden der Weg hinein und der Weg hinaus beide ordentlich gebaut.
     </p>
   </div>
   <div class="absolute bottom-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-sky-500/20 to-transparent" aria-hidden="true"></div>
 </section>
 
 <!-- ============================================================
-     WHY THIS MATTERS
+     WARUM DAS ZÄHLT
      ============================================================ -->
 <section class="bg-white dark:bg-navy-950 py-16 lg:py-24">
   <div class="max-w-3xl mx-auto px-4">
     <h2 class="text-2xl lg:text-3xl font-bold tracking-tight text-slate-800 dark:text-white mb-6 reveal">
-      Why this page exists.
+      Warum es diese Seite gibt.
     </h2>
     <div class="prose prose-slate prose-lg dark:prose-invert max-w-none reveal reveal-delay-1">
       <p>
-        NinerLog was started by a pilot who had moved between logbook apps and EFBs more than once, and lost hours each time to cleanup and reformatting. A logbook is a legal record of an entire flying career. It should not be difficult to carry.
+        NinerLog wurde von einem Piloten begonnen, der mehr als einmal zwischen Flugbuch-Apps und EFBs gewechselt ist und dabei jedes Mal Stunden mit Aufräumen und Umformatieren verloren hat. Ein Flugbuch ist der rechtliche Nachweis einer ganzen Fliegerlaufbahn. Es sollte nicht schwer zu tragen sein.
       </p>
       <p>
-        So import and export are not a checkbox on a feature list here. They are the reason the project got written, and they are the first thing you should test before trusting any logbook with your hours &mdash; including this one.
+        Import und Export sind hier deshalb kein Häkchen auf einer Funktionsliste. Sie sind der Grund, warum dieses Projekt entstanden ist &mdash; und das Erste, was du prüfen solltest, bevor du irgendeinem Flugbuch deine Stunden anvertraust. Auch diesem.
       </p>
     </div>
   </div>
@@ -56,35 +58,35 @@
   <div class="max-w-6xl mx-auto px-4">
     <div class="text-center mb-12 lg:mb-16">
       <h2 class="text-3xl lg:text-4xl font-bold tracking-tight text-slate-800 dark:text-white reveal">
-        Bringing your history in.
+        Deine Historie hereinholen.
       </h2>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
       <div class="group p-6 bg-white dark:bg-navy-800 border border-slate-200 dark:border-navy-700 rounded-xl hover:shadow-lg hover:-translate-y-1 transition-all duration-200 reveal reveal-delay-1">
-        <h3 class="text-lg font-semibold text-slate-800 dark:text-white mb-2">ForeFlight, recognised</h3>
+        <h3 class="text-lg font-semibold text-slate-800 dark:text-white mb-2">ForeFlight wird erkannt</h3>
         <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-          Drop in a ForeFlight logbook CSV and NinerLog identifies the layout from its column headers and maps the fields for you &mdash; times, landings, approaches, holds, instructor names and comments included.
+          Lade eine ForeFlight-Flugbuch-CSV hoch, und NinerLog erkennt das Format an den Spaltenüberschriften und ordnet die Felder für dich zu &mdash; inklusive Zeiten, Landungen, Anflügen, Holdings, Fluglehrernamen und Bemerkungen.
         </p>
       </div>
       <div class="group p-6 bg-white dark:bg-navy-800 border border-slate-200 dark:border-navy-700 rounded-xl hover:shadow-lg hover:-translate-y-1 transition-all duration-200 reveal reveal-delay-2">
-        <h3 class="text-lg font-semibold text-slate-800 dark:text-white mb-2">Any other CSV</h3>
+        <h3 class="text-lg font-semibold text-slate-800 dark:text-white mb-2">Jede andere CSV</h3>
         <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-          Coming from something else, or from a spreadsheet you have kept by hand? Map each column to a field yourself. Both <code>MM/DD/YYYY</code> and <code>YYYY-MM-DD</code> dates are understood, so US and European exports both work.
+          Du kommst von etwas anderem oder aus einer selbst gepflegten Tabelle? Ordne jede Spalte selbst einem Feld zu. Sowohl <code>MM/DD/YYYY</code> als auch <code>YYYY-MM-DD</code> werden verstanden &mdash; US- und europäische Exporte funktionieren also beide.
         </p>
       </div>
       <div class="group p-6 bg-white dark:bg-navy-800 border border-slate-200 dark:border-navy-700 rounded-xl hover:shadow-lg hover:-translate-y-1 transition-all duration-200 reveal reveal-delay-3">
-        <h3 class="text-lg font-semibold text-slate-800 dark:text-white mb-2">Check before you commit</h3>
+        <h3 class="text-lg font-semibold text-slate-800 dark:text-white mb-2">Prüfen, bevor es zählt</h3>
         <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-          You see the proposed mapping and can correct it before anything is written. Aircraft referenced by your imported flights are created as you go, rather than leaving you to enter a fleet by hand first.
+          Du siehst die vorgeschlagene Zuordnung und kannst sie korrigieren, bevor irgendetwas geschrieben wird. Luftfahrzeuge, auf die deine importierten Flüge verweisen, werden dabei automatisch angelegt &mdash; du musst nicht erst eine ganze Flotte von Hand erfassen.
         </p>
       </div>
     </div>
 
     <p class="mt-8 text-center text-sm text-slate-500 dark:text-slate-400 max-w-2xl mx-auto reveal reveal-delay-4">
-      Once the history is in, currency is calculated from it immediately &mdash; so an imported logbook tells you where you stand under
-      <a href="/easa-logbook" class="text-sky-600 dark:text-sky-400 hover:underline">EASA</a> or
-      <a href="/faa-logbook" class="text-sky-600 dark:text-sky-400 hover:underline">FAA</a> rules straight away.
+      Sobald die Historie drin ist, wird die Recency sofort daraus berechnet &mdash; ein importiertes Flugbuch sagt dir also direkt, wo du nach
+      <a href="/de/easa-flugbuch" class="text-sky-600 dark:text-sky-400 hover:underline">EASA</a>- oder
+      <a href="/de/faa-flugbuch" class="text-sky-600 dark:text-sky-400 hover:underline">FAA</a>-Regeln stehst.
     </p>
   </div>
 </section>
@@ -96,33 +98,33 @@
   <div class="max-w-6xl mx-auto px-4">
     <div class="text-center mb-12 lg:mb-16">
       <h2 class="text-3xl lg:text-4xl font-bold tracking-tight text-slate-800 dark:text-white reveal">
-        Taking it back out.
+        Und wieder heraus.
       </h2>
       <p class="mt-4 text-lg text-slate-500 dark:text-slate-400 max-w-2xl mx-auto reveal reveal-delay-1">
-        No paywall, no record limit, no support ticket. Three formats, because they serve three different purposes.
+        Keine Bezahlschranke, kein Datensatzlimit, kein Support-Ticket. Drei Formate, weil sie drei verschiedenen Zwecken dienen.
       </p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
       <div class="group p-6 bg-white dark:bg-navy-800 border border-slate-200 dark:border-navy-700 rounded-xl hover:shadow-lg hover:-translate-y-1 transition-all duration-200 reveal reveal-delay-1">
         <div class="font-mono text-xs font-bold text-cyan-500 tracking-wider mb-2">CSV</div>
-        <h3 class="text-lg font-semibold text-slate-800 dark:text-white mb-2">For moving to another app</h3>
+        <h3 class="text-lg font-semibold text-slate-800 dark:text-white mb-2">Für den Umzug in eine andere App</h3>
         <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-          Three column layouts: an <strong>EASA</strong> profile, an <strong>FAA</strong> profile following the familiar ASA/Jeppesen columns, and a <strong>standard</strong> ForeFlight-compatible default. Pick the one your destination expects instead of rearranging columns by hand.
+          Drei Spaltenlayouts: ein <strong>EASA</strong>-Profil, ein <strong>FAA</strong>-Profil mit den vertrauten ASA-/Jeppesen-Spalten und ein <strong>Standard</strong>-Layout, das zu ForeFlight passt. Wähle das, was dein Ziel erwartet, statt Spalten von Hand umzusortieren.
         </p>
       </div>
       <div class="group p-6 bg-white dark:bg-navy-800 border border-slate-200 dark:border-navy-700 rounded-xl hover:shadow-lg hover:-translate-y-1 transition-all duration-200 reveal reveal-delay-2">
         <div class="font-mono text-xs font-bold text-rose-500 tracking-wider mb-2">PDF</div>
-        <h3 class="text-lg font-semibold text-slate-800 dark:text-white mb-2">For handing to a human</h3>
+        <h3 class="text-lg font-semibold text-slate-800 dark:text-white mb-2">Für den Menschen gegenüber</h3>
         <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-          A printable logbook document for an examiner, an employer, a licence application, or a paper file you keep in a drawer because belt and braces is good airmanship.
+          Ein druckbares Flugbuchdokument für Prüfer, Arbeitgeber, einen Lizenzantrag oder die Papierablage in der Schublade &mdash; doppelt hält bekanntlich besser.
         </p>
       </div>
       <div class="group p-6 bg-white dark:bg-navy-800 border border-slate-200 dark:border-navy-700 rounded-xl hover:shadow-lg hover:-translate-y-1 transition-all duration-200 reveal reveal-delay-3">
         <div class="font-mono text-xs font-bold text-emerald-500 tracking-wider mb-2">JSON</div>
-        <h3 class="text-lg font-semibold text-slate-800 dark:text-white mb-2">For a complete backup</h3>
+        <h3 class="text-lg font-semibold text-slate-800 dark:text-white mb-2">Für ein vollständiges Backup</h3>
         <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-          The full picture, not just the flight rows &mdash; a structured backup of your logbook data that keeps the relationships between flights, aircraft, licences and ratings intact.
+          Das ganze Bild, nicht nur die Flugzeilen &mdash; eine strukturierte Sicherung deiner Flugbuchdaten, die die Beziehungen zwischen Flügen, Luftfahrzeugen, Lizenzen und Berechtigungen erhält.
         </p>
       </div>
     </div>
@@ -130,36 +132,36 @@
 </section>
 
 <!-- ============================================================
-     AUTOMATIC BACKUPS
+     AUTOMATISCHE BACKUPS
      ============================================================ -->
 <section class="bg-slate-50 dark:bg-navy-900 py-16 lg:py-24">
   <div class="max-w-3xl mx-auto px-4">
     <h2 class="text-2xl lg:text-3xl font-bold tracking-tight text-slate-800 dark:text-white mb-6 reveal">
-      Or have it export itself.
+      Oder es exportiert sich selbst.
     </h2>
     <div class="prose prose-slate prose-lg dark:prose-invert max-w-none reveal reveal-delay-1">
       <p>
-        A manual export only helps if you remember to take one. NinerLog can push scheduled backups to a destination that belongs to you &mdash; any <strong>S3-compatible bucket</strong>, an <strong>SFTP server</strong>, or a <strong>WebDAV share</strong>.
+        Ein manueller Export hilft nur, wenn du daran denkst. NinerLog kann geplante Backups an ein Ziel schicken, das dir gehört &mdash; jeden <strong>S3-kompatiblen Bucket</strong>, einen <strong>SFTP-Server</strong> oder eine <strong>WebDAV-Freigabe</strong>.
       </p>
       <p>
-        Your bucket, your credentials, your retention policy. The copy lands somewhere we have no access to, which is rather the point: it keeps working even if this project does not.
+        Dein Bucket, deine Zugangsdaten, deine Aufbewahrungsregeln. Die Kopie landet an einem Ort, auf den wir keinen Zugriff haben &mdash; und genau das ist der Sinn: Sie funktioniert weiter, auch wenn dieses Projekt es nicht tut.
       </p>
     </div>
   </div>
 </section>
 
 <!-- ============================================================
-     HONEST NOTE
+     EHRLICHER HINWEIS
      ============================================================ -->
 <section class="bg-white dark:bg-navy-950 py-16 lg:py-24">
   <div class="max-w-3xl mx-auto px-4">
     <div class="p-6 lg:p-8 bg-amber-500/5 border border-amber-500/30 rounded-xl reveal">
       <h2 class="text-xl lg:text-2xl font-bold tracking-tight text-slate-800 dark:text-white mb-4">
-        What to expect from a migration.
+        Was du von einer Migration erwarten kannst.
       </h2>
       <div class="prose prose-slate dark:prose-invert max-w-none">
         <p class="mb-0">
-          Logbook apps disagree about how to model crew, training and remarks, so no import between two systems is ever perfectly lossless &mdash; ours included. Expect to spot-check a sample of entries after importing, particularly around instructor time and approaches. If NinerLog mangles something from your export, that is a bug worth <a href="/report-a-bug">reporting</a>: import fidelity is the part of this project least likely to be left alone.
+          Flugbuch-Apps sind sich uneinig darüber, wie Crew, Ausbildung und Bemerkungen abgebildet werden &mdash; kein Import zwischen zwei Systemen ist daher je völlig verlustfrei, unserer eingeschlossen. Rechne damit, nach dem Import eine Stichprobe zu prüfen, vor allem bei Lehrerzeiten und Anflügen. Wenn NinerLog etwas aus deinem Export verstümmelt, ist das ein Fehler, den du <a href="/de/fehler-melden">melden</a> solltest: Die Importtreue ist der Teil dieses Projekts, der am wenigsten in Ruhe gelassen wird.
         </p>
       </div>
     </div>
@@ -172,14 +174,14 @@
 <section class="bg-navy-900 py-16 lg:py-24">
   <div class="max-w-3xl mx-auto px-4 text-center">
     <h2 class="text-3xl lg:text-4xl font-bold tracking-tight text-white mb-6 reveal">
-      Bring your hours across.
+      Bring deine Stunden mit.
     </h2>
     <p class="text-lg text-slate-300 leading-relaxed mb-8 reveal reveal-delay-1">
-      Import your existing logbook, check it, and export it again the same day if you want to. Nothing is locked in.
+      Importiere dein bestehendes Flugbuch, prüfe es und exportiere es noch am selben Tag wieder, wenn du magst. Nichts ist eingesperrt.
     </p>
     <a href="https://app.ninerlog.com/register"
        class="inline-flex items-center gap-2 px-8 py-4 bg-linear-to-r from-amber-400 to-amber-500 text-navy-900 font-semibold text-lg rounded-full shadow-lg shadow-amber-400/30 hover:shadow-xl hover:shadow-amber-400/40 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-navy-900 reveal reveal-delay-2">
-      Start Logging &mdash; It&rsquo;s Free
+      Kostenlos loslegen
     </a>
   </div>
 </section>

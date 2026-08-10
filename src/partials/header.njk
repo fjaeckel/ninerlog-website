@@ -4,17 +4,20 @@
 #}
 {% if pageLang == "de" %}
   {% set navLinks = [
-    { href: "/de/flugbuch", label: "Flugbuch" },
+    { href: "/de/funktionen", label: "Funktionen" },
+    { href: "/de/selbst-hosten", label: "Selbst hosten" },
     { href: "/de/open-source-flugbuch", label: "Open Source" },
-    { href: "/de/selbst-hosten", label: "Selbst hosten" }
+    { href: "/de/unterstuetzen", label: "Unterstützen" }
   ] %}
   {% set ctaLabel = "Kostenlos starten &rarr;" %}
   {% set ctaLabelMobile = "Kostenlos loslegen" %}
-  {# altEn set = a real translation pair; otherwise fall back to the EN home
-     without claiming hreflang, since it is not this page's equivalent. #}
-  {% set langSwitchHref = altEn | default("/") %}
-  {% set langSwitchHreflang = "en" if altEn else "" %}
-  {% set langSwitchLabel = "EN" %}
+  {# altEn set = a real translation pair, so the switch may claim hreflang.
+     Without one it still points at the EN home, but makes no equivalence claim. #}
+  {% set enHref = altEn | default("/") %}
+  {% set enIsPair = altEn %}
+  {% set deHref = pagePath %}
+  {% set deIsPair = true %}
+  {% set langPickerLabel = "Sprache wählen" %}
   {% set openMenuLabel = "Menü öffnen" %}
   {% set closeMenuLabel = "Menü schließen" %}
   {% set navAriaLabel = "Hauptnavigation" %}
@@ -23,13 +26,16 @@
     { href: "/features", label: "Features" },
     { href: "/self-hosted", label: "Self-Hosted" },
     { href: "/open-source", label: "Open Source" },
-    { href: "/about", label: "About" }
+    { href: "/about", label: "About" },
+    { href: "/donate", label: "Donate" }
   ] %}
   {% set ctaLabel = "Start Free &rarr;" %}
   {% set ctaLabelMobile = "Start Logging &mdash; It&rsquo;s Free" %}
-  {% set langSwitchHref = altDe %}
-  {% set langSwitchHreflang = "de" if altDe else "" %}
-  {% set langSwitchLabel = "DE" %}
+  {% set enHref = pagePath %}
+  {% set enIsPair = true %}
+  {% set deHref = altDe | default("/de/flugbuch") %}
+  {% set deIsPair = altDe %}
+  {% set langPickerLabel = "Choose language" %}
   {% set openMenuLabel = "Open menu" %}
   {% set closeMenuLabel = "Close menu" %}
   {% set navAriaLabel = "Main navigation" %}
@@ -44,29 +50,58 @@
       <span><span class="text-white">Niner</span><span class="text-sky-400">Log</span></span>
     </a>
 
-    <!-- Desktop nav -->
-    <div class="hidden lg:flex items-center gap-6">
-      {% for link in navLinks %}
-      <a href="{{ link.href }}" class="text-sm text-slate-300 hover:text-white transition-colors">{{ link.label }}</a>
-      {% endfor %}
-      {% if langSwitchHref %}
-      <a href="{{ langSwitchHref }}"{% if langSwitchHreflang %} hreflang="{{ langSwitchHreflang }}"{% endif %}
-         class="text-xs font-mono font-bold text-slate-400 hover:text-white border border-white/15 rounded-sm px-2 py-1 transition-colors">
-        {{ langSwitchLabel }}
-      </a>
-      {% endif %}
-      <a href="https://app.ninerlog.com/register"
-         class="px-5 py-2 bg-amber-400 text-navy-900 text-sm font-semibold rounded-full hover:bg-amber-300 transition-colors">
-        {{ ctaLabel | safe }}
-      </a>
-    </div>
+    <div class="flex items-center gap-2 lg:gap-6">
+      <!-- Desktop nav -->
+      <div class="hidden lg:flex items-center gap-6">
+        {% for link in navLinks %}
+        <a href="{{ link.href }}" class="text-sm text-slate-300 hover:text-white transition-colors">{{ link.label }}</a>
+        {% endfor %}
+        <a href="https://app.ninerlog.com/register"
+           class="px-5 py-2 bg-amber-400 text-navy-900 text-sm font-semibold rounded-full hover:bg-amber-300 transition-colors">
+          {{ ctaLabel | safe }}
+        </a>
+      </div>
 
-    <!-- Mobile hamburger -->
-    <button id="menu-toggle" class="lg:hidden p-2 text-slate-300 hover:text-white" aria-label="{{ openMenuLabel }}">
-      <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
-      </svg>
-    </button>
+      {#
+        Language picker. Always present, at every breakpoint — a pilot landing on
+        the wrong language should never have to hunt for the way out. Each entry
+        links to this page's counterpart where one exists, and otherwise to that
+        language's home; only a genuine counterpart carries hreflang.
+      #}
+      <div class="relative" id="lang-picker">
+        <button type="button" id="lang-toggle"
+                class="flex items-center gap-1.5 px-2 py-1.5 text-slate-300 hover:text-white border border-white/15 rounded-sm hover:border-white/30 transition-colors"
+                aria-haspopup="true" aria-expanded="false" aria-label="{{ langPickerLabel }}">
+          <span class="text-base leading-none" aria-hidden="true">{{ "🇩🇪" if pageLang == "de" else "🇬🇧" }}</span>
+          <span class="text-xs font-mono font-bold">{{ "DE" if pageLang == "de" else "EN" }}</span>
+          <svg class="w-3 h-3 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <ul id="lang-menu"
+            class="hidden absolute right-0 mt-2 min-w-[9rem] py-1 bg-navy-800 border border-white/10 rounded-lg shadow-xl shadow-black/30 z-50">
+          <li>
+            <a href="{{ enHref }}"{% if enIsPair %} hreflang="en"{% endif %}{% if pageLang != "de" %} aria-current="true"{% endif %}
+               class="flex items-center gap-2.5 px-3 py-2 text-sm {{ 'text-white bg-white/5' if pageLang != 'de' else 'text-slate-300' }} hover:bg-white/10 hover:text-white transition-colors">
+              <span class="text-base leading-none" aria-hidden="true">🇬🇧</span>
+              English
+            </a>
+          </li>
+          <li>
+            <a href="{{ deHref }}"{% if deIsPair %} hreflang="de"{% endif %}{% if pageLang == "de" %} aria-current="true"{% endif %}
+               class="flex items-center gap-2.5 px-3 py-2 text-sm {{ 'text-white bg-white/5' if pageLang == 'de' else 'text-slate-300' }} hover:bg-white/10 hover:text-white transition-colors">
+              <span class="text-base leading-none" aria-hidden="true">🇩🇪</span>
+              Deutsch
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Mobile hamburger -->
+      <button id="menu-toggle" class="lg:hidden p-2 text-slate-300 hover:text-white" aria-label="{{ openMenuLabel }}">
+        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
   </nav>
 </header>
 
@@ -81,12 +116,6 @@
     {% for link in navLinks %}
     <a href="{{ link.href }}" class="text-2xl text-white font-semibold hover:text-sky-400 transition-colors">{{ link.label }}</a>
     {% endfor %}
-    {% if langSwitchHref %}
-    <a href="{{ langSwitchHref }}"{% if langSwitchHreflang %} hreflang="{{ langSwitchHreflang }}"{% endif %}
-       class="text-base font-mono font-bold text-slate-400 hover:text-white border border-white/15 rounded-sm px-3 py-1 transition-colors">
-      {{ langSwitchLabel }}
-    </a>
-    {% endif %}
     <a href="https://app.ninerlog.com/register"
        class="mt-4 px-8 py-4 bg-amber-400 text-navy-900 font-semibold text-lg rounded-full hover:bg-amber-300 transition-colors">
       {{ ctaLabelMobile | safe }}

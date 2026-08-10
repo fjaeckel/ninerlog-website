@@ -41,6 +41,37 @@
   }
 </script>
 
+<!-- Language picker dropdown -->
+<script>
+  (function() {
+    var picker = document.getElementById('lang-picker');
+    var langToggle = document.getElementById('lang-toggle');
+    var langMenu = document.getElementById('lang-menu');
+    if (!picker || !langToggle || !langMenu) return;
+
+    function setOpen(open) {
+      langMenu.classList.toggle('hidden', !open);
+      langToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+
+    langToggle.addEventListener('click', function(e) {
+      e.stopPropagation();
+      setOpen(langMenu.classList.contains('hidden'));
+    });
+
+    document.addEventListener('click', function(e) {
+      if (!picker.contains(e.target)) setOpen(false);
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && !langMenu.classList.contains('hidden')) {
+        setOpen(false);
+        langToggle.focus();
+      }
+    });
+  })();
+</script>
+
 <!-- Copy-to-clipboard for code blocks -->
 <script>
   document.querySelectorAll('[data-copy]').forEach(function(btn) {

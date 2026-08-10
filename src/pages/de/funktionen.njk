@@ -1,9 +1,11 @@
-{% set pageTitle = "Features — NinerLog" %}
-{% set pageDescription = "Flight logging, multi-license support, currency tracking, import/export, user-owned offsite cloud backup, and more. Every feature free, forever." %}
-{% set pagePath = "/features" %}
-{% set altDe = "/de/funktionen" %}
+{% set pageLang = "de" %}
+{% set pageTitle = "Funktionen — NinerLog" %}
+{% set pageDescription = "Flüge erfassen, mehrere Lizenzen verwalten, Recency im Blick behalten, Import/Export und Cloud-Backup auf deinem eigenen Speicher. Jede Funktion kostenlos, für immer." %}
+{% set pagePath = "/de/funktionen" %}
+{% set altEn = "/features" %}
 {% set sitemapChangefreq = "monthly" %}
 {% set sitemapPriority = "0.9" %}
+{% set skipToContentLabel = "Zum Inhalt springen" %}
 {% extends "layouts/base.njk" %}
 
 {% block content %}
@@ -18,49 +20,49 @@
     <div class="mb-4 reveal">
       <span class="freq-badge">
         <span class="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 animate-blink"></span>
-        ALL FEATURES &bull; ZERO COST
+        ALLE FUNKTIONEN &bull; KEINE KOSTEN
       </span>
     </div>
     <h1 class="text-4xl lg:text-5xl font-extrabold tracking-tight text-white text-balance reveal reveal-delay-1">
-      Built for pilots who care<br class="hidden sm:block" /> about their data.
+      Für Piloten gebaut, denen ihre<br class="hidden sm:block" /> Daten wichtig sind.
     </h1>
     <p class="mt-6 text-lg text-slate-300 leading-relaxed max-w-2xl mx-auto reveal reveal-delay-2">
-      Every feature designed by pilots, for pilots. No bloat, no gimmicks &mdash; just the tools you need.
+      Jede Funktion von Piloten für Piloten entworfen. Kein Ballast, keine Spielereien &mdash; nur die Werkzeuge, die du brauchst.
     </p>
   </div>
   <div class="absolute bottom-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-sky-500/20 to-transparent" aria-hidden="true"></div>
 </section>
 
 <!-- ============================================================
-     FEATURE DETAIL BLOCKS (alternating)
+     FUNKTIONSBLÖCKE (abwechselnd)
      ============================================================ -->
 
-<!-- Flight Logging -->
+<!-- Flüge erfassen -->
 <section class="bg-white dark:bg-navy-950 py-16 lg:py-24">
   <div class="max-w-6xl mx-auto px-4">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-      <img src="/images/feature-flight-logging.png" alt="NinerLog flight logging interface showing quick entry, block times, and landing tracking" class="rounded-xl shadow-xl w-full order-last lg:order-none" loading="lazy" width="1200" height="675" />
+      <img src="/images/feature-flight-logging.png" alt="NinerLog Flugerfassung mit Schnelleingabe, Blockzeiten und Landungszählung" class="rounded-xl shadow-xl w-full order-last lg:order-none" loading="lazy" width="1200" height="675" />
       <div class="reveal">
-        <h2 class="text-2xl lg:text-3xl font-bold tracking-tight text-slate-800 dark:text-white mb-4">Flight Logging</h2>
+        <h2 class="text-2xl lg:text-3xl font-bold tracking-tight text-slate-800 dark:text-white mb-4">Flüge erfassen</h2>
         <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
-          Log every detail of every flight. From off-blocks to on-blocks, landings to approaches, NinerLog captures it all. Quick entry templates turn logging into a 30-second habit.
+          Erfasse jedes Detail jedes Fluges. Von Off-Block bis On-Block, von Landungen bis Anflügen &mdash; NinerLog hält alles fest. Vorlagen für die Schnelleingabe machen aus dem Eintragen eine Sache von 30 Sekunden.
         </p>
         <ul class="space-y-3">
           <li class="flex items-start gap-3">
             <svg class="w-5 h-5 text-emerald-500 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-            <span class="text-slate-600 dark:text-slate-300">Quick entry for rapid flight logging</span>
+            <span class="text-slate-600 dark:text-slate-300">Schnelleingabe für zügiges Erfassen</span>
           </li>
           <li class="flex items-start gap-3">
             <svg class="w-5 h-5 text-emerald-500 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-            <span class="text-slate-600 dark:text-slate-300">Block times, flight times, and advanced time splits</span>
+            <span class="text-slate-600 dark:text-slate-300">Blockzeiten, Flugzeiten und detaillierte Zeitaufteilungen</span>
           </li>
           <li class="flex items-start gap-3">
             <svg class="w-5 h-5 text-emerald-500 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-            <span class="text-slate-600 dark:text-slate-300">Day and night landings tracked separately</span>
+            <span class="text-slate-600 dark:text-slate-300">Tag- und Nachtlandungen getrennt erfasst</span>
           </li>
           <li class="flex items-start gap-3">
             <svg class="w-5 h-5 text-emerald-500 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-            <span class="text-slate-600 dark:text-slate-300">IFR approaches, holds, and instrument time</span>
+            <span class="text-slate-600 dark:text-slate-300">IFR-Anflüge, Holdings und Instrumentenzeit</span>
           </li>
         </ul>
       </div>
@@ -72,36 +74,36 @@
 <section class="bg-slate-50 dark:bg-navy-900 py-16 lg:py-24">
   <div class="max-w-6xl mx-auto px-4">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-      <img src="/images/feature-quick-log.png" alt="NinerLog Quick Log screen mid-session, showing off-block and takeoff already tapped and awaiting landing" class="rounded-xl shadow-xl w-full order-last lg:order-2" loading="lazy" width="1200" height="675" />
+      <img src="/images/feature-quick-log.png" alt="NinerLog Quick Log während des Fluges: Off-Block und Start bereits erfasst, Landung ausstehend" class="rounded-xl shadow-xl w-full order-last lg:order-2" loading="lazy" width="1200" height="675" />
       <div class="reveal lg:order-1">
         <span class="freq-badge mb-4">
           <span class="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 animate-blink"></span>
-          NEW &bull; LIVE BLOCK TIMES
+          NEU &bull; LIVE-BLOCKZEITEN
         </span>
         <h2 class="text-2xl lg:text-3xl font-bold tracking-tight text-slate-800 dark:text-white mb-4 mt-3">Quick Log</h2>
         <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
-          Your logbook, running while you fly. Open Quick Log on your phone, pick your aircraft, and tap once at each milestone &mdash; off block, takeoff, landing, on block. The moment you go on blocks, NinerLog turns your taps into a complete flight entry: block times, total time, and route, all filled in automatically. No watch-glancing, no kneeboard scribbles to decipher later.
+          Dein Flugbuch läuft mit, während du fliegst. Quick Log auf dem Handy öffnen, Luftfahrzeug wählen und bei jedem Meilenstein einmal tippen &mdash; Off-Block, Start, Landung, On-Block. Sobald du On-Block gehst, macht NinerLog aus deinen Taps einen vollständigen Flugeintrag: Blockzeiten, Gesamtzeit und Route automatisch ausgefüllt. Kein Blick auf die Uhr, keine Kritzeleien auf dem Kneeboard, die du später entziffern musst.
         </p>
         <ul class="space-y-3">
           <li class="flex items-start gap-3">
             <svg class="w-5 h-5 text-emerald-500 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-            <span class="text-slate-600 dark:text-slate-300"><strong>One tap per event.</strong> Capture off-block, takeoff, landing, and on-block times the second they happen</span>
+            <span class="text-slate-600 dark:text-slate-300"><strong>Ein Tap pro Ereignis.</strong> Off-Block, Start, Landung und On-Block genau in dem Moment festhalten, in dem sie passieren</span>
           </li>
           <li class="flex items-start gap-3">
             <svg class="w-5 h-5 text-emerald-500 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-            <span class="text-slate-600 dark:text-slate-300"><strong>The flight logs itself.</strong> Going on blocks creates the logbook entry with block times, total time, and route already filled in &mdash; just review and add landings, crew, or remarks</span>
+            <span class="text-slate-600 dark:text-slate-300"><strong>Der Flug trägt sich selbst ein.</strong> On-Block erzeugt den Flugbucheintrag mit Blockzeiten, Gesamtzeit und Route &mdash; du prüfst nur noch und ergänzt Landungen, Crew oder Bemerkungen</span>
           </li>
           <li class="flex items-start gap-3">
             <svg class="w-5 h-5 text-emerald-500 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-            <span class="text-slate-600 dark:text-slate-300"><strong>GPS airport detection.</strong> Grant location access and your departure and arrival airports fill themselves in</span>
+            <span class="text-slate-600 dark:text-slate-300"><strong>Flugplatzerkennung per GPS.</strong> Standortzugriff erlauben und Start- und Zielflugplatz füllen sich von selbst aus</span>
           </li>
           <li class="flex items-start gap-3">
             <svg class="w-5 h-5 text-emerald-500 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-            <span class="text-slate-600 dark:text-slate-300"><strong>Works offline.</strong> No signal at the airfield? Taps are saved on your device and sync automatically when you&rsquo;re back online</span>
+            <span class="text-slate-600 dark:text-slate-300"><strong>Funktioniert offline.</strong> Kein Empfang am Platz? Deine Taps werden auf dem Gerät gespeichert und synchronisieren sich automatisch, sobald du wieder online bist</span>
           </li>
           <li class="flex items-start gap-3">
             <svg class="w-5 h-5 text-emerald-500 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-            <span class="text-slate-600 dark:text-slate-300"><strong>Add aircraft on the spot.</strong> Flying something new? Quick-add its registration and type without leaving the screen</span>
+            <span class="text-slate-600 dark:text-slate-300"><strong>Luftfahrzeug direkt anlegen.</strong> Neues Muster? Kennzeichen und Typ hinzufügen, ohne den Bildschirm zu verlassen</span>
           </li>
         </ul>
       </div>
@@ -109,40 +111,40 @@
   </div>
 </section>
 
-<!-- Powerful Flight Search -->
+<!-- Leistungsstarke Flugsuche -->
 <section class="bg-white dark:bg-navy-950 py-16 lg:py-24">
   <div class="max-w-6xl mx-auto px-4">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-      <img src="/images/feature-search.png" alt="NinerLog flight search narrowing a logbook down to matching flights by ICAO code" class="rounded-xl shadow-xl w-full order-last lg:order-none" loading="lazy" width="1200" height="675" />
+      <img src="/images/feature-search.png" alt="NinerLog Flugsuche, die das Flugbuch anhand eines ICAO-Codes auf passende Flüge eingrenzt" class="rounded-xl shadow-xl w-full order-last lg:order-none" loading="lazy" width="1200" height="675" />
       <div class="reveal">
         <span class="freq-badge mb-4">
           <span class="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 animate-blink"></span>
-          NEW &bull; FIND ANYTHING
+          NEU &bull; ALLES WIEDERFINDEN
         </span>
-        <h2 class="text-2xl lg:text-3xl font-bold tracking-tight text-slate-800 dark:text-white mb-4 mt-3">Powerful Flight Search</h2>
+        <h2 class="text-2xl lg:text-3xl font-bold tracking-tight text-slate-800 dark:text-white mb-4 mt-3">Leistungsstarke Flugsuche</h2>
         <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
-          A logbook is only as good as your ability to find things in it. Type anything into the search box above your flight list &mdash; a registration, an aircraft type, an airport code, or a word you wrote in the remarks &mdash; and NinerLog instantly narrows your logbook to matching flights. There&rsquo;s no field to pick first: one search sweeps registration, type, departure and arrival ICAO, and remarks all at once, and partial matches count, so &ldquo;EDD&rdquo; finds every big German airport you&rsquo;ve ever visited.
+          Ein Flugbuch ist nur so gut, wie du darin etwas wiederfindest. Tippe irgendetwas in das Suchfeld über deiner Flugliste &mdash; ein Kennzeichen, ein Muster, einen Flugplatzcode oder ein Wort aus deinen Bemerkungen &mdash; und NinerLog grenzt dein Flugbuch sofort auf die passenden Flüge ein. Du musst kein Feld vorher auswählen: Eine Suche durchsucht Kennzeichen, Muster, Start- und Ziel-ICAO sowie Bemerkungen auf einmal, und Teiltreffer zählen mit &mdash; &bdquo;EDD&ldquo; findet also jeden großen deutschen Verkehrsflughafen, den du je angeflogen hast.
         </p>
         <ul class="space-y-3">
           <li class="flex items-start gap-3">
             <svg class="w-5 h-5 text-emerald-500 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-            <span class="text-slate-600 dark:text-slate-300"><strong>One box, every field.</strong> Registration, aircraft type, departure and arrival ICAO, and remarks &mdash; searched together, case-insensitive</span>
+            <span class="text-slate-600 dark:text-slate-300"><strong>Ein Feld, alle Felder.</strong> Kennzeichen, Muster, Start- und Ziel-ICAO und Bemerkungen &mdash; gemeinsam durchsucht, ohne Groß-/Kleinschreibung zu beachten</span>
           </li>
           <li class="flex items-start gap-3">
             <svg class="w-5 h-5 text-emerald-500 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-            <span class="text-slate-600 dark:text-slate-300"><strong>Partial matches count.</strong> Type &ldquo;172&rdquo; for every Skyhawk flight, or &ldquo;crosswind&rdquo; to dig up that remark from two years ago</span>
+            <span class="text-slate-600 dark:text-slate-300"><strong>Teiltreffer zählen.</strong> Tippe &bdquo;172&ldquo; für jeden Skyhawk-Flug oder &bdquo;Seitenwind&ldquo;, um die Bemerkung von vor zwei Jahren auszugraben</span>
           </li>
           <li class="flex items-start gap-3">
             <svg class="w-5 h-5 text-emerald-500 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-            <span class="text-slate-600 dark:text-slate-300"><strong>Combine with filters.</strong> Stack date range, aircraft registration, departure or arrival airport, and pilot function (PIC only, dual only) on top of your search</span>
+            <span class="text-slate-600 dark:text-slate-300"><strong>Mit Filtern kombinierbar.</strong> Zeitraum, Kennzeichen, Start- oder Zielflugplatz und Pilotenfunktion (nur PIC, nur Dual) zusätzlich zur Suche stapeln</span>
           </li>
           <li class="flex items-start gap-3">
             <svg class="w-5 h-5 text-emerald-500 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-            <span class="text-slate-600 dark:text-slate-300"><strong>Sort your results.</strong> Order matches by date, hours, or when they were added</span>
+            <span class="text-slate-600 dark:text-slate-300"><strong>Ergebnisse sortieren.</strong> Treffer nach Datum, Stunden oder Erfassungszeitpunkt ordnen</span>
           </li>
           <li class="flex items-start gap-3">
             <svg class="w-5 h-5 text-emerald-500 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-            <span class="text-slate-600 dark:text-slate-300"><strong>Your whole logbook, not just this page.</strong> Search runs across every flight you&rsquo;ve ever logged, however many thousands that is</span>
+            <span class="text-slate-600 dark:text-slate-300"><strong>Das ganze Flugbuch, nicht nur diese Seite.</strong> Die Suche läuft über jeden Flug, den du je erfasst hast &mdash; egal wie viele tausend es sind</span>
           </li>
         </ul>
       </div>
@@ -150,28 +152,28 @@
   </div>
 </section>
 
-<!-- Multi-License Management -->
+<!-- Mehrere Lizenzen -->
 <section class="bg-slate-50 dark:bg-navy-900 py-16 lg:py-24">
   <div class="max-w-6xl mx-auto px-4">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-      <img src="/images/feature-multi-license.png" alt="NinerLog multi-license management showing EASA and FAA licenses with class ratings and expiry dates" class="rounded-xl shadow-xl w-full order-last lg:order-2" loading="lazy" width="1200" height="675" />
+      <img src="/images/feature-multi-license.png" alt="NinerLog Lizenzverwaltung mit EASA- und FAA-Lizenzen samt Klassenberechtigungen und Ablaufdaten" class="rounded-xl shadow-xl w-full order-last lg:order-2" loading="lazy" width="1200" height="675" />
       <div class="reveal lg:order-1">
-        <h2 class="text-2xl lg:text-3xl font-bold tracking-tight text-slate-800 dark:text-white mb-4">Multi-License Management</h2>
+        <h2 class="text-2xl lg:text-3xl font-bold tracking-tight text-slate-800 dark:text-white mb-4">Mehrere Lizenzen verwalten</h2>
         <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
-          Hold a PPL and SPL? EASA and FAA? NinerLog handles them all. Flights count toward all applicable licenses and class ratings automatically.
+          PPL und SPL? EASA und FAA? NinerLog kommt mit allen zurecht. Flüge zählen automatisch auf alle passenden Lizenzen und Klassenberechtigungen ein.
         </p>
         <ul class="space-y-3">
           <li class="flex items-start gap-3">
             <svg class="w-5 h-5 text-emerald-500 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-            <span class="text-slate-600 dark:text-slate-300">Any regulatory authority worldwide</span>
+            <span class="text-slate-600 dark:text-slate-300">Jede Luftfahrtbehörde weltweit</span>
           </li>
           <li class="flex items-start gap-3">
             <svg class="w-5 h-5 text-emerald-500 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-            <span class="text-slate-600 dark:text-slate-300">Class ratings with expiry tracking (SEP, MEP, TMG, IR)</span>
+            <span class="text-slate-600 dark:text-slate-300">Klassenberechtigungen mit Ablaufüberwachung (SEP, MEP, TMG, IR)</span>
           </li>
           <li class="flex items-start gap-3">
             <svg class="w-5 h-5 text-emerald-500 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-            <span class="text-slate-600 dark:text-slate-300">No per-license flight assignment &mdash; flights count everywhere</span>
+            <span class="text-slate-600 dark:text-slate-300">Keine Zuordnung pro Lizenz &mdash; Flüge zählen überall</span>
           </li>
         </ul>
       </div>
@@ -179,28 +181,28 @@
   </div>
 </section>
 
-<!-- Currency Tracking -->
+<!-- Recency -->
 <section class="bg-white dark:bg-navy-950 py-16 lg:py-24">
   <div class="max-w-6xl mx-auto px-4">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-      <img src="/images/feature-currency-tracking.png" alt="NinerLog currency tracking dashboard with EASA revalidation and FAA 90-day currency status" class="rounded-xl shadow-xl w-full order-last lg:order-none" loading="lazy" width="1200" height="675" />
+      <img src="/images/feature-currency-tracking.png" alt="NinerLog Recency-Übersicht mit EASA-Verlängerung und FAA-90-Tage-Status" class="rounded-xl shadow-xl w-full order-last lg:order-none" loading="lazy" width="1200" height="675" />
       <div class="reveal">
-        <h2 class="text-2xl lg:text-3xl font-bold tracking-tight text-slate-800 dark:text-white mb-4">Currency Tracking</h2>
+        <h2 class="text-2xl lg:text-3xl font-bold tracking-tight text-slate-800 dark:text-white mb-4">Recency im Blick</h2>
         <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
-          Never guess if you&rsquo;re current again. NinerLog evaluates your flights against EASA and FAA rules automatically.
+          Nie wieder rätseln, ob du noch current bist. NinerLog prüft deine Flüge automatisch gegen die EASA- und FAA-Regeln.
         </p>
         <ul class="space-y-3">
           <li class="flex items-start gap-3">
             <svg class="w-5 h-5 text-emerald-500 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-            <span class="text-slate-600 dark:text-slate-300">EASA revalidation rules (FCL.740)</span>
+            <span class="text-slate-600 dark:text-slate-300">EASA-Verlängerungsregeln (FCL.740)</span>
           </li>
           <li class="flex items-start gap-3">
             <svg class="w-5 h-5 text-emerald-500 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-            <span class="text-slate-600 dark:text-slate-300">FAA 90-day passenger currency (14 CFR 61.57)</span>
+            <span class="text-slate-600 dark:text-slate-300">FAA-90-Tage-Regel für Passagierflüge (14 CFR 61.57)</span>
           </li>
           <li class="flex items-start gap-3">
             <svg class="w-5 h-5 text-emerald-500 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-            <span class="text-slate-600 dark:text-slate-300">Instrument currency tracking with approach counting</span>
+            <span class="text-slate-600 dark:text-slate-300">Instrumenten-Recency inklusive Anflugzählung</span>
           </li>
         </ul>
       </div>
@@ -208,40 +210,40 @@
   </div>
 </section>
 
-<!-- Instructor Signing -->
+<!-- Fluglehrer-Unterschrift -->
 <section class="bg-slate-50 dark:bg-navy-900 py-16 lg:py-24">
   <div class="max-w-6xl mx-auto px-4">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-      <img src="/images/feature-instructor-signing.png" alt="NinerLog flight detail page showing a completed instructor signature, locked flight banner, and crew entry" class="rounded-xl shadow-xl w-full order-last lg:order-2" loading="lazy" width="1200" height="675" />
+      <img src="/images/feature-instructor-signing.png" alt="NinerLog Flugdetailseite mit geleisteter Fluglehrer-Unterschrift, Sperrhinweis und Crew-Eintrag" class="rounded-xl shadow-xl w-full order-last lg:order-2" loading="lazy" width="1200" height="675" />
       <div class="reveal lg:order-1">
         <span class="freq-badge mb-4">
           <span class="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 animate-blink"></span>
-          NEW &bull; TRAINING-READY
+          NEU &bull; BEREIT FÜR DIE AUSBILDUNG
         </span>
-        <h2 class="text-2xl lg:text-3xl font-bold tracking-tight text-slate-800 dark:text-white mb-4 mt-3">Instructor Signing</h2>
+        <h2 class="text-2xl lg:text-3xl font-bold tracking-tight text-slate-800 dark:text-white mb-4 mt-3">Fluglehrer-Unterschrift</h2>
         <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
-          Training flights need an instructor&rsquo;s signature &mdash; and going digital shouldn&rsquo;t make that harder than paper. With NinerLog, your instructor signs the flight right on your phone after the debrief, or later from their own device through a secure signing link. Once signed, the entry is locked against edits, so your training record stays exactly as your instructor endorsed it.
+          Schulungsflüge brauchen die Unterschrift des Fluglehrers &mdash; und digital sollte das nicht umständlicher sein als auf Papier. Mit NinerLog unterschreibt dein Fluglehrer den Flug direkt nach dem Debriefing auf deinem Handy oder später vom eigenen Gerät über einen sicheren Signaturlink. Nach der Unterschrift ist der Eintrag gegen Änderungen gesperrt &mdash; dein Ausbildungsnachweis bleibt genau so, wie dein Fluglehrer ihn bestätigt hat.
         </p>
         <ul class="space-y-3">
           <li class="flex items-start gap-3">
             <svg class="w-5 h-5 text-emerald-500 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-            <span class="text-slate-600 dark:text-slate-300"><strong>Sign on the spot.</strong> Hand over your phone &mdash; the instructor draws their signature and adds their name and certificate number</span>
+            <span class="text-slate-600 dark:text-slate-300"><strong>Direkt vor Ort unterschreiben.</strong> Handy rüberreichen &mdash; der Fluglehrer zeichnet seine Unterschrift und ergänzt Name und Lizenznummer</span>
           </li>
           <li class="flex items-start gap-3">
             <svg class="w-5 h-5 text-emerald-500 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-            <span class="text-slate-600 dark:text-slate-300"><strong>Or request it remotely.</strong> Email a secure signing link, or share a link or QR code &mdash; the instructor signs from any device, no account needed</span>
+            <span class="text-slate-600 dark:text-slate-300"><strong>Oder aus der Ferne anfordern.</strong> Sicheren Signaturlink per E-Mail schicken oder Link bzw. QR-Code teilen &mdash; der Fluglehrer unterschreibt von jedem Gerät, ganz ohne Konto</span>
           </li>
           <li class="flex items-start gap-3">
             <svg class="w-5 h-5 text-emerald-500 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-            <span class="text-slate-600 dark:text-slate-300"><strong>Links expire on your terms.</strong> Valid from 24 hours to 30 days &mdash; resend or cancel a pending request any time</span>
+            <span class="text-slate-600 dark:text-slate-300"><strong>Links laufen ab, wann du willst.</strong> Gültig von 24 Stunden bis 30 Tage &mdash; offene Anfragen jederzeit erneut senden oder zurückziehen</span>
           </li>
           <li class="flex items-start gap-3">
             <svg class="w-5 h-5 text-emerald-500 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-            <span class="text-slate-600 dark:text-slate-300"><strong>Signed means locked.</strong> The signature &mdash; name, certificate number, and date &mdash; appears on the flight, which can no longer be edited</span>
+            <span class="text-slate-600 dark:text-slate-300"><strong>Unterschrieben heißt gesperrt.</strong> Die Unterschrift &mdash; Name, Lizenznummer und Datum &mdash; erscheint am Flug, der danach nicht mehr bearbeitet werden kann</span>
           </li>
           <li class="flex items-start gap-3">
             <svg class="w-5 h-5 text-emerald-500 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-            <span class="text-slate-600 dark:text-slate-300"><strong>Void with an audit trail.</strong> Need to fix a typo? Void the signature with a documented reason &mdash; the flight unlocks and a fresh signature is required</span>
+            <span class="text-slate-600 dark:text-slate-300"><strong>Widerruf mit Nachweis.</strong> Tippfehler zu korrigieren? Unterschrift mit dokumentiertem Grund widerrufen &mdash; der Flug wird entsperrt und braucht eine neue Unterschrift</span>
           </li>
         </ul>
       </div>
@@ -253,20 +255,20 @@
 <section class="bg-white dark:bg-navy-950 py-16 lg:py-24">
   <div class="max-w-6xl mx-auto px-4">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-      <img src="/images/feature-import.png" alt="NinerLog import interface supporting CSV, XLS, and ForeFlight formats" class="rounded-xl shadow-xl w-full order-last lg:order-2" loading="lazy" width="1200" height="675" />
+      <img src="/images/feature-import.png" alt="NinerLog Import mit Unterstützung für CSV, XLS und ForeFlight" class="rounded-xl shadow-xl w-full order-last lg:order-2" loading="lazy" width="1200" height="675" />
       <div class="reveal lg:order-1">
         <h2 class="text-2xl lg:text-3xl font-bold tracking-tight text-slate-800 dark:text-white mb-4">Import</h2>
         <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
-          Switching from another logbook? Bring your data in. NinerLog maps your existing flights automatically &mdash; no manual re-entry.
+          Du wechselst von einem anderen Flugbuch? Bring deine Daten mit. NinerLog ordnet deine bestehenden Flüge automatisch zu &mdash; kein Abtippen.
         </p>
         <ul class="space-y-3">
           <li class="flex items-start gap-3">
             <svg class="w-5 h-5 text-emerald-500 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-            <span class="text-slate-600 dark:text-slate-300">Import from CSV and XLS</span>
+            <span class="text-slate-600 dark:text-slate-300">Import aus CSV und XLS</span>
           </li>
           <li class="flex items-start gap-3">
             <svg class="w-5 h-5 text-emerald-500 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-            <span class="text-slate-600 dark:text-slate-300">Automatic field mapping and validation</span>
+            <span class="text-slate-600 dark:text-slate-300">Automatische Feldzuordnung und Prüfung</span>
           </li>
         </ul>
       </div>
@@ -278,24 +280,24 @@
 <section class="bg-slate-50 dark:bg-navy-900 py-16 lg:py-24">
   <div class="max-w-6xl mx-auto px-4">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-      <img src="/images/feature-export.png" alt="NinerLog export interface with CSV, PDF, and JSON download options" class="rounded-xl shadow-xl w-full order-last lg:order-none" loading="lazy" width="1200" height="675" />
+      <img src="/images/feature-export.png" alt="NinerLog Export mit Download-Optionen für CSV, PDF und JSON" class="rounded-xl shadow-xl w-full order-last lg:order-none" loading="lazy" width="1200" height="675" />
       <div class="reveal">
         <h2 class="text-2xl lg:text-3xl font-bold tracking-tight text-slate-800 dark:text-white mb-4">Export</h2>
         <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
-          Want to leave? Take everything with you. Your data is never trapped &mdash; export in the format you need, anytime.
+          Du willst gehen? Nimm alles mit. Deine Daten sind nie eingesperrt &mdash; exportiere jederzeit in dem Format, das du brauchst.
         </p>
         <ul class="space-y-3">
           <li class="flex items-start gap-3">
             <svg class="w-5 h-5 text-emerald-500 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-            <span class="text-slate-600 dark:text-slate-300">Export to CSV, PDF, and JSON</span>
+            <span class="text-slate-600 dark:text-slate-300">Export nach CSV, PDF und JSON</span>
           </li>
           <li class="flex items-start gap-3">
             <svg class="w-5 h-5 text-emerald-500 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-            <span class="text-slate-600 dark:text-slate-300">EASA-compliant logbook PDF format</span>
+            <span class="text-slate-600 dark:text-slate-300">EASA-konformes Flugbuch-PDF</span>
           </li>
           <li class="flex items-start gap-3">
             <svg class="w-5 h-5 text-emerald-500 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-            <span class="text-slate-600 dark:text-slate-300">No vendor lock-in &mdash; your data, your way</span>
+            <span class="text-slate-600 dark:text-slate-300">Keine Herstellerbindung &mdash; deine Daten, deine Regeln</span>
           </li>
         </ul>
       </div>
@@ -303,124 +305,124 @@
   </div>
 </section>
 
-<!-- Cloud Backup -->
+<!-- Cloud-Backup -->
 <section class="bg-white dark:bg-navy-950 py-16 lg:py-24">
   <div class="max-w-6xl mx-auto px-4">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-      <img src="/images/feature-cloud-backup.png" alt="NinerLog Cloud Backups settings showing a connected S3 destination with active status and last successful run" class="rounded-xl shadow-xl w-full order-last lg:order-2" loading="lazy" width="1200" height="675" />
+      <img src="/images/feature-cloud-backup.png" alt="NinerLog Cloud-Backup-Einstellungen mit verbundenem S3-Ziel, aktivem Status und letztem erfolgreichen Lauf" class="rounded-xl shadow-xl w-full order-last lg:order-2" loading="lazy" width="1200" height="675" />
       <div class="reveal lg:order-1">
         <span class="freq-badge mb-4">
           <span class="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 animate-blink"></span>
-          NEW &bull; USER-OWNED
+          NEU &bull; DIR GEHÖREND
         </span>
-        <h2 class="text-2xl lg:text-3xl font-bold tracking-tight text-slate-800 dark:text-white mb-4 mt-3">Cloud Backup</h2>
+        <h2 class="text-2xl lg:text-3xl font-bold tracking-tight text-slate-800 dark:text-white mb-4 mt-3">Cloud-Backup</h2>
         <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
-          Send a copy of your logbook to a cloud storage location <em>you</em> own and control &mdash; on a schedule, automatically. Point NinerLog at any S3-compatible bucket you trust, and we&rsquo;ll keep an offsite copy of your flights there for you. S3-compatible storage is the only destination today, with more providers on the way &mdash; no NinerLog-only vault, no lock-in, just your data in your storage.
+          Schick eine Kopie deines Flugbuchs an einen Cloud-Speicher, der <em>dir</em> gehört und den du kontrollierst &mdash; automatisch, nach Zeitplan. Richte NinerLog auf einen beliebigen S3-kompatiblen Bucket deines Vertrauens, und wir legen dort eine externe Kopie deiner Flüge ab. S3-kompatibler Speicher ist derzeit das einzige Ziel, weitere Anbieter folgen &mdash; kein NinerLog-Tresor, keine Bindung, einfach deine Daten in deinem Speicher.
         </p>
         <ul class="space-y-3">
           <li class="flex items-start gap-3">
             <svg class="w-5 h-5 text-emerald-500 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-            <span class="text-slate-600 dark:text-slate-300"><strong>You pick the destination.</strong> Bring your own S3-compatible bucket &mdash; NinerLog never holds the only copy</span>
+            <span class="text-slate-600 dark:text-slate-300"><strong>Du wählst das Ziel.</strong> Bring deinen eigenen S3-kompatiblen Bucket mit &mdash; NinerLog hat nie die einzige Kopie</span>
           </li>
           <li class="flex items-start gap-3">
             <svg class="w-5 h-5 text-emerald-500 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-            <span class="text-slate-600 dark:text-slate-300"><strong>Truly user-owned.</strong> The backup files sit in your storage account under your credentials &mdash; you can read, copy, or delete them without us</span>
+            <span class="text-slate-600 dark:text-slate-300"><strong>Wirklich in deiner Hand.</strong> Die Backup-Dateien liegen in deinem Speicherkonto unter deinen Zugangsdaten &mdash; du kannst sie ohne uns lesen, kopieren oder löschen</span>
           </li>
           <li class="flex items-start gap-3">
             <svg class="w-5 h-5 text-emerald-500 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-            <span class="text-slate-600 dark:text-slate-300"><strong>Open formats.</strong> Backups use the same CSV / JSON your export already produces &mdash; readable with or without NinerLog</span>
+            <span class="text-slate-600 dark:text-slate-300"><strong>Offene Formate.</strong> Backups nutzen dieselben CSV-/JSON-Dateien wie dein Export &mdash; lesbar mit und ohne NinerLog</span>
           </li>
           <li class="flex items-start gap-3">
             <svg class="w-5 h-5 text-emerald-500 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-            <span class="text-slate-600 dark:text-slate-300"><strong>Opt-in and reversible.</strong> Off by default, switch on when you want it, disconnect any time &mdash; we keep no copy of your storage credentials beyond what&rsquo;s needed to run the backup</span>
+            <span class="text-slate-600 dark:text-slate-300"><strong>Freiwillig und umkehrbar.</strong> Standardmäßig aus, einschalten wann du willst, jederzeit trennen &mdash; wir speichern von deinen Zugangsdaten nur, was für den Backup-Lauf nötig ist</span>
           </li>
           <li class="flex items-start gap-3">
             <svg class="w-5 h-5 text-emerald-500 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-            <span class="text-slate-600 dark:text-slate-300"><strong>Scheduled, offsite, automatic.</strong> A second copy lands safely outside the app on the cadence you choose &mdash; daily, weekly, or after every flight</span>
+            <span class="text-slate-600 dark:text-slate-300"><strong>Geplant, extern, automatisch.</strong> Eine zweite Kopie landet sicher außerhalb der App &mdash; täglich, wöchentlich oder nach jedem Flug, wie du möchtest</span>
           </li>
           <li class="flex items-start gap-3">
             <svg class="w-5 h-5 text-emerald-500 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-            <span class="text-slate-600 dark:text-slate-300"><strong>Restore from your own files.</strong> Bring a backup file back into NinerLog at any time &mdash; or open it directly in a spreadsheet</span>
+            <span class="text-slate-600 dark:text-slate-300"><strong>Wiederherstellen aus deinen Dateien.</strong> Eine Backup-Datei jederzeit zurück in NinerLog holen &mdash; oder direkt in der Tabellenkalkulation öffnen</span>
           </li>
         </ul>
         <p class="mt-6 text-sm text-slate-500 dark:text-slate-400">
-          Cloud backup is entirely optional &mdash; the rest of NinerLog works exactly the same with it switched off. See our <a href="/privacy" class="text-sky-600 dark:text-sky-400 hover:underline">privacy policy</a> for how connection details are handled.
+          Cloud-Backup ist vollständig optional &mdash; der Rest von NinerLog funktioniert ausgeschaltet genauso. Wie die Verbindungsdaten behandelt werden, steht in unserer <a href="/privacy" class="text-sky-600 dark:text-sky-400 hover:underline">Datenschutzerklärung</a>.
         </p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Ready for your flying club (self-hosted) -->
+<!-- Bereit für deinen Verein (selbst gehostet) -->
 <section class="bg-slate-50 dark:bg-navy-900 py-16 lg:py-24">
   <div class="max-w-6xl mx-auto px-4">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-      <img src="/images/feature-flying-club.png" alt="NinerLog admin console showing a flying club member roster with account status, 2FA, and flight counts" class="rounded-xl shadow-xl w-full order-last lg:order-none" loading="lazy" width="1200" height="675" />
+      <img src="/images/feature-flying-club.png" alt="NinerLog Admin-Konsole mit Mitgliederliste eines Vereins samt Kontostatus, 2FA und Fluganzahl" class="rounded-xl shadow-xl w-full order-last lg:order-none" loading="lazy" width="1200" height="675" />
       <div class="reveal">
         <span class="freq-badge mb-4">
           <span class="inline-block w-1.5 h-1.5 rounded-full bg-amber-400 animate-blink"></span>
-          SELF-HOSTED &bull; CLUB-READY
+          SELBST GEHOSTET &bull; VEREINSTAUGLICH
         </span>
-        <h2 class="text-2xl lg:text-3xl font-bold tracking-tight text-slate-800 dark:text-white mb-4 mt-3">Ready for your flying club</h2>
+        <h2 class="text-2xl lg:text-3xl font-bold tracking-tight text-slate-800 dark:text-white mb-4 mt-3">Bereit für deinen Verein</h2>
         <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
-          Self-host NinerLog and you don&rsquo;t just get a logbook &mdash; you get a complete logbook platform for your flying club, school, or group. Invite your members, manage their accounts from a built-in admin panel, and post announcements that show up the next time they log in. One shared instance, every pilot&rsquo;s own logbook, all on your own server.
+          Wenn du NinerLog selbst hostest, bekommst du nicht nur ein Flugbuch &mdash; du bekommst eine komplette Flugbuch-Plattform für deinen Verein, deine Flugschule oder deine Haltergemeinschaft. Lade deine Mitglieder ein, verwalte ihre Konten über ein eingebautes Admin-Panel und poste Mitteilungen, die beim nächsten Login erscheinen. Eine gemeinsame Instanz, für jeden Piloten ein eigenes Flugbuch, alles auf deinem eigenen Server.
         </p>
         <ul class="space-y-3">
           <li class="flex items-start gap-3">
             <svg class="w-5 h-5 text-emerald-500 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-            <span class="text-slate-600 dark:text-slate-300"><strong>Built-in admin panel.</strong> Invite, enable, disable, or reset members from one place &mdash; no database surgery, no command line</span>
+            <span class="text-slate-600 dark:text-slate-300"><strong>Eingebautes Admin-Panel.</strong> Mitglieder einladen, aktivieren, deaktivieren oder zurücksetzen &mdash; alles an einem Ort, ohne Datenbankeingriffe und ohne Kommandozeile</span>
           </li>
           <li class="flex items-start gap-3">
             <svg class="w-5 h-5 text-emerald-500 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-            <span class="text-slate-600 dark:text-slate-300"><strong>Complete user management.</strong> Roles, accounts, and access for everyone in your club &mdash; each pilot keeps their own private logbook</span>
+            <span class="text-slate-600 dark:text-slate-300"><strong>Vollständige Benutzerverwaltung.</strong> Rollen, Konten und Zugriff für alle im Verein &mdash; jeder Pilot behält sein eigenes, privates Flugbuch</span>
           </li>
           <li class="flex items-start gap-3">
             <svg class="w-5 h-5 text-emerald-500 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-            <span class="text-slate-600 dark:text-slate-300"><strong>Announcements built in.</strong> Push club notices, maintenance windows, or safety updates straight to your members&rsquo; dashboards</span>
+            <span class="text-slate-600 dark:text-slate-300"><strong>Mitteilungen inklusive.</strong> Vereinsnachrichten, Wartungsfenster oder Sicherheitshinweise direkt auf die Dashboards deiner Mitglieder bringen</span>
           </li>
           <li class="flex items-start gap-3">
             <svg class="w-5 h-5 text-emerald-500 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-            <span class="text-slate-600 dark:text-slate-300"><strong>Your server, your rules.</strong> Runs on Docker Compose &mdash; your members&rsquo; data never leaves the box you control</span>
+            <span class="text-slate-600 dark:text-slate-300"><strong>Dein Server, deine Regeln.</strong> Läuft mit Docker Compose &mdash; die Daten deiner Mitglieder verlassen nie die Maschine, die du kontrollierst</span>
           </li>
         </ul>
         <p class="mt-6 text-sm text-slate-500 dark:text-slate-400">
-          Curious how it works? See the <a href="/self-hosted" class="text-sky-600 dark:text-sky-400 hover:underline">self-hosting guide</a> for a one-command Docker Compose setup.
+          Neugierig, wie das läuft? Die <a href="/de/selbst-hosten" class="text-sky-600 dark:text-sky-400 hover:underline">Anleitung zum Selbst-Hosten</a> zeigt das Setup mit einem einzigen Docker-Compose-Befehl.
         </p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Login Security (2FA & Passkeys) -->
+<!-- Anmeldesicherheit (2FA & Passkeys) -->
 <section class="bg-white dark:bg-navy-950 py-16 lg:py-24">
   <div class="max-w-6xl mx-auto px-4">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-      <img src="/images/feature-login-security.png" alt="NinerLog account security settings showing two-factor authentication enabled and a registered passkey" class="rounded-xl shadow-xl w-full order-last lg:order-2" loading="lazy" width="1200" height="675" />
+      <img src="/images/feature-login-security.png" alt="NinerLog Kontosicherheit mit aktivierter Zwei-Faktor-Authentifizierung und registriertem Passkey" class="rounded-xl shadow-xl w-full order-last lg:order-2" loading="lazy" width="1200" height="675" />
       <div class="reveal lg:order-1">
         <span class="freq-badge mb-4">
           <span class="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 animate-blink"></span>
-          SECURE BY DEFAULT
+          VON HAUS AUS SICHER
         </span>
-        <h2 class="text-2xl lg:text-3xl font-bold tracking-tight text-slate-800 dark:text-white mb-4 mt-3">Login Security</h2>
+        <h2 class="text-2xl lg:text-3xl font-bold tracking-tight text-slate-800 dark:text-white mb-4 mt-3">Anmeldesicherheit</h2>
         <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
-          Your logbook is years of flying history &mdash; we treat it that way. NinerLog protects your account with modern, phishing-resistant sign-in: add a passkey from your phone, laptop, or hardware key, or turn on two-factor authentication with the authenticator app you already use. Available on both the hosted version and any self-hosted instance.
+          Dein Flugbuch sind Jahre an Flugerfahrung &mdash; so behandeln wir es auch. NinerLog schützt dein Konto mit moderner, phishing-resistenter Anmeldung: Passkey von Handy, Laptop oder Hardware-Key hinzufügen oder Zwei-Faktor-Authentifizierung mit der Authenticator-App aktivieren, die du ohnehin nutzt. Verfügbar in der gehosteten Version und auf jeder selbst gehosteten Instanz.
         </p>
         <ul class="space-y-3">
           <li class="flex items-start gap-3">
             <svg class="w-5 h-5 text-emerald-500 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-            <span class="text-slate-600 dark:text-slate-300"><strong>Passkey sign-in.</strong> Use Face ID, Touch ID, Windows Hello, or a security key &mdash; no password to phish, no password to forget</span>
+            <span class="text-slate-600 dark:text-slate-300"><strong>Anmeldung per Passkey.</strong> Face ID, Touch ID, Windows Hello oder Sicherheitsschlüssel &mdash; kein Passwort zum Abphishen, keines zum Vergessen</span>
           </li>
           <li class="flex items-start gap-3">
             <svg class="w-5 h-5 text-emerald-500 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-            <span class="text-slate-600 dark:text-slate-300"><strong>Two-factor authentication.</strong> Pair your password with any standard TOTP app &mdash; Aegis, 1Password, Google Authenticator, you name it</span>
+            <span class="text-slate-600 dark:text-slate-300"><strong>Zwei-Faktor-Authentifizierung.</strong> Passwort plus beliebige TOTP-App &mdash; Aegis, 1Password, Google Authenticator, was du magst</span>
           </li>
           <li class="flex items-start gap-3">
             <svg class="w-5 h-5 text-emerald-500 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-            <span class="text-slate-600 dark:text-slate-300"><strong>Recovery codes.</strong> Print or stash one-time backup codes so you&rsquo;re never locked out of your own logbook</span>
+            <span class="text-slate-600 dark:text-slate-300"><strong>Wiederherstellungscodes.</strong> Einmal-Codes ausdrucken oder verwahren, damit du nie aus deinem eigenen Flugbuch ausgesperrt wirst</span>
           </li>
           <li class="flex items-start gap-3">
             <svg class="w-5 h-5 text-emerald-500 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-            <span class="text-slate-600 dark:text-slate-300"><strong>Hosted or self-hosted.</strong> Strong sign-in works the same on app.ninerlog.com and on your own Docker instance &mdash; no extra services required</span>
+            <span class="text-slate-600 dark:text-slate-300"><strong>Gehostet oder selbst gehostet.</strong> Starke Anmeldung funktioniert auf app.ninerlog.com genauso wie auf deiner eigenen Docker-Instanz &mdash; ohne Zusatzdienste</span>
           </li>
         </ul>
       </div>
@@ -428,28 +430,28 @@
   </div>
 </section>
 
-<!-- Custom Reports -->
+<!-- Eigene Auswertungen -->
 <section class="bg-slate-50 dark:bg-navy-900 py-16 lg:py-24">
   <div class="max-w-6xl mx-auto px-4">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-      <img src="/images/feature-reports.png" alt="NinerLog custom reports page with charts, flight statistics, and route maps" class="rounded-xl shadow-xl w-full order-last lg:order-2" loading="lazy" width="1200" height="675" />
+      <img src="/images/feature-reports.png" alt="NinerLog Auswertungen mit Diagrammen, Flugstatistiken und Routenkarten" class="rounded-xl shadow-xl w-full order-last lg:order-2" loading="lazy" width="1200" height="675" />
       <div class="reveal lg:order-1">
-        <h2 class="text-2xl lg:text-3xl font-bold tracking-tight text-slate-800 dark:text-white mb-4">Custom Reports</h2>
+        <h2 class="text-2xl lg:text-3xl font-bold tracking-tight text-slate-800 dark:text-white mb-4">Eigene Auswertungen</h2>
         <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
-          See your flying career at a glance. NinerLog generates detailed reports and visualizations from your logbook data.
+          Deine Fliegerlaufbahn auf einen Blick. NinerLog erstellt detaillierte Auswertungen und Grafiken aus deinen Flugbuchdaten.
         </p>
         <ul class="space-y-3">
           <li class="flex items-start gap-3">
             <svg class="w-5 h-5 text-emerald-500 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-            <span class="text-slate-600 dark:text-slate-300">Flight hours by aircraft type, period, and license</span>
+            <span class="text-slate-600 dark:text-slate-300">Flugstunden nach Muster, Zeitraum und Lizenz</span>
           </li>
           <li class="flex items-start gap-3">
             <svg class="w-5 h-5 text-emerald-500 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-            <span class="text-slate-600 dark:text-slate-300">Route maps and airport heatmaps</span>
+            <span class="text-slate-600 dark:text-slate-300">Routenkarten und Flugplatz-Heatmaps</span>
           </li>
           <li class="flex items-start gap-3">
             <svg class="w-5 h-5 text-emerald-500 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-            <span class="text-slate-600 dark:text-slate-300">Landing and approach statistics</span>
+            <span class="text-slate-600 dark:text-slate-300">Landungs- und Anflugstatistiken</span>
           </li>
         </ul>
       </div>
@@ -457,30 +459,30 @@
   </div>
 </section>
 
-<!-- Mobile Support -->
+<!-- Mobil nutzbar -->
 <section class="bg-white dark:bg-navy-950 py-16 lg:py-24">
   <div class="max-w-6xl mx-auto px-4">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
       <div class="flex justify-center order-last lg:order-none">
-        <img src="/images/feature-mobile.png" alt="NinerLog dashboard on a mobile device showing responsive flight logging interface" class="rounded-xl shadow-xl max-w-xs w-full" loading="lazy" width="390" height="844" />
+        <img src="/images/feature-mobile.png" alt="NinerLog Dashboard auf dem Smartphone mit responsiver Flugerfassung" class="rounded-xl shadow-xl max-w-xs w-full" loading="lazy" width="390" height="844" />
       </div>
       <div class="reveal">
-        <h2 class="text-2xl lg:text-3xl font-bold tracking-tight text-slate-800 dark:text-white mb-4">Mobile Support</h2>
+        <h2 class="text-2xl lg:text-3xl font-bold tracking-tight text-slate-800 dark:text-white mb-4">Mobil nutzbar</h2>
         <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
-          Log flights right after shutdown. NinerLog is fully responsive &mdash; use it on your phone, tablet, or desktop.
+          Flüge direkt nach dem Abstellen eintragen. NinerLog ist vollständig responsiv &mdash; nutze es auf Handy, Tablet oder Desktop.
         </p>
         <ul class="space-y-3">
           <li class="flex items-start gap-3">
             <svg class="w-5 h-5 text-emerald-500 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-            <span class="text-slate-600 dark:text-slate-300">Fully responsive design for any screen size</span>
+            <span class="text-slate-600 dark:text-slate-300">Vollständig responsives Design für jede Bildschirmgröße</span>
           </li>
           <li class="flex items-start gap-3">
             <svg class="w-5 h-5 text-emerald-500 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-            <span class="text-slate-600 dark:text-slate-300">Log flights on the go from your phone</span>
+            <span class="text-slate-600 dark:text-slate-300">Flüge unterwegs vom Handy aus erfassen</span>
           </li>
           <li class="flex items-start gap-3">
             <svg class="w-5 h-5 text-emerald-500 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-            <span class="text-slate-600 dark:text-slate-300">No app install required &mdash; works in any browser</span>
+            <span class="text-slate-600 dark:text-slate-300">Keine App-Installation nötig &mdash; läuft in jedem Browser</span>
           </li>
         </ul>
       </div>
@@ -488,28 +490,28 @@
   </div>
 </section>
 
-<!-- Language Support -->
+<!-- Sprachen -->
 <section class="bg-slate-50 dark:bg-navy-900 py-16 lg:py-24">
   <div class="max-w-6xl mx-auto px-4">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-      <img src="/images/feature-language.png" alt="NinerLog interface in German showing full language support" class="rounded-xl shadow-xl w-full order-last lg:order-2" loading="lazy" width="1200" height="675" />
+      <img src="/images/feature-language.png" alt="NinerLog Oberfläche auf Deutsch mit vollständiger Sprachunterstützung" class="rounded-xl shadow-xl w-full order-last lg:order-2" loading="lazy" width="1200" height="675" />
       <div class="reveal lg:order-1">
-        <h2 class="text-2xl lg:text-3xl font-bold tracking-tight text-slate-800 dark:text-white mb-4">Language Support</h2>
+        <h2 class="text-2xl lg:text-3xl font-bold tracking-tight text-slate-800 dark:text-white mb-4">Sprachen</h2>
         <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
-          Use NinerLog in your language. Full German support is available today, with more languages coming soon.
+          Nutze NinerLog in deiner Sprache. Vollständiges Deutsch gibt es schon heute, weitere Sprachen folgen.
         </p>
         <ul class="space-y-3">
           <li class="flex items-start gap-3">
             <svg class="w-5 h-5 text-emerald-500 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-            <span class="text-slate-600 dark:text-slate-300">Full German (Deutsch) translation</span>
+            <span class="text-slate-600 dark:text-slate-300">Vollständige deutsche Übersetzung</span>
           </li>
           <li class="flex items-start gap-3">
             <svg class="w-5 h-5 text-emerald-500 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-            <span class="text-slate-600 dark:text-slate-300">English as default language</span>
+            <span class="text-slate-600 dark:text-slate-300">Englisch als Standardsprache</span>
           </li>
           <li class="flex items-start gap-3">
             <svg class="w-5 h-5 text-emerald-500 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-            <span class="text-slate-600 dark:text-slate-300">More languages coming &mdash; community contributions welcome</span>
+            <span class="text-slate-600 dark:text-slate-300">Weitere Sprachen kommen &mdash; Beiträge aus der Community willkommen</span>
           </li>
         </ul>
       </div>
@@ -518,33 +520,33 @@
 </section>
 
 <!-- ============================================================
-     FULL FEATURE GRID
+     GESAMTÜBERSICHT
      ============================================================ -->
 <section class="bg-white dark:bg-navy-950 py-16 lg:py-24">
   <div class="max-w-6xl mx-auto px-4">
     <div class="text-center mb-12 lg:mb-16">
       <h2 class="text-3xl lg:text-4xl font-bold tracking-tight text-slate-800 dark:text-white reveal">
-        The full picture.
+        Das ganze Bild.
       </h2>
       <p class="mt-4 text-lg text-slate-500 dark:text-slate-400 max-w-2xl mx-auto reveal reveal-delay-1">
-        Every feature at a glance. All free, forever.
+        Alle Funktionen auf einen Blick. Alle kostenlos, für immer.
       </p>
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8">
       {% set features = [
-        { "cat": "Core", "items": ["Flight Logging", "Quick Log (live block times)", "Quick Entry", "Block Times", "Day & Night Landings"] },
-        { "cat": "Licenses", "items": ["Multi-License", "Class Ratings (SEP/MEP/TMG/IR)", "Any Authority Worldwide"] },
-        { "cat": "Tracking", "items": ["Currency Tracking", "Credentials & Medicals", "Expiry Notifications"] },
-        { "cat": "Fleet", "items": ["Aircraft Management", "Flight Form Integration"] },
-        { "cat": "Search", "items": ["Powerful Flight Search", "Multi-Field Filters", "Custom Sorting"] },
-        { "cat": "Training", "items": ["Instructor Signing", "In-Person or Remote Signing", "Signature-Locked Entries"] },
-        { "cat": "Data", "items": ["Import (CSV/XLS/ForeFlight)", "Export (CSV/PDF/JSON)", "Offsite Cloud Backup"] },
-        { "cat": "Visualization", "items": ["Reports & Charts", "Route Maps", "Airport Heatmap"] },
-        { "cat": "Advanced", "items": ["Instrument Tracking", "People & Crew", "Auto-Calculations"] },
-        { "cat": "Security", "items": ["Passkey Sign-In", "Two-Factor Auth (TOTP)", "Recovery Codes"] },
-        { "cat": "Club Ops", "items": ["Admin Panel", "User Management", "Announcements"] },
-        { "cat": "Platform", "items": ["Self-Hosting", "Security Hardened", "MIT Licensed"] }
+        { "cat": "Basis", "items": ["Flüge erfassen", "Quick Log (Live-Blockzeiten)", "Schnelleingabe", "Blockzeiten", "Tag- & Nachtlandungen"] },
+        { "cat": "Lizenzen", "items": ["Mehrere Lizenzen", "Klassenberechtigungen (SEP/MEP/TMG/IR)", "Jede Behörde weltweit"] },
+        { "cat": "Überwachung", "items": ["Recency", "Nachweise & Medicals", "Ablaufbenachrichtigungen"] },
+        { "cat": "Flotte", "items": ["Luftfahrzeugverwaltung", "Anbindung ans Bordbuch"] },
+        { "cat": "Suche", "items": ["Leistungsstarke Flugsuche", "Filter über mehrere Felder", "Eigene Sortierung"] },
+        { "cat": "Ausbildung", "items": ["Fluglehrer-Unterschrift", "Vor Ort oder aus der Ferne", "Gesperrte Einträge nach Signatur"] },
+        { "cat": "Daten", "items": ["Import (CSV/XLS/ForeFlight)", "Export (CSV/PDF/JSON)", "Externes Cloud-Backup"] },
+        { "cat": "Auswertung", "items": ["Berichte & Diagramme", "Routenkarten", "Flugplatz-Heatmap"] },
+        { "cat": "Fortgeschritten", "items": ["Instrumentenzeiten", "Personen & Crew", "Automatische Berechnungen"] },
+        { "cat": "Sicherheit", "items": ["Anmeldung per Passkey", "Zwei-Faktor-Auth (TOTP)", "Wiederherstellungscodes"] },
+        { "cat": "Vereinsbetrieb", "items": ["Admin-Panel", "Benutzerverwaltung", "Mitteilungen"] },
+        { "cat": "Plattform", "items": ["Selbst hosten", "Sicherheitsgehärtet", "MIT-Lizenz"] }
       ] %}
       {% for group in features %}
       <div class="p-6 bg-white dark:bg-navy-800 rounded-xl reveal reveal-delay-{{ loop.index }}">
@@ -569,10 +571,10 @@
 <section class="bg-linear-to-b from-navy-900 to-navy-950 py-16 lg:py-24">
   <div class="max-w-6xl mx-auto px-4 text-center">
     <h2 class="text-3xl lg:text-4xl font-bold tracking-tight text-white reveal">
-      See for yourself.
+      Überzeug dich selbst.
     </h2>
     <p class="mt-4 text-lg text-slate-300 max-w-xl mx-auto reveal reveal-delay-1">
-      Every feature. Free. No trial period, no feature gates, no &ldquo;upgrade to Pro.&rdquo;
+      Jede Funktion. Kostenlos. Keine Testphase, keine gesperrten Funktionen, kein &bdquo;Upgrade auf Pro&ldquo;.
     </p>
     <div class="mt-8 reveal reveal-delay-2">
       <a href="https://app.ninerlog.com/register"
@@ -585,10 +587,10 @@
                 active:scale-[0.98]
                 transition-all duration-200">
         <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>
-        Start Logging &mdash; It&rsquo;s Free
+        Kostenlos loslegen
       </a>
       <p class="mt-3 text-sm text-slate-400">
-        <span class="font-mono text-xs text-slate-500 tracking-wider">SQUAWK 7000</span> &mdash; VFR and free to fly.
+        <span class="font-mono text-xs text-slate-500 tracking-wider">SQUAWK 7000</span> &mdash; VFR und kostenlos.
       </p>
     </div>
   </div>

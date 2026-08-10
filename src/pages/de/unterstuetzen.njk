@@ -1,9 +1,11 @@
-{% set pageTitle = "Support NinerLog — Donate" %}
-{% set pageDescription = "NinerLog is free for every pilot, funded by community donations. Help keep it running." %}
-{% set pagePath = "/donate" %}
-{% set altDe = "/de/unterstuetzen" %}
+{% set pageLang = "de" %}
+{% set pageTitle = "NinerLog unterstützen — Spenden" %}
+{% set pageDescription = "NinerLog ist für jeden Piloten kostenlos und wird von der Community finanziert. Hilf mit, den Betrieb zu sichern." %}
+{% set pagePath = "/de/unterstuetzen" %}
+{% set altEn = "/donate" %}
 {% set sitemapChangefreq = "monthly" %}
 {% set sitemapPriority = "0.7" %}
+{% set skipToContentLabel = "Zum Inhalt springen" %}
 {% extends "layouts/base.njk" %}
 
 {% block content %}
@@ -17,30 +19,30 @@
     <div class="mb-4 reveal">
       <span class="freq-badge">
         <span class="inline-block w-1.5 h-1.5 rounded-full bg-amber-400 animate-blink"></span>
-        COMMUNITY FUNDED
+        VON DER COMMUNITY FINANZIERT
       </span>
     </div>
     <h1 class="text-4xl lg:text-5xl font-extrabold tracking-tight text-white text-balance reveal reveal-delay-1">
-      Free for all. Funded by some.
+      Kostenlos für alle. Finanziert von einigen.
     </h1>
     <p class="mt-6 text-lg text-slate-300 leading-relaxed max-w-2xl mx-auto reveal reveal-delay-2">
-      NinerLog is free for every pilot. If you find value in it, consider helping keep the servers running.
+      NinerLog ist für jeden Piloten kostenlos. Wenn es dir etwas wert ist, hilf mit, die Server am Laufen zu halten.
     </p>
   </div>
   <div class="absolute bottom-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-sky-500/20 to-transparent" aria-hidden="true"></div>
 </section>
 
 <!-- ============================================================
-     WHY DONATE
+     WARUM SPENDEN
      ============================================================ -->
 <section class="bg-white dark:bg-navy-950 py-16 lg:py-24">
   <div class="max-w-6xl mx-auto px-4">
     <div class="text-center mb-12 lg:mb-16">
       <h2 class="text-3xl lg:text-4xl font-bold tracking-tight text-slate-800 dark:text-white reveal">
-        NinerLog costs money to run.
+        NinerLog verursacht Kosten.
       </h2>
       <p class="mt-4 text-lg text-slate-500 dark:text-slate-400 max-w-2xl mx-auto reveal reveal-delay-1">
-        We believe in full transparency. Here&rsquo;s where the money goes.
+        Wir setzen auf volle Transparenz. Hier fließt das Geld hin.
       </p>
     </div>
 
@@ -49,33 +51,33 @@
         <div class="w-12 h-12 rounded-lg bg-sky-500/10 flex items-center justify-center mb-4">
           <svg class="w-6 h-6 text-sky-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="8" x="2" y="2" rx="2" ry="2"/><rect width="20" height="8" x="2" y="14" rx="2" ry="2"/><line x1="6" x2="6.01" y1="6" y2="6"/><line x1="6" x2="6.01" y1="18" y2="18"/></svg>
         </div>
-        <h3 class="text-lg font-semibold text-slate-800 dark:text-white mb-2">Hosting &amp; Infrastructure</h3>
-        <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Servers, database, CDN, domain, SSL certificates. Everything needed to keep NinerLog online 24/7.</p>
+        <h3 class="text-lg font-semibold text-slate-800 dark:text-white mb-2">Hosting &amp; Infrastruktur</h3>
+        <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Server, Datenbank, CDN, Domain, SSL-Zertifikate. Alles, was NinerLog rund um die Uhr online hält.</p>
       </div>
 
       <div class="p-6 bg-slate-50 dark:bg-navy-800 border border-slate-200 dark:border-navy-700 rounded-xl reveal reveal-delay-2">
         <div class="w-12 h-12 rounded-lg bg-amber-500/10 flex items-center justify-center mb-4">
           <svg class="w-6 h-6 text-amber-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>
         </div>
-        <h3 class="text-lg font-semibold text-slate-800 dark:text-white mb-2">Development</h3>
-        <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Volunteer time and occasional paid contributions. Building new features, fixing bugs, improving performance.</p>
+        <h3 class="text-lg font-semibold text-slate-800 dark:text-white mb-2">Entwicklung</h3>
+        <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Freiwillige Zeit und gelegentlich bezahlte Beiträge. Neue Funktionen bauen, Fehler beheben, Performance verbessern.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ============================================================
-     DONATION OPTIONS
+     SPENDENOPTIONEN
      ============================================================ -->
 <section class="bg-slate-50 dark:bg-navy-900 py-16 lg:py-24">
   <div class="max-w-6xl mx-auto px-4">
     <div class="text-center mb-12 lg:mb-16">
       <h2 class="text-3xl lg:text-4xl font-bold tracking-tight text-slate-800 dark:text-white reveal">
-        Every contribution fuels a free logbook.
+        Jeder Beitrag finanziert ein freies Flugbuch.
       </h2>
     </div>
 
-    <!-- Donation platforms -->
+    <!-- Spendenplattformen -->
     <div class="max-w-md mx-auto reveal reveal-delay-1">
       <a href="https://github.com/sponsors/fjaeckel" target="_blank" rel="noopener noreferrer"
          class="flex items-center justify-center gap-3 w-full px-8 py-4
@@ -87,7 +89,7 @@
                 active:scale-[0.98]
                 transition-all duration-200">
         <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
-        Donate via GitHub Sponsors
+        Über GitHub Sponsors spenden
       </a>
     </div>
   </div>

@@ -1,9 +1,11 @@
-{% set pageTitle = "Free Pilot Logbook, No Subscription — Open Source | NinerLog" %}
-{% set pageDescription = "A pilot logbook that is genuinely free: no subscription, no tiers, no ads, no expiring trial. Open source, donation-funded, and your data exports anytime." %}
-{% set pagePath = "/free-pilot-logbook" %}
-{% set altDe = "/de/kostenloses-flugbuch" %}
+{% set pageLang = "de" %}
+{% set pageTitle = "Kostenloses Flugbuch ohne Abo — Open Source | NinerLog" %}
+{% set pageDescription = "Ein Flugbuch, das wirklich kostenlos ist: kein Abo, keine Stufen, keine Werbung, keine ablaufende Testphase. Quelloffen, spendenfinanziert, und deine Daten lassen sich jederzeit exportieren." %}
+{% set pagePath = "/de/kostenloses-flugbuch" %}
+{% set altEn = "/free-pilot-logbook" %}
 {% set sitemapChangefreq = "monthly" %}
 {% set sitemapPriority = "0.9" %}
+{% set skipToContentLabel = "Zum Inhalt springen" %}
 {% extends "layouts/base.njk" %}
 
 {% block content %}
@@ -17,98 +19,98 @@
     <div class="mb-4 reveal">
       <span class="freq-badge">
         <span class="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 animate-blink"></span>
-        NO SUBSCRIPTION &bull; NO TIERS &bull; NO ADS
+        KEIN ABO &bull; KEINE STUFEN &bull; KEINE WERBUNG
       </span>
     </div>
     <h1 class="text-4xl lg:text-5xl font-extrabold tracking-tight text-white text-balance reveal reveal-delay-1">
-      Free Pilot Logbook, No Subscription
+      Kostenloses Flugbuch, ohne Abo
     </h1>
     <p class="mt-6 text-lg text-slate-300 leading-relaxed max-w-2xl mx-auto reveal reveal-delay-2">
-      Not free-for-30-days. Not free until you hit 50 flights. Not free with the export button greyed out. Free.
+      Nicht 30 Tage lang kostenlos. Nicht kostenlos bis zum 50. Flug. Nicht kostenlos mit ausgegrautem Export-Knopf. Kostenlos.
     </p>
   </div>
   <div class="absolute bottom-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-sky-500/20 to-transparent" aria-hidden="true"></div>
 </section>
 
 <!-- ============================================================
-     WHAT FREE MEANS
+     WAS KOSTENLOS HEISST
      ============================================================ -->
 <section class="bg-white dark:bg-navy-950 py-16 lg:py-24">
   <div class="max-w-3xl mx-auto px-4">
     <h2 class="text-2xl lg:text-3xl font-bold tracking-tight text-slate-800 dark:text-white mb-6 reveal">
-      What &ldquo;free&rdquo; means here.
+      Was &bdquo;kostenlos&ldquo; hier bedeutet.
     </h2>
     <div class="prose prose-slate prose-lg dark:prose-invert max-w-none reveal reveal-delay-1">
       <p>
-        &ldquo;Free&rdquo; has been stretched thin by software that is free in the way a first taste is free. So it is worth being specific about what it means for NinerLog:
+        &bdquo;Kostenlos&ldquo; ist von Software arg strapaziert worden, die kostenlos ist wie die erste Kostprobe. Deshalb lohnt es sich, genau zu sagen, was es bei NinerLog heißt:
       </p>
       <ul>
-        <li><strong>There is one tier</strong>, and you are on it. No pro plan, no unlock, no feature held back as an upsell.</li>
-        <li><strong>No flight limit.</strong> Log twelve hours a year or twelve hundred; it makes no difference.</li>
-        <li><strong>No ads, and nothing sold on.</strong> Your logbook is not an advertising surface and your data is not a product.</li>
-        <li><strong>Export is not a paid feature.</strong> CSV, PDF and JSON, whenever you want, in full.</li>
-        <li><strong>No credit card</strong> to sign up, so there is nothing to cancel later.</li>
+        <li><strong>Es gibt eine Stufe</strong>, und du bist darauf. Kein Pro-Tarif, keine Freischaltung, keine Funktion, die als Verkaufsargument zurückgehalten wird.</li>
+        <li><strong>Kein Fluglimit.</strong> Zwölf Stunden im Jahr oder zwölfhundert &mdash; das macht keinen Unterschied.</li>
+        <li><strong>Keine Werbung, nichts weiterverkauft.</strong> Dein Flugbuch ist keine Werbefläche und deine Daten sind kein Produkt.</li>
+        <li><strong>Export ist keine Bezahlfunktion.</strong> CSV, PDF und JSON, wann immer du willst, vollständig.</li>
+        <li><strong>Keine Kreditkarte</strong> bei der Anmeldung &mdash; es gibt also später auch nichts zu kündigen.</li>
       </ul>
       <p>
-        The uncomfortable question that follows is the obvious one, so here is the answer.
+        Die unbequeme Frage, die darauf folgt, liegt auf der Hand &mdash; hier ist die Antwort.
       </p>
     </div>
   </div>
 </section>
 
 <!-- ============================================================
-     HOW IT'S FUNDED
+     WIE ES FINANZIERT IST
      ============================================================ -->
 <section class="bg-slate-50 dark:bg-navy-900 py-16 lg:py-24">
   <div class="max-w-3xl mx-auto px-4">
     <h2 class="text-2xl lg:text-3xl font-bold tracking-tight text-slate-800 dark:text-white mb-6 reveal">
-      So how is it paid for?
+      Wer bezahlt das also?
     </h2>
     <div class="prose prose-slate prose-lg dark:prose-invert max-w-none reveal reveal-delay-1">
       <p>
-        NinerLog is built by one person &mdash; a software engineer who has been flying GA since 2018 &mdash; and it is deliberately cheap to run. Hosting, database, domain and certificates come to roughly <strong>$30 a month</strong>. Development is volunteer time.
+        NinerLog wird von einer einzelnen Person gebaut &mdash; einem Softwareentwickler, der seit 2018 GA fliegt &mdash; und ist bewusst günstig im Betrieb. Hosting, Datenbank, Domain und Zertifikate kosten zusammen rund <strong>30 US-Dollar im Monat</strong>. Die Entwicklung ist Freizeit.
       </p>
       <p>
-        That bill is covered by <a href="/donate">donations from pilots who use it</a>. There is no venture capital behind this, which means there is no investor who will eventually need the free tier to start converting. That pressure is the usual reason a free logbook stops being free, and it simply does not exist here.
+        Diese Rechnung wird von <a href="/de/unterstuetzen">Spenden der Piloten gedeckt, die es nutzen</a>. Hier steckt kein Wagniskapital dahinter &mdash; und damit auch kein Investor, der irgendwann darauf angewiesen ist, dass die kostenlose Stufe endlich konvertiert. Genau dieser Druck ist der übliche Grund, warum ein kostenloses Flugbuch aufhört, kostenlos zu sein. Den gibt es hier schlicht nicht.
       </p>
       <p>
-        Donating is genuinely optional. Nothing is withheld from people who do not, and there is no badge, no tier, no nag screen. If NinerLog saves you from a paper logbook, that is already the point of it.
+        Spenden ist wirklich freiwillig. Wer nicht spendet, dem wird nichts vorenthalten &mdash; kein Abzeichen, keine Stufe, kein Nervbildschirm. Wenn NinerLog dir das Papierflugbuch erspart, ist der Zweck schon erfüllt.
       </p>
     </div>
   </div>
 </section>
 
 <!-- ============================================================
-     WHY YOU CAN BELIEVE IT
+     WARUM DU DAS GLAUBEN KANNST
      ============================================================ -->
 <section class="bg-white dark:bg-navy-950 py-16 lg:py-24">
   <div class="max-w-6xl mx-auto px-4">
     <div class="text-center mb-12 lg:mb-16">
       <h2 class="text-3xl lg:text-4xl font-bold tracking-tight text-slate-800 dark:text-white reveal">
-        Why this promise is worth more than a promise.
+        Warum dieses Versprechen mehr wert ist als ein Versprechen.
       </h2>
       <p class="mt-4 text-lg text-slate-500 dark:text-slate-400 max-w-2xl mx-auto reveal reveal-delay-1">
-        Every logbook says it cares about your data. Open source is what makes it checkable.
+        Jedes Flugbuch sagt, dass ihm deine Daten wichtig sind. Open Source macht es überprüfbar.
       </p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
       <div class="group p-6 bg-white dark:bg-navy-800 border border-slate-200 dark:border-navy-700 rounded-xl hover:shadow-lg hover:-translate-y-1 transition-all duration-200 reveal reveal-delay-1">
-        <h3 class="text-lg font-semibold text-slate-800 dark:text-white mb-2">The licence protects you</h3>
+        <h3 class="text-lg font-semibold text-slate-800 dark:text-white mb-2">Die Lizenz schützt dich</h3>
         <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-          The API is AGPL-3.0, everything else MIT. Today&rsquo;s code cannot be retroactively taken away &mdash; if NinerLog ever changed direction, the version you trusted stays forkable by anyone.
+          Die API steht unter AGPL-3.0, alles andere unter MIT. Der heutige Code kann nicht rückwirkend entzogen werden &mdash; sollte NinerLog je die Richtung ändern, bleibt die Version, der du vertraut hast, für jeden forkbar.
         </p>
       </div>
       <div class="group p-6 bg-white dark:bg-navy-800 border border-slate-200 dark:border-navy-700 rounded-xl hover:shadow-lg hover:-translate-y-1 transition-all duration-200 reveal reveal-delay-2">
-        <h3 class="text-lg font-semibold text-slate-800 dark:text-white mb-2">You can leave at any time</h3>
+        <h3 class="text-lg font-semibold text-slate-800 dark:text-white mb-2">Du kannst jederzeit gehen</h3>
         <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-          The exit is built in and tested, not a formality. Take a full CSV, PDF or JSON export and go &mdash; lock-in is the problem NinerLog was written to solve in the first place.
+          Der Ausgang ist eingebaut und getestet, keine Formsache. Nimm einen vollständigen CSV-, PDF- oder JSON-Export und geh &mdash; Herstellerbindung ist überhaupt das Problem, für das NinerLog geschrieben wurde.
         </p>
       </div>
       <div class="group p-6 bg-white dark:bg-navy-800 border border-slate-200 dark:border-navy-700 rounded-xl hover:shadow-lg hover:-translate-y-1 transition-all duration-200 reveal reveal-delay-3">
-        <h3 class="text-lg font-semibold text-slate-800 dark:text-white mb-2">Or take the whole thing</h3>
+        <h3 class="text-lg font-semibold text-slate-800 dark:text-white mb-2">Oder nimm das Ganze mit</h3>
         <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-          If the hosted service ever stopped, you could <a href="/self-hosted" class="text-sky-500 hover:text-sky-400">run it on your own server</a> with Docker Compose. Your logbook outlives the project.
+          Sollte der gehostete Dienst je eingestellt werden, könntest du ihn <a href="/de/selbst-hosten" class="text-sky-500 hover:text-sky-400">auf deinem eigenen Server betreiben</a> &mdash; mit Docker Compose. Dein Flugbuch überlebt das Projekt.
         </p>
       </div>
     </div>
@@ -116,19 +118,19 @@
 </section>
 
 <!-- ============================================================
-     HONEST NOTE
+     EHRLICHER HINWEIS
      ============================================================ -->
 <section class="bg-slate-50 dark:bg-navy-900 py-16 lg:py-24">
   <div class="max-w-3xl mx-auto px-4">
     <div class="p-6 lg:p-8 bg-amber-500/5 border border-amber-500/30 rounded-xl reveal">
       <h2 class="text-xl lg:text-2xl font-bold tracking-tight text-slate-800 dark:text-white mb-4">
-        The honest trade-off.
+        Der ehrliche Kompromiss.
       </h2>
       <div class="prose prose-slate dark:prose-invert max-w-none">
         <p class="mb-0">
-          Free and solo-built has a cost, and it is fair to say it out loud: NinerLog is younger than the commercial logbooks, there is no support desk, and features arrive when one person has evenings free. Some paid apps are more polished and more automated, and for some pilots that is worth paying for. What you get in exchange here is a logbook that cannot be taken hostage &mdash; and the ability to
-          <a href="https://github.com/fjaeckel/ninerlog" target="_blank" rel="noopener noreferrer">check every word of this</a>
-          against the source.
+          Kostenlos und im Alleingang gebaut hat seinen Preis, und den sollte man aussprechen: NinerLog ist jünger als die kommerziellen Flugbücher, es gibt keinen Support-Schalter, und Funktionen kommen dann, wenn eine Person abends Zeit hat. Manche Bezahl-Apps sind runder und stärker automatisiert, und für manche Piloten ist das sein Geld wert. Dafür bekommst du hier ein Flugbuch, das nicht in Geiselhaft genommen werden kann &mdash; und die Möglichkeit,
+          <a href="https://github.com/fjaeckel/ninerlog" target="_blank" rel="noopener noreferrer">jedes Wort davon nachzuprüfen</a>
+          &mdash; im Quellcode.
         </p>
       </div>
     </div>
@@ -141,14 +143,14 @@
 <section class="bg-navy-900 py-16 lg:py-24">
   <div class="max-w-3xl mx-auto px-4 text-center">
     <h2 class="text-3xl lg:text-4xl font-bold tracking-tight text-white mb-6 reveal">
-      No trial. Just the logbook.
+      Keine Testphase. Nur das Flugbuch.
     </h2>
     <p class="text-lg text-slate-300 leading-relaxed mb-8 reveal reveal-delay-1">
-      Sign up with an email address and start logging. That is the whole funnel.
+      Mit einer E-Mail-Adresse anmelden und loslegen. Das ist der ganze Funnel.
     </p>
     <a href="https://app.ninerlog.com/register"
        class="inline-flex items-center gap-2 px-8 py-4 bg-linear-to-r from-amber-400 to-amber-500 text-navy-900 font-semibold text-lg rounded-full shadow-lg shadow-amber-400/30 hover:shadow-xl hover:shadow-amber-400/40 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-navy-900 reveal reveal-delay-2">
-      Start Logging &mdash; It&rsquo;s Free
+      Kostenlos loslegen
     </a>
   </div>
 </section>
