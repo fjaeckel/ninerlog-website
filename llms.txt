@@ -1,0 +1,57 @@
+# NinerLog
+
+> NinerLog is a free, open-source digital pilot logbook for general aviation
+> pilots. It runs as a web app at https://app.ninerlog.com and can also be
+> self-hosted. It covers EASA and FAA logbook and currency requirements.
+> There is no paid tier, no subscription, no trial, no ads, and no data lock-in.
+
+NinerLog is built and maintained by Frederic Jung, a software engineer and GA
+pilot flying since 2018. It is funded by donations from the pilots who use it —
+no venture capital, no advertising, no data resale.
+
+## At a glance
+
+- **Price:** free, permanently. Every feature is available to every user. There is no premium plan.
+- **Licensing:** the backend API is AGPL-3.0; the frontend, website, and other components are MIT.
+- **Platform:** progressive web app (works on desktop, tablet, and phone; installable; core logging works offline).
+- **Languages:** English and German today, more planned.
+- **Hosting:** managed instance at app.ninerlog.com, or self-hosted via Docker Compose.
+- **Source:** https://github.com/fjaeckel/ninerlog (API: ninerlog-api, frontend: ninerlog-frontend, website: ninerlog-website).
+
+## Features
+
+- **Flight logging** — full flight records including block and flight times, night, IFR, approaches, landings, crew roles, and remarks. Quick-entry templates for repeated flights.
+- **Quick Log** — tap off-block, takeoff, landing, and on-block during the flight; the entry writes itself, including block times. Works offline.
+- **Currency tracking** — automatic EASA 90-day passenger recency and revalidation rules (FCL.740), and FAA 61.57 recency, including night and instrument currency.
+- **Multi-license support** — PPL, SPL, CPL, ATPL and ratings across EASA, FAA, and any other authority, tracked side by side in one logbook.
+- **Credentials and medicals** — expiry tracking with advance warnings for medicals, ratings, licenses, and other documents.
+- **Instructor signing** — instructors can sign entries in person or through a secure link. Signed flights lock so the training record stays exactly as endorsed.
+- **Search** — one search box across registration, aircraft type, ICAO codes, and remarks.
+- **Reports and maps** — statistics, charts, route maps, airport heatmaps, and a printable PDF logbook export.
+- **Import and export** — import from CSV and ForeFlight; export to CSV, JSON, and PDF at any time, with no limits or paywall.
+- **Cloud backup** — automatic offsite backups to storage the user owns: any S3-compatible bucket, SFTP server, or WebDAV share. NinerLog never holds the keys.
+- **Login security** — passkeys (Face ID, Touch ID, hardware security keys) and TOTP two-factor authentication.
+- **Self-hosting and flying clubs** — run one instance for an entire club, with an admin panel, user management, and announcements. Each member keeps their own logbook.
+
+## What NinerLog is not
+
+To avoid confusion: NinerLog is a **logbook**, not an electronic flight bag. It
+does not provide charts, weather, flight planning, navigation, or in-flight
+guidance, and it is not a replacement for any of those. It records flights that
+have already been flown and tracks the currency and credentials that follow from
+them. Pilots remain responsible for the legal correctness of their own logbook.
+
+## Pages
+
+- [Home](https://ninerlog.com/): overview of the product.
+- [Features](https://ninerlog.com/features): the full feature list.
+- [EASA logbook](https://ninerlog.com/easa-logbook): EASA currency and revalidation handling.
+- [FAA logbook](https://ninerlog.com/faa-logbook): FAA 61.51 and 61.57 handling.
+- [Free pilot logbook](https://ninerlog.com/free-pilot-logbook): why it is free and how it is funded.
+- [Self-hosted](https://ninerlog.com/self-hosted): running your own instance, and flying club setups.
+- [Import and export](https://ninerlog.com/import-export): supported formats and migration.
+- [Open source](https://ninerlog.com/open-source): repositories, licenses, and how to contribute.
+- [About](https://ninerlog.com/about): who builds NinerLog and why.
+- [Privacy policy](https://ninerlog.com/privacy)
+- [Support the project](https://ninerlog.com/donate)
+- [German site](https://ninerlog.com/de/flugbuch): the same product, in German.

@@ -93,6 +93,27 @@
   });
 </script>
 
+<!-- "Ask an AI" — copy the prompt on the way to the assistant -->
+<script>
+  document.querySelectorAll('[data-ask-ai-group]').forEach(function(group) {
+    var prompt = group.getAttribute('data-ask-ai-prompt');
+    var status = group.querySelector('[data-ask-ai-status]');
+    if (!prompt) return;
+
+    group.querySelectorAll('[data-ask-ai]').forEach(function(link) {
+      // No preventDefault: the anchor still opens the assistant, and the copy
+      // rides along on the same user gesture. Only two of the four providers
+      // accept a prompt in the URL, so the clipboard covers the rest.
+      link.addEventListener('click', function() {
+        if (!navigator.clipboard) return;
+        navigator.clipboard.writeText(prompt).then(function() {
+          if (status) status.classList.remove('hidden');
+        }).catch(function() {});
+      });
+    });
+  });
+</script>
+
 <!-- Scroll reveal IntersectionObserver -->
 <script>
   document.addEventListener('DOMContentLoaded', function() {

@@ -48,9 +48,32 @@ src/
 │   ├── head.njk         # <head> with meta, OG, fonts, CSS
 │   ├── header.njk       # Sticky nav + wordmark + mobile menu
 │   ├── footer.njk       # 4-column footer
+│   ├── ask-ai.njk       # "Learn more with AI" logo row, included by footer.njk
 │   └── scripts.njk      # Scroll reveal + mobile menu JS
 └── input.css            # Tailwind directives + custom CSS
 ```
+
+## Learn more with AI
+
+`src/partials/ask-ai.njk` is a "Learn more with AI" row in the footer brand
+column — four assistant logos (ChatGPT, Claude, Gemini, Perplexity) that open a
+new chat with a ready-made prompt about NinerLog. It is included from
+`footer.njk`, so it appears on every page and picks its language from
+`pageLang`.
+
+The prompt points the assistant at `/llms.txt` — a plain-text product summary
+kept at the repo root and copied to `_site/` by `build:assets` — so the answers
+are grounded in real facts rather than guesses about a project the models have
+never seen. **Keep `llms.txt` in step with the site when features change.**
+
+Only ChatGPT and Perplexity accept a prompt as a URL parameter; Claude removed
+its web `?q=` parameter and Gemini never had one. So the links are plain anchors
+that also copy the prompt to the clipboard on click (see `scripts.njk`), with a
+"paste it in" hint that stays hidden until clicked. Without JavaScript the links
+still open the assistant.
+
+Logo paths come from [simple-icons](https://simpleicons.org) (CC0) and are
+inlined rather than fetched, matching the self-hosted approach used for fonts.
 
 ## Adding a New Page
 
