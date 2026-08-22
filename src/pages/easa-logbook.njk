@@ -1,5 +1,5 @@
 {% set pageTitle = "Free EASA Pilot Logbook — FCL.740 & FCL.140 Currency | NinerLog" %}
-{% set pageDescription = "Free, open-source EASA pilot logbook. Tracks FCL.740.A revalidation, FCL.140.A LAPL and FCL.140.S sailplane recency, and FCL.625.A instrument currency." %}
+{% set pageDescription = "Free, open-source EASA pilot logbook. Tracks FCL.740.A class rating revalidation, FCL.140.A LAPL recency, and FCL.625.A instrument currency." %}
 {% set pagePath = "/easa-logbook" %}
 {% set altDe = "/de/easa-flugbuch" %}
 {% set sitemapChangefreq = "monthly" %}
@@ -43,11 +43,11 @@
         This is the detail that trips up most software. EASA draws a line between two things that both have to be true at once:
       </p>
       <ul>
-        <li><strong>Recency</strong> (FCL.140.x) &mdash; rolling flight experience you need to exercise the privileges of a LAPL or SPL. It runs backwards from today, and no examiner signature is involved.</li>
+        <li><strong>Recency</strong> (FCL.140.x) &mdash; rolling flight experience you need to exercise the privileges of a LAPL. It runs backwards from today, and no examiner signature is involved.</li>
         <li><strong>Revalidation</strong> (FCL.740.x) &mdash; periodic renewal of a class or type rating on a PPL, CPL or ATPL. The experience is counted inside a window tied to the rating&rsquo;s <em>expiry date</em>, not to today.</li>
       </ul>
       <p>
-        A tool that counts everything as a rolling window will quietly tell a PPL holder they are fine when their SEP rating window has not even opened yet. NinerLog models the two separately, and dispatches on your licence type: LAPL and SPL go down the FCL.140 path, PPL/CPL/ATPL down FCL.740.
+        A tool that counts everything as a rolling window will quietly tell a PPL holder they are fine when their SEP rating window has not even opened yet. NinerLog models the two separately, and dispatches on your licence type: a LAPL goes down the FCL.140 path, PPL/CPL/ATPL down FCL.740.
       </p>
     </div>
   </div>
@@ -96,15 +96,6 @@
         </p>
       </div>
 
-      <!-- FCL.140.S -->
-      <div class="group p-6 bg-white dark:bg-navy-800 border border-slate-200 dark:border-navy-700 rounded-xl hover:shadow-lg hover:-translate-y-1 transition-all duration-200 reveal reveal-delay-3">
-        <div class="font-mono text-xs font-bold text-amber-500 tracking-wider mb-2">FCL.140.S</div>
-        <h3 class="text-lg font-semibold text-slate-800 dark:text-white mb-2">SPL &amp; LAPL(S) recency</h3>
-        <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-          Sailplanes count <em>launches</em>, not landings: 5 hours of PIC time, 15 launches and 2 training flights with an instructor in the preceding 24 months. Launch methods are tracked individually &mdash; winch, aerotow and self-launch each need their own 5 launches under FCL.140.S(b)(1). The TMG extension under FCL.140.S(b)(2) is evaluated separately again.
-        </p>
-      </div>
-
       <!-- FCL.625.A -->
       <div class="group p-6 bg-white dark:bg-navy-800 border border-slate-200 dark:border-navy-700 rounded-xl hover:shadow-lg hover:-translate-y-1 transition-all duration-200 reveal reveal-delay-3">
         <div class="font-mono text-xs font-bold text-violet-500 tracking-wider mb-2">FCL.625.A</div>
@@ -128,25 +119,6 @@
 </section>
 
 <!-- ============================================================
-     GERMAN UL
-     ============================================================ -->
-<section class="bg-white dark:bg-navy-950 py-16 lg:py-24">
-  <div class="max-w-3xl mx-auto px-4">
-    <h2 class="text-2xl lg:text-3xl font-bold tracking-tight text-slate-800 dark:text-white mb-6 reveal">
-      German ultralights, too.
-    </h2>
-    <div class="prose prose-slate prose-lg dark:prose-invert max-w-none reveal reveal-delay-1">
-      <p>
-        Ultralights in Germany are not covered by Part-FCL at all &mdash; they run on national law. NinerLog has a separate evaluator for <strong>LuftPersV &sect;45</strong>: 12 hours of flight time, 12 takeoffs and landings and a one-hour <em>&Uuml;bungsflug</em> with an instructor on a rolling 24-month window, plus the 90-day rule attached to the <em>Passagierberechtigung</em>.
-      </p>
-      <p>
-        The results for UL ratings are reported in German, because that is the language the regulation and your <em>Luftsportger&auml;tef&uuml;hrerschein</em> are written in.
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================
      BEYOND CURRENCY
      ============================================================ -->
 <section class="bg-slate-50 dark:bg-navy-900 py-16 lg:py-24">
@@ -160,7 +132,7 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
       <div class="group p-6 bg-white dark:bg-navy-800 border border-slate-200 dark:border-navy-700 rounded-xl hover:shadow-lg hover:-translate-y-1 transition-all duration-200 reveal reveal-delay-1">
         <h3 class="text-lg font-semibold text-slate-800 dark:text-white mb-2">More than one licence</h3>
-        <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Plenty of European pilots hold an SPL and a PPL, or an EASA licence and an FAA certificate. Each licence carries its own ratings and is evaluated under its own authority&rsquo;s rules, in one logbook.</p>
+        <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Plenty of European pilots hold an EASA licence and an FAA certificate. Each licence carries its own ratings and is evaluated under its own authority&rsquo;s rules, in one logbook.</p>
       </div>
       <div class="group p-6 bg-white dark:bg-navy-800 border border-slate-200 dark:border-navy-700 rounded-xl hover:shadow-lg hover:-translate-y-1 transition-all duration-200 reveal reveal-delay-2">
         <h3 class="text-lg font-semibold text-slate-800 dark:text-white mb-2">EASA-shaped CSV export</h3>
@@ -222,7 +194,7 @@
     </p>
     <a href="https://app.ninerlog.com/register"
        class="inline-flex items-center gap-2 px-8 py-4 bg-linear-to-r from-amber-400 to-amber-500 text-navy-900 font-semibold text-lg rounded-full shadow-lg shadow-amber-400/30 hover:shadow-xl hover:shadow-amber-400/40 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-navy-900 reveal reveal-delay-2">
-      Start Logging &mdash; It&rsquo;s Free
+      Try it yourself
     </a>
   </div>
 </section>

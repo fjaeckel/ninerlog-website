@@ -1,5 +1,5 @@
 {% if pageLang == "de" %}
-  {% set footTagline = "Das freie, quelloffene Flugbuch für Piloten. Deine Daten, deine Regeln, dauerhaft kostenlos." %}
+  {% set footTagline = "Das quelloffene Flugbuch für Piloten. Deine Daten, deine Regeln, kostenlos nutzbar." %}
   {% set footProductHeading = "Produkt" %}
   {% set footProductLinks = [
     { href: "/de/flugbuch", label: "Digitales Flugbuch" },
@@ -19,7 +19,7 @@
   {% set footCopy = "&copy; 2026 NinerLog. Open Source unter AGPL-3.0 &amp; MIT." %}
   {% set footMadeBy = "Von Piloten für Piloten." %}
 {% else %}
-  {% set footTagline = "The free, open-source pilot logbook. Your data, your rules, forever free." %}
+  {% set footTagline = "The open-source pilot logbook. Your data, your rules, free to use." %}
   {% set footProductHeading = "Product" %}
   {% set footProductLinks = [
     { href: "/features", label: "Features" },
@@ -99,8 +99,8 @@
     </div>
 
     <div class="mt-12 pt-8 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-4">
-      <p class="text-xs text-slate-500">{{ footCopy | safe }}</p>
-      <p class="text-xs text-slate-500 font-mono tracking-wide">{{ footMadeBy | safe }}</p>
+      <p class="text-xs text-slate-400">{{ footCopy | safe }}</p>
+      <p class="text-xs text-slate-400 font-mono tracking-wide">{{ footMadeBy | safe }}</p>
     </div>
   </div>
 </footer>

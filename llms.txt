@@ -20,18 +20,24 @@ no venture capital, no advertising, no data resale.
 
 ## Features
 
-- **Flight logging** — full flight records including block and flight times, night, IFR, approaches, landings, crew roles, and remarks. Quick-entry templates for repeated flights.
-- **Quick Log** — tap off-block, takeoff, landing, and on-block during the flight; the entry writes itself, including block times. Works offline.
-- **Currency tracking** — automatic EASA 90-day passenger recency and revalidation rules (FCL.740), and FAA 61.57 recency, including night and instrument currency.
-- **Multi-license support** — PPL, SPL, CPL, ATPL and ratings across EASA, FAA, and any other authority, tracked side by side in one logbook.
-- **Credentials and medicals** — expiry tracking with advance warnings for medicals, ratings, licenses, and other documents.
-- **Instructor signing** — instructors can sign entries in person or through a secure link. Signed flights lock so the training record stays exactly as endorsed.
-- **Search** — one search box across registration, aircraft type, ICAO codes, and remarks.
-- **Reports and maps** — statistics, charts, route maps, airport heatmaps, and a printable PDF logbook export.
-- **Import and export** — import from CSV and ForeFlight; export to CSV, JSON, and PDF at any time, with no limits or paywall.
-- **Cloud backup** — automatic offsite backups to storage the user owns: any S3-compatible bucket, SFTP server, or WebDAV share. NinerLog never holds the keys.
-- **Login security** — passkeys (Face ID, Touch ID, hardware security keys) and TOTP two-factor authentication.
-- **Self-hosting and flying clubs** — run one instance for an entire club, with an admin panel, user management, and announcements. Each member keeps their own logbook.
+- **Flight logging** — full flight records including block and flight times, night, IFR, structured approaches (type, airport, runway), holds, landings and takeoffs, crew roles, endorsements, and remarks. FSTD (simulator) sessions are recorded separately and never summed into flight time. Legs flown as a passenger are kept as a record of the trip and counted in no total. Departure and arrival accept free text for sites without an ICAO code.
+- **Automatic calculation** — night time from actual sunset and sunrise at the departure and arrival airports, day/night landing and takeoff split, cross-country time, great-circle distance in nautical miles, and PIC, solo, SIC, dual-given and multi-pilot time derived from the crew list. All of it overridable.
+- **Quick Log** — tap off-block, takeoff, landing, and on-block during the flight; the entry writes itself, including block times. GPS airport detection. Works offline and syncs later.
+- **Currency tracking** — automatic EASA revalidation by experience (FCL.740) and passenger currency, FAA 61.57 recency, night and instrument currency with approach counting, IPC, and the FAA flight review (61.56). Informational 90-day recency per aircraft model and per registration.
+- **Custom currency rules** — pilots can author their own currency rules for club minimums, insurance requirements or personal limits: a rolling window, filters over the flights that count, and "at least N" requirements over roughly 25 metrics. Built either in a visual block editor or as YAML, previewed against the real logbook before saving, pausable, with per-rule email reminders, and shareable by link so other users can import them.
+- **Multi-license support** — PPL, CPL, ATPL and class ratings (SEP, MEP, SET, TMG, IR) across EASA, FAA, and any other authority, tracked side by side in one logbook. Flights count toward every applicable license with no manual assignment.
+- **Credentials and medicals** — EASA Class 1/2/LAPL, FAA First/Second/Third Class, ICAO language proficiency, security clearances, and BZF/AZF radio certificates, with expiry tracking. Photos and PDFs of the actual documents can be attached. Email reminders are configurable per category, per warning interval, and per hour of day.
+- **Instructor signing** — instructors can sign entries in person or through a secure, expiring link (email, link or QR code), with no account needed. Signed flights lock so the training record stays exactly as endorsed; voiding a signature is recorded with a reason.
+- **Search** — one search box across registration, aircraft type, ICAO codes, and remarks, stackable with date, aircraft, airport and pilot-function filters. Filters persist across navigation, and the flights list columns are user-selectable or adaptive to window width.
+- **Reports** — a full analytics view in seven sections: overview (career hours curve, hours per month), experience (role split by year, instructors, crew), aircraft (by type, registration, class, category), places (airports, countries, routes, route maps, airport heatmap), instrument (IFR time, approach types), patterns (day of week, time of day, seasonality, flight length) and records (personal bests and streaks). An optional initial-hours snapshot carries pre-existing experience into the totals and into the PDF logbook.
+- **Fleet** — per-aircraft statistics (hours, flights, landings, last flown), 90-day recency per model and registration, per-aircraft default departure and arrival, complex/high-performance/tailwheel flags, and registration changes that carry logged flights over.
+- **Import** — twelve logbook formats detected automatically from the header row, including ForeFlight, LogTen Pro, MyFlightbook, capzlog.aero, FLYLOG.io, Wader, Vereinsflieger, SkyDemon, the EASA AMC1 FCL.050 layout, the FAA layout, and generic CSV/XLS. Drag and drop, preview with duplicate warnings, automatic fleet creation from the imported rows, and JSON backup restore.
+- **Export** — a printable, per-page signable PDF logbook in EASA AMC1 FCL.050 or FAA §61.51 columns, in A4/A5/Letter, as a book-style spread or single landscape page, with configurable rows per page. Also CSV in ForeFlight, EASA or FAA column sets, a full JSON backup, and contacts as vCard. No limits, no paywall.
+- **Cloud backup** — automatic offsite backups to storage the user owns: any S3-compatible bucket, SFTP server, or WebDAV share, on a daily, weekly or monthly schedule with retention and a run history. Credentials are encrypted at rest (AES-256-GCM) and never returned by the API.
+- **Login security** — passkeys (Face ID, Touch ID, hardware security keys), TOTP two-factor authentication, recovery codes, active session listing and revocation, and optional OIDC single sign-on for self-hosted instances.
+- **Self-hosting and flying clubs** — run one instance for an entire club, with an admin console covering users, a tamper-resistant audit log, email delivery status and suppressions, maintenance tasks, announcements, configuration, and a release update check. Each member keeps their own private logbook.
+- **Platform** — progressive web app with a mobile-native flight list, offline Quick Log, English and German throughout, a guided welcome tour, an in-app Help Base of thirteen illustrated topics, light and dark themes, and hours displayed as h:mm or decimal.
+- **Open API** — a documented OpenAPI specification with delta sync, deletion tombstones, idempotent writes, and a downloadable offline pack of the merged airport database (over 29,000 airports, refreshed daily).
 
 ## What NinerLog is not
 

@@ -4,15 +4,21 @@
   {% include "partials/head.njk" %}
 </head>
 <body class="min-h-screen flex flex-col">
-  <!-- Dark mode init — prevents FOUC -->
+  {#
+    Theme init. Runs before the first paint, so neither the colours nor the
+    toggle's icon flash the wrong state. Three modes: an absent `theme` key
+    means "follow the system", which is the default for a first-time visitor.
+  #}
   <script>
-    const theme = (() => {
-      if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
-        return localStorage.getItem('theme');
-      }
-      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    (function () {
+      var mode = 'system';
+      try { mode = localStorage.getItem('theme') || 'system'; } catch (e) { /* private mode */ }
+      if (mode !== 'light' && mode !== 'dark') mode = 'system';
+      var dark = mode === 'dark' ||
+        (mode === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+      document.documentElement.classList.toggle('dark', dark);
+      document.documentElement.dataset.themeMode = mode;
     })();
-    document.documentElement.classList.toggle('dark', theme === 'dark');
   </script>
 
   <!-- Skip to content -->

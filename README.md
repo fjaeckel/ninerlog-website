@@ -24,7 +24,7 @@ npm run build     # Production build → _site/
 src/
 ├── pages/          # Nunjucks page templates → _site/*.html (subdirs preserved)
 │   ├── index.njk               # Landing page
-│   ├── features.njk            # Features page
+│   ├── features.njk            # Features showcase (see below)
 │   ├── easa-logbook.njk        # EASA currency landing page
 │   ├── faa-logbook.njk         # FAA currency landing page
 │   ├── free-pilot-logbook.njk  # No-subscription landing page
@@ -52,6 +52,71 @@ src/
 │   └── scripts.njk      # Scroll reveal + mobile menu JS
 └── input.css            # Tailwind directives + custom CSS
 ```
+
+## Light and dark
+
+Three modes: **system** (the default — no stored preference), **light** and
+**dark**. The toggle in the header cycles through them and stores the choice in
+`localStorage` under `theme`; choosing *system* removes the key rather than
+storing the word, so a visitor who never touches the button keeps following
+their OS, including when it changes mid-visit.
+
+The inline script at the top of `layouts/base.njk` runs before the first paint
+and sets two things on `<html>`: the `dark` class (which drives Tailwind's
+`dark:` variant, configured as `@custom-variant dark (&:is(.dark *))`) and
+`data-theme-mode`, which selects the toggle's icon purely in CSS. Both have to
+happen there — doing either after load flashes the wrong state.
+
+Page chrome — header, footer, hero sections, the 404 — is navy in **both**
+themes by design; only the content sections swap. So a new section needs a
+`dark:` counterpart for every colour it sets, and a colour picked against navy
+usually fails on white. The ones that bit us: `text-sky-100` on a
+`bg-sky-500/10` bar (1.04:1 in light), the `freq-badge` utility, and `-500`
+inks used as small text on white. `freq-badge` now carries its own light
+palette in `input.css`; elsewhere the pattern is `text-sky-700 dark:text-sky-400`.
+
+**Check both themes before shipping a page.** The quickest way is
+`localStorage.setItem('theme','dark')` then reload — toggling the class from
+the console does not reliably restyle already-painted nested elements.
+
+## The features page
+
+`features.njk` and its German twin `de/funktionen.njk` are the long-form
+showcase, and the only pages that carry a chapter nav: a row of anchor pills
+under the hero, one per `<section id="…">`. Anchor and section must stay in
+step, and every section needs `scroll-mt-20` so the sticky header does not
+cover its heading.
+
+Both files open with three Nunjucks macros — `check()`, `card()` and `badge()` —
+because the page is otherwise forty repetitions of the same tick-mark SVG.
+Pass `true` as the last argument to `check()` or `card()` to append the
+**New** pill. `badge()` takes a *whole* class name for the status dot
+(`"bg-amber-400"`), never a colour fragment: Tailwind scans these files as plain
+text and cannot see a class assembled from parts.
+
+The hero deliberately carries no call to action, and the sign-up button sits at
+the very bottom. The landing pages lead with **See what it does** for the same
+reason — asking for a registration before anyone has seen the product turned
+readers away from the product.
+
+**When a feature ships, this page, its German twin, and `llms.txt` all need the
+same update.**
+
+### What the site deliberately does not claim
+
+Some things the API and frontend implement are **not advertised anywhere on the
+site**, because the implementation is not good enough to promise yet:
+
+| Not claimed | Present in code as |
+|---|---|
+| Gliders / sailplanes | `launchMethod` (winch, aerotow, self-launch), FCL.140.S and §61.57(a) evaluators |
+| German ultralights | the LuftPersV §45 evaluator |
+| The iOS app | the `ninerlog-ios` repo |
+
+Grepping the repos for features will surface all three again. Leave them out
+until the owner says otherwise. `SPL` and `LAPL(S)` count as glider claims —
+use "an EASA licence and an FAA certificate" as the multi-licence example.
+`TMG` is fine: it is a powered class rating on the generic class machinery.
 
 ## Learn more with AI
 

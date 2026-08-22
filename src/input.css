@@ -245,11 +245,19 @@
 }
 
 @utility freq-badge {
-  /* ── ATIS frequency badge ── */
+  /* ── ATIS frequency badge ──
+     Sky-400 on a near-white tint is about 1.9:1, so the light theme needs its
+     own, darker ink; the dark theme keeps the original glow. */
   @apply inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-sm text-xs font-mono font-medium;
-  background: rgba(14, 165, 233, 0.08);
-  color: #38bdf8;
-  border: 1px solid rgba(14, 165, 233, 0.15);
+  background: rgba(14, 165, 233, 0.1);
+  color: #0369a1;
+  border: 1px solid rgba(14, 165, 233, 0.3);
+
+  &:is(.dark *) {
+    background: rgba(14, 165, 233, 0.08);
+    color: #38bdf8;
+    border-color: rgba(14, 165, 233, 0.15);
+  }
 }
 
 @utility taxiway-border {
@@ -341,6 +349,20 @@
     font-family: 'Plus Jakarta Sans Variable', 'Inter Variable', system-ui, sans-serif;
     @apply text-slate-800 dark:text-white;
   }
+}
+
+/*
+  Appearance toggle icons. Which of the three shows is driven by
+  `data-theme-mode` on <html>, set by the inline script in base.njk before the
+  first paint — doing it in JS after load would flash the wrong icon.
+*/
+[data-theme-icon] {
+  display: none;
+}
+[data-theme-mode='system'] [data-theme-icon='system'],
+[data-theme-mode='light'] [data-theme-icon='light'],
+[data-theme-mode='dark'] [data-theme-icon='dark'] {
+  display: block;
 }
 
 /* Scroll reveal */

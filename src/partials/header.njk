@@ -9,8 +9,8 @@
     { href: "/de/open-source-flugbuch", label: "Open Source" },
     { href: "/de/unterstuetzen", label: "Unterstützen" }
   ] %}
-  {% set ctaLabel = "Kostenlos starten &rarr;" %}
-  {% set ctaLabelMobile = "Kostenlos loslegen" %}
+  {% set ctaLabel = "Selbst ausprobieren &rarr;" %}
+  {% set ctaLabelMobile = "Selbst ausprobieren" %}
   {# altEn set = a real translation pair, so the switch may claim hreflang.
      Without one it still points at the EN home, but makes no equivalence claim. #}
   {% set enHref = altEn | default("/") %}
@@ -18,6 +18,7 @@
   {% set deHref = pagePath %}
   {% set deIsPair = true %}
   {% set langPickerLabel = "Sprache wählen" %}
+  {% set themeLabels = '{"system":"Darstellung: System — Klick für Hell","light":"Darstellung: Hell — Klick für Dunkel","dark":"Darstellung: Dunkel — Klick für System"}' %}
   {% set openMenuLabel = "Menü öffnen" %}
   {% set closeMenuLabel = "Menü schließen" %}
   {% set navAriaLabel = "Hauptnavigation" %}
@@ -29,13 +30,14 @@
     { href: "/about", label: "About" },
     { href: "/donate", label: "Donate" }
   ] %}
-  {% set ctaLabel = "Start Free &rarr;" %}
-  {% set ctaLabelMobile = "Start Logging &mdash; It&rsquo;s Free" %}
+  {% set ctaLabel = "Try it yourself &rarr;" %}
+  {% set ctaLabelMobile = "Try it yourself" %}
   {% set enHref = pagePath %}
   {% set enIsPair = true %}
   {% set deHref = altDe | default("/de/flugbuch") %}
   {% set deIsPair = altDe %}
   {% set langPickerLabel = "Choose language" %}
+  {% set themeLabels = '{"system":"Appearance: system — click for light","light":"Appearance: light — click for dark","dark":"Appearance: dark — click for system"}' %}
   {% set openMenuLabel = "Open menu" %}
   {% set closeMenuLabel = "Close menu" %}
   {% set navAriaLabel = "Main navigation" %}
@@ -61,6 +63,20 @@
           {{ ctaLabel | safe }}
         </a>
       </div>
+
+      {#
+        Appearance toggle. Cycles system → light → dark → system; which icon
+        shows is CSS driven by `data-theme-mode` on <html>, so the correct one
+        is painted on the very first frame. The title/aria-label names the
+        current mode and what a click does, since the icon alone cannot.
+      #}
+      <button type="button" id="theme-toggle"
+              data-theme-labels='{{ themeLabels }}'
+              class="flex items-center justify-center w-8 h-8 text-slate-300 hover:text-white border border-white/15 rounded-sm hover:border-white/30 transition-colors">
+        <svg data-theme-icon="system" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="14" x="2" y="3" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+        <svg data-theme-icon="light" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+        <svg data-theme-icon="dark" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+      </button>
 
       {#
         Language picker. Always present, at every breakpoint — a pilot landing on

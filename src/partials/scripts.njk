@@ -41,6 +41,46 @@
   }
 </script>
 
+<!-- Appearance toggle -->
+<script>
+  (function () {
+    var btn = document.getElementById('theme-toggle');
+    if (!btn) return;
+
+    var order = ['system', 'light', 'dark'];
+    var labels = JSON.parse(btn.getAttribute('data-theme-labels'));
+    var media = window.matchMedia('(prefers-color-scheme: dark)');
+    var root = document.documentElement;
+
+    function read() {
+      try { return localStorage.getItem('theme') || 'system'; } catch (e) { return 'system'; }
+    }
+
+    function apply(mode) {
+      root.classList.toggle('dark', mode === 'dark' || (mode === 'system' && media.matches));
+      root.dataset.themeMode = mode;
+      btn.setAttribute('aria-label', labels[mode]);
+      btn.setAttribute('title', labels[mode]);
+    }
+
+    btn.addEventListener('click', function () {
+      var next = order[(order.indexOf(read()) + 1) % order.length];
+      // "system" is the absence of a choice, so it is stored as no key at all.
+      try {
+        if (next === 'system') localStorage.removeItem('theme');
+        else localStorage.setItem('theme', next);
+      } catch (e) { /* private mode: the choice lasts for this page only */ }
+      apply(next);
+    });
+
+    media.addEventListener('change', function () {
+      if (read() === 'system') apply('system');
+    });
+
+    apply(read());
+  })();
+</script>
+
 <!-- Language picker dropdown -->
 <script>
   (function() {
