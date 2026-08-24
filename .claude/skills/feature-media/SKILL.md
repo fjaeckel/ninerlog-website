@@ -37,10 +37,13 @@ Regenerate them with `npm run shots:marketing -- --lang=de [--animations]` in
 the frontend repo; never point the German page at the English set or vice
 versa.
 
-`npm run dev` copies `images/` into `_site/` once at startup (`build:assets`);
-it does not watch it. After swapping media, restart dev or run
-`npm run build:assets` — and hard-refresh the browser, because the media
-basenames are a stable URL contract and stay cached across content changes.
+`npm run dev` copies `images/` into `_site/` once at startup (`build:assets`)
+and mirrors regenerated pages onto the `_site` root continuously
+(`scripts/dev-mirror.mjs` — the nunjucks watcher writes under `_site/pages/`,
+while the server resolves production URLs against the root). After swapping
+media, restart dev or run `npm run build:assets` — and hard-refresh the
+browser, because the media basenames are a stable URL contract and stay
+cached across content changes.
 
 Site dark mode is a **class toggle** (`scripts.njk` toggles `.dark` on the
 root), so `<picture media="(prefers-color-scheme:…)">` would ignore the
