@@ -4,7 +4,7 @@
   "private": true,
   "description": "NinerLog.com — The free, open-source pilot logbook website",
   "scripts": {
-    "dev": "npm run build:fonts && concurrently \"npm:dev:*\"",
+    "dev": "npm run build:fonts && npm run build:assets && concurrently \"npm:dev:*\"",
     "dev:njk": "nunjucks 'pages/**/*.njk' -p src -o _site -w",
     "dev:css": "tailwindcss -i src/input.css -o _site/styles.css --watch",
     "dev:serve": "npx serve _site -l 8080",
