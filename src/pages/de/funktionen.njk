@@ -95,7 +95,16 @@
 <section id="erfassen" class="scroll-mt-20 bg-white dark:bg-navy-950 py-16 lg:py-24">
   <div class="max-w-6xl mx-auto px-4">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-      <img src="/images/feature-quick-log.png" alt="NinerLog Quick Log während des Fluges: Off-Block und Start bereits getippt, wartet auf die Landung" class="rounded-xl shadow-xl w-full order-last lg:order-none" loading="lazy" width="1200" height="675" />
+      <div class="w-full order-last lg:order-none">
+        <video class="rounded-xl shadow-xl w-full dark:hidden" autoplay loop muted playsinline preload="metadata" poster="/images/poster-quicklog-de.png" width="1200" height="675" aria-label="NinerLog Quick Log während des Fluges: Off-Block und Start bereits getippt, wartet auf die Landung">
+          <source src="/images/demo-quicklog-de.webm" type="video/webm" />
+          <img src="/images/feature-quick-log-de.png" alt="NinerLog Quick Log während des Fluges: Off-Block und Start bereits getippt, wartet auf die Landung" class="w-full" loading="lazy" width="1264" height="739" />
+        </video>
+        <video class="rounded-xl shadow-xl w-full hidden dark:block" autoplay loop muted playsinline preload="metadata" poster="/images/poster-quicklog-de-dark.png" width="1200" height="675" aria-label="NinerLog Quick Log während des Fluges: Off-Block und Start bereits getippt, wartet auf die Landung">
+          <source src="/images/demo-quicklog-de-dark.webm" type="video/webm" />
+          <img src="/images/feature-quick-log-de-dark.png" alt="NinerLog Quick Log während des Fluges: Off-Block und Start bereits getippt, wartet auf die Landung" class="w-full" loading="lazy" width="1264" height="739" />
+        </video>
+      </div>
       <div class="reveal">
         {{ badge("QUICK LOG &bull; BLOCKZEITEN LIVE") }}
         <h2 class="text-2xl lg:text-3xl font-bold tracking-tight text-slate-800 dark:text-white mb-4 mt-3">Dein Flugbuch läuft mit, während du fliegst</h2>
@@ -144,7 +153,10 @@
 <section id="suche" class="scroll-mt-20 bg-white dark:bg-navy-950 py-16 lg:py-24">
   <div class="max-w-6xl mx-auto px-4">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-      <img src="/images/feature-search.png" alt="Die NinerLog-Flugsuche filtert ein Flugbuch anhand eines ICAO-Codes auf die passenden Flüge" class="rounded-xl shadow-xl w-full order-last lg:order-2" loading="lazy" width="1200" height="675" />
+      <div class="w-full order-last lg:order-2">
+        <img src="/images/feature-search-de.png" alt="Die NinerLog-Flugsuche filtert ein Flugbuch anhand eines ICAO-Codes auf die passenden Flüge" class="w-full dark:hidden" loading="lazy" width="1264" height="739" />
+        <img src="/images/feature-search-de-dark.png" alt="Die NinerLog-Flugsuche filtert ein Flugbuch anhand eines ICAO-Codes auf die passenden Flüge" class="w-full hidden dark:block" loading="lazy" width="1264" height="739" />
+      </div>
       <div class="reveal lg:order-1">
         {{ badge("ALLES WIEDERFINDEN") }}
         <h2 class="text-2xl lg:text-3xl font-bold tracking-tight text-slate-800 dark:text-white mb-4 mt-3">Ein Feld, alle Spalten</h2>
@@ -169,7 +181,10 @@
 <section id="recency" class="scroll-mt-20 bg-slate-50 dark:bg-navy-900 py-16 lg:py-24">
   <div class="max-w-6xl mx-auto px-4">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-      <img src="/images/feature-currency-tracking.png" alt="NinerLog Recency-Übersicht mit EASA-Verlängerung und FAA-90-Tage-Status" class="rounded-xl shadow-xl w-full order-last lg:order-none" loading="lazy" width="1200" height="675" />
+      <div class="w-full order-last lg:order-none">
+        <img src="/images/feature-currency-tracking-de.png" alt="NinerLog Recency-Übersicht mit EASA-Verlängerung und FAA-90-Tage-Status" class="w-full dark:hidden" loading="lazy" width="1264" height="739" />
+        <img src="/images/feature-currency-tracking-de-dark.png" alt="NinerLog Recency-Übersicht mit EASA-Verlängerung und FAA-90-Tage-Status" class="w-full hidden dark:block" loading="lazy" width="1264" height="739" />
+      </div>
       <div class="reveal">
         <h2 class="text-2xl lg:text-3xl font-bold tracking-tight text-slate-800 dark:text-white mb-4">Nie wieder raten, ob du current bist</h2>
         <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
@@ -240,6 +255,10 @@
     <span class="text-sky-400">label</span>: Nachtlandungen
 </code></pre>
         </div>
+        <div class="mt-4">
+          <img src="/images/feature-custom-currency-de.png" alt="Der NinerLog Currency-Baukasten mit der Nachtlandungen-Regel: Zeitfenster-, Filter- und Anforderungsblöcke" class="w-full dark:hidden" loading="lazy" width="1264" height="739" />
+          <img src="/images/feature-custom-currency-de-dark.png" alt="Der NinerLog Currency-Baukasten mit der Nachtlandungen-Regel: Zeitfenster-, Filter- und Anforderungsblöcke" class="w-full hidden dark:block" loading="lazy" width="1264" height="739" />
+        </div>
         <p class="mt-4 text-sm text-slate-500 dark:text-slate-400">
           Dieselbe Regel im Baukasten: ein 90-Tage-Fenster, ein Filter, eine Anforderung. Nichts zu installieren, nichts zu skripten.
         </p>
@@ -259,6 +278,10 @@
         Lizenzen von mehr als einer Behörde &mdash; etwa eine EASA-Lizenz und ein FAA-Certificate? Flüge zählen auf jede Lizenz und jede Klassenberechtigung, für die sie gelten &mdash; ohne dass du Flüge einzeln zuordnen musst. Und die Mappe voller Nachweise, die drumherum abläuft, liegt am selben Ort.
       </p>
     </div>
+    <div class="mb-10 lg:mb-14 reveal reveal-delay-1">
+      <img src="/images/feature-credentials-de.png" alt="NinerLog Nachweise-Seite mit einem bald ablaufenden EASA-Klasse-2-Medical, einem unbefristeten Sprechfunkzeugnis und einem abgelaufenen ICAO-Sprachnachweis" class="w-full dark:hidden" loading="lazy" width="1264" height="739" />
+      <img src="/images/feature-credentials-de-dark.png" alt="NinerLog Nachweise-Seite mit einem bald ablaufenden EASA-Klasse-2-Medical, einem unbefristeten Sprechfunkzeugnis und einem abgelaufenen ICAO-Sprachnachweis" class="w-full hidden dark:block" loading="lazy" width="1264" height="739" />
+    </div>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 reveal reveal-delay-1">
       {{ card("Jede Behörde, nebeneinander", "EASA, FAA, UK CAA oder wer auch immer deine ausgestellt hat. Lizenz anlegen, Klassenberechtigungen mit Ausstellungs- und Ablaufdatum ergänzen &mdash; jeder Flug landet dort, wo er hingehört.") }}
       {{ card("Klassenberechtigungen mit Ablauf", "SEP, MEP, SET, TMG und IR, jede mit eigener Gültigkeit, Verlängerungsstand und Ablaufdatum.") }}
@@ -276,7 +299,16 @@
 <section id="auswertung" class="scroll-mt-20 bg-white dark:bg-navy-950 py-16 lg:py-24">
   <div class="max-w-6xl mx-auto px-4">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-      <img src="/images/feature-reports.png" alt="NinerLog Auswertungen mit Diagrammen, Flugstatistiken und Streckenkarten" class="rounded-xl shadow-xl w-full order-last lg:order-2" loading="lazy" width="1200" height="675" />
+      <div class="w-full order-last lg:order-2">
+        <video class="rounded-xl shadow-xl w-full dark:hidden" autoplay loop muted playsinline preload="metadata" poster="/images/poster-reports-de.png" width="1200" height="675" aria-label="NinerLog Auswertungen mit Diagrammen, Flugstatistiken und Streckenkarten">
+          <source src="/images/demo-reports-de.webm" type="video/webm" />
+          <img src="/images/feature-reports-de.png" alt="NinerLog Auswertungen mit Diagrammen, Flugstatistiken und Streckenkarten" class="w-full" loading="lazy" width="1264" height="739" />
+        </video>
+        <video class="rounded-xl shadow-xl w-full hidden dark:block" autoplay loop muted playsinline preload="metadata" poster="/images/poster-reports-de-dark.png" width="1200" height="675" aria-label="NinerLog Auswertungen mit Diagrammen, Flugstatistiken und Streckenkarten">
+          <source src="/images/demo-reports-de-dark.webm" type="video/webm" />
+          <img src="/images/feature-reports-de-dark.png" alt="NinerLog Auswertungen mit Diagrammen, Flugstatistiken und Streckenkarten" class="w-full" loading="lazy" width="1264" height="739" />
+        </video>
+      </div>
       <div class="reveal lg:order-1">
         {{ badge("NEU GEBAUT &bull; SIEBEN KAPITEL") }}
         <h2 class="text-2xl lg:text-3xl font-bold tracking-tight text-slate-800 dark:text-white mb-4 mt-3">Deine gesamte Fliegerei, vorgelesen</h2>
@@ -312,6 +344,10 @@
         Kennzeichen und Muster trägst du einmal ein. Danach führt das Flugzeug seine eigene Historie, seine eigenen Vorgaben und seine eigene Recency.
       </p>
     </div>
+    <div class="mb-10 lg:mb-14 reveal reveal-delay-1">
+      <img src="/images/feature-fleet-de.png" alt="NinerLog Flotten-Seite mit Statistiken je Kennzeichen, 90-Tage-Recency und Vorbelegungen für jedes Luftfahrzeug" class="w-full dark:hidden" loading="lazy" width="1264" height="739" />
+      <img src="/images/feature-fleet-de-dark.png" alt="NinerLog Flotten-Seite mit Statistiken je Kennzeichen, 90-Tage-Recency und Vorbelegungen für jedes Luftfahrzeug" class="w-full hidden dark:block" loading="lazy" width="1264" height="739" />
+    </div>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 reveal reveal-delay-1">
       {{ card("Stunden pro Kennzeichen", "Gesamtzeit, Flüge, Landungen bei Tag und Nacht und wann du zuletzt geflogen bist &mdash; auf der Karte, ohne eine Auswertung zu öffnen.", true) }}
       {{ card("Recency auf einen Blick", "Landungen der letzten 90 Tage für das Muster und für das einzelne Flugzeug, mit dem Datum, an dem die Recency abläuft.", true) }}
@@ -329,7 +365,10 @@
 <section id="unterschrift" class="scroll-mt-20 bg-white dark:bg-navy-950 py-16 lg:py-24">
   <div class="max-w-6xl mx-auto px-4">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-      <img src="/images/feature-instructor-signing.png" alt="NinerLog Flugdetailseite mit abgeschlossener Fluglehrer-Unterschrift, Sperrhinweis und Crew-Eintrag" class="rounded-xl shadow-xl w-full order-last lg:order-none" loading="lazy" width="1200" height="675" />
+      <div class="w-full order-last lg:order-none">
+        <img src="/images/feature-instructor-signing-de.png" alt="NinerLog Flugdetailseite mit abgeschlossener Fluglehrer-Unterschrift, Sperrhinweis und Crew-Eintrag" class="w-full dark:hidden" loading="lazy" width="1264" height="739" />
+        <img src="/images/feature-instructor-signing-de-dark.png" alt="NinerLog Flugdetailseite mit abgeschlossener Fluglehrer-Unterschrift, Sperrhinweis und Crew-Eintrag" class="w-full hidden dark:block" loading="lazy" width="1264" height="739" />
+      </div>
       <div class="reveal">
         {{ badge("AUSBILDUNGSTAUGLICH") }}
         <h2 class="text-2xl lg:text-3xl font-bold tracking-tight text-slate-800 dark:text-white mb-4 mt-3">Vom Fluglehrer unterschrieben, danach gesperrt</h2>
@@ -354,7 +393,10 @@
 <section id="import" class="scroll-mt-20 bg-slate-50 dark:bg-navy-900 py-16 lg:py-24">
   <div class="max-w-6xl mx-auto px-4">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-      <img src="/images/feature-import.png" alt="NinerLog Import liest einen Logbuch-Export und ordnet die Spalten automatisch zu" class="rounded-xl shadow-xl w-full order-last lg:order-2" loading="lazy" width="1200" height="675" />
+      <div class="w-full order-last lg:order-2">
+        <img src="/images/feature-import-de.png" alt="NinerLog Import liest einen Logbuch-Export und ordnet die Spalten automatisch zu" class="w-full dark:hidden" loading="lazy" width="1264" height="739" />
+        <img src="/images/feature-import-de-dark.png" alt="NinerLog Import liest einen Logbuch-Export und ordnet die Spalten automatisch zu" class="w-full hidden dark:block" loading="lazy" width="1264" height="739" />
+      </div>
       <div class="reveal lg:order-1">
         {{ badge("ZWÖLF FORMATE &bull; AUTOMATISCH ERKANNT") }}
         <h2 class="text-2xl lg:text-3xl font-bold tracking-tight text-slate-800 dark:text-white mb-4 mt-3">Es erkennt dein altes Flugbuch</h2>
@@ -384,7 +426,10 @@
 <section id="export" class="scroll-mt-20 bg-white dark:bg-navy-950 py-16 lg:py-24">
   <div class="max-w-6xl mx-auto px-4">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-      <img src="/images/feature-export.png" alt="NinerLog Exportseite mit CSV, PDF-Logbuch und vollständigem JSON-Backup" class="rounded-xl shadow-xl w-full order-last lg:order-none" loading="lazy" width="1200" height="675" />
+      <div class="w-full order-last lg:order-none">
+        <img src="/images/feature-export-de.png" alt="NinerLog Exportseite mit CSV, PDF-Logbuch und vollständigem JSON-Backup" class="w-full dark:hidden" loading="lazy" width="1264" height="739" />
+        <img src="/images/feature-export-de-dark.png" alt="NinerLog Exportseite mit CSV, PDF-Logbuch und vollständigem JSON-Backup" class="w-full hidden dark:block" loading="lazy" width="1264" height="739" />
+      </div>
       <div class="reveal">
         {{ badge("DRUCKEN &bull; UNTERSCHREIBEN") }}
         <h2 class="text-2xl lg:text-3xl font-bold tracking-tight text-slate-800 dark:text-white mb-4 mt-3">Ein PDF-Logbuch, das ein Prüfer akzeptiert</h2>
@@ -410,7 +455,10 @@
 <section id="backup" class="scroll-mt-20 bg-slate-50 dark:bg-navy-900 py-16 lg:py-24">
   <div class="max-w-6xl mx-auto px-4">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-      <img src="/images/feature-cloud-backup.png" alt="NinerLog Cloud-Backup-Einstellungen mit verbundenem Ziel, aktivem Status und letztem erfolgreichen Lauf" class="rounded-xl shadow-xl w-full order-last lg:order-2" loading="lazy" width="1200" height="675" />
+      <div class="w-full order-last lg:order-2">
+        <img src="/images/feature-cloud-backup-de.png" alt="NinerLog Cloud-Backup-Einstellungen mit verbundenem Ziel, aktivem Status und letztem erfolgreichen Lauf" class="w-full dark:hidden" loading="lazy" width="1264" height="739" />
+        <img src="/images/feature-cloud-backup-de-dark.png" alt="NinerLog Cloud-Backup-Einstellungen mit verbundenem Ziel, aktivem Status und letztem erfolgreichen Lauf" class="w-full hidden dark:block" loading="lazy" width="1264" height="739" />
+      </div>
       <div class="reveal lg:order-1">
         {{ badge("DIR GEHÖRT DER SPEICHER") }}
         <h2 class="text-2xl lg:text-3xl font-bold tracking-tight text-slate-800 dark:text-white mb-4 mt-3">Eine Kopie auf Speicher, der dir gehört</h2>
@@ -439,7 +487,10 @@
 <section id="sicherheit" class="scroll-mt-20 bg-white dark:bg-navy-950 py-16 lg:py-24">
   <div class="max-w-6xl mx-auto px-4">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-      <img src="/images/feature-login-security.png" alt="NinerLog Kontosicherheit mit aktivierter Zwei-Faktor-Authentifizierung und registriertem Passkey" class="rounded-xl shadow-xl w-full order-last lg:order-none" loading="lazy" width="1200" height="675" />
+      <div class="w-full order-last lg:order-none">
+        <img src="/images/feature-login-security-de.png" alt="NinerLog Kontosicherheit mit aktivierter Zwei-Faktor-Authentifizierung und registriertem Passkey" class="w-full dark:hidden" loading="lazy" width="1264" height="739" />
+        <img src="/images/feature-login-security-de-dark.png" alt="NinerLog Kontosicherheit mit aktivierter Zwei-Faktor-Authentifizierung und registriertem Passkey" class="w-full hidden dark:block" loading="lazy" width="1264" height="739" />
+      </div>
       <div class="reveal">
         {{ badge("SICHER VON HAUS AUS") }}
         <h2 class="text-2xl lg:text-3xl font-bold tracking-tight text-slate-800 dark:text-white mb-4 mt-3">Dein Flugbuch ist ein Rechtsdokument. Wir behandeln es so</h2>
@@ -465,7 +516,10 @@
 <section id="verein" class="scroll-mt-20 bg-slate-50 dark:bg-navy-900 py-16 lg:py-24">
   <div class="max-w-6xl mx-auto px-4">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-      <img src="/images/feature-flying-club.png" alt="NinerLog Adminkonsole mit der Mitgliederliste eines Vereins samt Kontostatus, 2FA und Fluganzahl" class="rounded-xl shadow-xl w-full order-last lg:order-2" loading="lazy" width="1200" height="675" />
+      <div class="w-full order-last lg:order-2">
+        <img src="/images/feature-flying-club-de.png" alt="NinerLog Adminkonsole mit der Mitgliederliste eines Vereins samt Kontostatus, 2FA und Fluganzahl" class="w-full dark:hidden" loading="lazy" width="1264" height="739" />
+        <img src="/images/feature-flying-club-de-dark.png" alt="NinerLog Adminkonsole mit der Mitgliederliste eines Vereins samt Kontostatus, 2FA und Fluganzahl" class="w-full hidden dark:block" loading="lazy" width="1264" height="739" />
+      </div>
       <div class="reveal lg:order-1">
         {{ badge("SELBST GEHOSTET &bull; VEREINSTAUGLICH", "bg-amber-400") }}
         <h2 class="text-2xl lg:text-3xl font-bold tracking-tight text-slate-800 dark:text-white mb-4 mt-3">Für den ganzen Verein betreiben</h2>
@@ -496,7 +550,10 @@
   <div class="max-w-6xl mx-auto px-4">
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
       <div class="flex justify-center lg:justify-start">
-        <img src="/images/feature-mobile.png" alt="NinerLog auf dem Smartphone mit der mobilen Flugliste" class="rounded-xl shadow-xl max-w-[240px] w-full" loading="lazy" width="393" height="852" />
+        <div class="max-w-[240px] w-full">
+        <img src="/images/feature-mobile-de.png" alt="NinerLog auf dem Smartphone mit der mobilen Flugliste" class="w-full dark:hidden" loading="lazy" width="457" height="916" />
+        <img src="/images/feature-mobile-de-dark.png" alt="NinerLog auf dem Smartphone mit der mobilen Flugliste" class="w-full hidden dark:block" loading="lazy" width="457" height="916" />
+      </div>
       </div>
       <div class="lg:col-span-2 reveal">
         <h2 class="text-2xl lg:text-3xl font-bold tracking-tight text-slate-800 dark:text-white mb-4">Auf dem Gerät, das du gerade in der Hand hast</h2>
