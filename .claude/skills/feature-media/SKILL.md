@@ -36,22 +36,27 @@ toggle. Theme-dependent media is always an element pair:
 
 ```html
 <div class="w-full order-last lg:order-none">
-  <img src="/images/feature-x.png"      alt="…" class="rounded-xl shadow-xl w-full dark:hidden"       loading="lazy" width="1200" height="675" />
-  <img src="/images/feature-x-dark.png" alt="…" class="rounded-xl shadow-xl w-full hidden dark:block" loading="lazy" width="1200" height="675" />
+  <img src="/images/feature-x.png"      alt="…" class="w-full dark:hidden"       loading="lazy" width="1264" height="739" />
+  <img src="/images/feature-x-dark.png" alt="…" class="w-full hidden dark:block" loading="lazy" width="1264" height="739" />
 </div>
 ```
 
+Stills come **pre-framed** — rounded corners, hairline border and drop shadow
+are baked into the PNG on a transparent margin — so never add `rounded-xl` or
+`shadow-xl` to a feature `<img>` (it would double-frame). Framed stills are
+1264×739 CSS px (mobile 457×916).
+
 The wrapper carries the grid/order/sizing classes (a bare pair would become
 two grid children and break the two-column layout); both images share the
-same alt. PNGs are 2400×1350 but keep `width="1200" height="675"` — the
-attributes only fix the aspect ratio.
+same alt — the width/height attributes only fix the aspect ratio.
 
-Demo videos follow the same pairing, with the matching still as poster and
-fallback:
+Demo videos follow the same pairing. They are unframed media, so they DO get
+`rounded-xl shadow-xl` in CSS, and their poster must be one of the unframed
+`poster-*` copies (a framed poster would flash margins before playback):
 
 ```html
 <video class="rounded-xl shadow-xl w-full dark:hidden" autoplay loop muted playsinline
-       preload="metadata" poster="/images/feature-x.png" width="1200" height="675" aria-label="…">
+       preload="metadata" poster="/images/poster-x.png" width="1200" height="675" aria-label="…">
   <source src="/images/demo-x.webm" type="video/webm" />
   <img src="/images/feature-x.png" alt="…" class="w-full" loading="lazy" width="1200" height="675" />
 </video>
