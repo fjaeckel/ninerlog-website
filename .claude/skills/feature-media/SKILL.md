@@ -30,6 +30,13 @@ and the review checklist. **Never** rename files in `images/` casually — the
 
 ## Markup patterns
 
+`de/funktionen.njk` references the **German-UI captures** — identical
+basenames with `-de` before the theme suffix (`feature-fleet-de.png`,
+`feature-fleet-de-dark.png`, `demo-quicklog-de.webm`, `poster-reports-de-dark.png`).
+Regenerate them with `npm run shots:marketing -- --lang=de [--animations]` in
+the frontend repo; never point the German page at the English set or vice
+versa.
+
 Site dark mode is a **class toggle** (`scripts.njk` toggles `.dark` on the
 root), so `<picture media="(prefers-color-scheme:…)">` would ignore the
 toggle. Theme-dependent media is always an element pair:
