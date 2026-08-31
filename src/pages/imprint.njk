@@ -14,10 +14,7 @@
 
     <h2>Diensteanbieter</h2>
     <p>
-      Frederic Jung<br />
-      Rosentreterpromenade 11<br />
-      13437 Berlin<br />
-      Deutschland
+      {% set addressCountry = "Deutschland" %}{% include "partials/legal-address.njk" %}
     </p>
 
     <h2>Kontakt</h2>
@@ -34,9 +31,7 @@
     <h2>Inhaltlich Verantwortlicher</h2>
     <p class="text-sm text-slate-500 dark:text-slate-400">gem&auml;&szlig; &sect; 18 Abs. 2 MStV</p>
     <p>
-      Frederic Jung<br />
-      Rosentreterpromenade 11<br />
-      13437 Berlin
+      {% set addressCountry = "" %}{% include "partials/legal-address.njk" %}
     </p>
 
     <h2>Haftung f&uuml;r Inhalte</h2>

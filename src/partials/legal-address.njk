@@ -1,0 +1,15 @@
+{#
+  Single source of truth for the ladungsfaehige Anschrift published under
+  § 5 DDG (Impressum), § 18 Abs. 2 MStV and Art. 13 DSGVO (Verantwortlicher).
+
+  Change the address HERE and every legal page follows. Do not inline it
+  into pages again.
+
+  Set the variable `addressCountry` before including to control the trailing
+  country line: "Deutschland" on German pages, "Germany" on English pages,
+  or an empty string to omit the line entirely.
+#}
+Frederic Jung<br />
+Rosentreterpromenade 11<br />
+13437 Berlin{% if addressCountry %}<br />
+{{ addressCountry }}{% endif %}
