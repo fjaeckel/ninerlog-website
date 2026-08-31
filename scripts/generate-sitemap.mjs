@@ -66,6 +66,12 @@ for (const file of walk(PAGES_DIR).sort()) {
   if (EXCLUDED.has(name.split('/').pop())) continue;
 
   const source = readFileSync(file, 'utf8');
+
+  // Pages marked `pageNoindex` are deliberately kept out of search results
+  // (see src/partials/head.njk). Advertising them in the sitemap would invite
+  // exactly the crawl the noindex is there to prevent.
+  if (njkSet(source, 'pageNoindex') === 'true') continue;
+
   const pagePath = njkSet(source, 'pagePath');
 
   if (!pagePath) {

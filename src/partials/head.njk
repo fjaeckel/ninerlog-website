@@ -5,6 +5,18 @@
 <link rel="canonical" href="https://ninerlog.com{{ pagePath | default('/') }}" />
 
 {#
+  Pages carrying `pageNoindex` stay out of search results. The Impressum and
+  the privacy policy have to be published (§ 5 DDG, § 18 MStV, Art. 13 DSGVO)
+  and stay one click away in the footer, but nothing obliges us to feed the
+  operator's postal address to search engines. `follow` keeps the outgoing
+  links alive; robots.txt deliberately does NOT disallow these paths, because
+  a crawler blocked from fetching the page never sees this tag.
+#}
+{% if pageNoindex %}
+<meta name="robots" content="noindex, follow" />
+{% endif %}
+
+{#
   hreflang — emitted only when a page has a genuine counterpart in the other
   language. English pages declare `altDe`, German pages declare `altEn`.
   Pages without a real translated equivalent deliberately emit nothing:
